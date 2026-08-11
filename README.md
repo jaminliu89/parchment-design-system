@@ -30,3 +30,4 @@ python3 ~/.hermes/skills/devops/design-system-delivery-gate/scripts/scan_design_
 
 - v2.1：石墨蓝强调色定版（原 v2.0 靛蓝 #4F46E5 已废弃）
 - 深色模式 = 深雾 #15171C + 银白墨 #ECEEF2
+# tri pushall smoke test
