@@ -1,33 +1,56 @@
-# Parchment Design System v2.1（云雾白）
+# Parchment Design System 3.0
 
-冷调云雾底 + 低饱和莫兰迪语义色 + 无阴影细边框 + 衬线大标题。极简、克制、高端工作室质感。
+> **Quiet Intelligence — Quiet UI / Strong Content / Precise Interaction**
 
-## 文件
+Parchment 3.0 is a redesign of the design-system architecture for creator tools, AI workspaces, editors, and content products. The goal is not to accumulate components, but to make visual quality reproducible through a coherent system of **Visual DNA → Tokens → Components → Composition → AI Patterns → Quality Gates**.
 
-- `Parchment-DESIGN.md` — 完整设计规范（3731 行 / 24 章节 / 三层 Token：Palette → Semantic → Component）
-- `parchment.tokens.json` — 结构化 design tokens（palette / semantic / typography / rounded / spacing / motion / components）
-- `parchment-preview.html` — 预览页（14 区块，浏览器直接打开）
+## Status
 
-## 核心定义
+**v3.0 rebuild in progress** on branch `parchment-3.0-rebuild`.
 
-- 云雾白底 #F6F7F9 / 冷墨文字 #1F2330
-- 唯一强调色：石墨蓝 #5A6590（低饱和，替代旧靛蓝 #4F46E5）
-- 莫兰迪语义色：灰绿 #6B8F7A / 灰琥珀 #B58A5A / 灰红 #B06A63
-- 深色模式：深雾 #15171C / 银白墨 #ECEEF2
-- 无阴影 1px 边框、胶囊按钮、衬线大标题、SVG 图标（禁 emoji）
+The existing v2.1 files remain available as the legacy reference while v3 is rebuilt from first principles.
 
-## 用法
+## Architecture
 
-```bash
-# 预览
-open parchment-preview.html
-
-# 校验（交付前必须全 PASS）
-python3 ~/.hermes/skills/devops/design-system-delivery-gate/scripts/scan_design_md.py Parchment-DESIGN.md
+```text
+Visual DNA
+    ↓
+Primitive Tokens
+    ↓
+Semantic Tokens
+    ↓
+State Tokens
+    ↓
+Component Tokens
+    ↓
+Composition Tokens
+    ↓
+Components + Patterns
+    ↓
+AI-native Patterns
+    ↓
+Quality Gates
 ```
 
-## 版本
+## v3.0 documents
 
-- v2.1：石墨蓝强调色定版（原 v2.0 靛蓝 #4F46E5 已废弃）
-- 深色模式 = 深雾 #15171C + 银白墨 #ECEEF2
-# tri pushall smoke test
+- `PARCHMENT-3.0-ARCHITECTURE.md` — architecture, visual DNA, shape, elevation, motion, composition and AI principles
+- `parchment.v3.tokens.json` — v3 foundation / semantic / state / composition / AI tokens
+- `Parchment-DESIGN.md` — v2.1 legacy specification during migration
+- `parchment.tokens.json` — v2.1 legacy token export during migration
+- `parchment-preview.html` — v2.1 legacy preview; v3 preview migration follows the foundation pass
+
+## Design principles
+
+1. **Quiet, not empty** — visual restraint creates hierarchy rather than removing information.
+2. **Content leads** — chrome stays quiet so the creator's work becomes the visual anchor.
+3. **Shape has semantics** — pill, soft rectangle, rectangle, circle and text actions communicate different interaction levels.
+4. **Elevation is semantic** — borders, surfaces and shadows express layer relationships; shadows are not banned, decoration is.
+5. **Optical rhythm over mathematical sameness** — spacing and typography are tuned for perceived balance, including CJK/Latin differences.
+6. **AI is a state, not a color** — generated, suggesting, processing, diff and conflict states must feel native to Parchment rather than becoming generic 'AI purple'.
+7. **Composition is first-class** — a design system must define how components form workspaces, editors and reading surfaces.
+8. **Every rule must be implementable and testable.**
+
+## Migration rule
+
+v2.1 is frozen as legacy. New components and product work should target v3 tokens and principles. Existing v2 files are migrated incrementally instead of being rewritten blindly.
