@@ -12,10 +12,44 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: Verify repository state
         run: |
+          set -euo pipefail
           sha="$(git rev-parse HEAD)"
           echo "Parchment main: ${sha}"
           test -n "$sha"
-      - name: Verify sync script exists
-        run: test -x scripts/sync-all.sh || test -f scripts/sync-all.sh
+
+      - name: Verify sync engine
+        run: |
+          set -euo pipefail
+          test -f scripts/sync-all.sh
+          bash -n scripts/sync-all.sh
+
+      - name: Audit public mirror SHAs
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          check_mirror() {
+            name="$1"
+            url="$2"
+            sha="$(git ls-remote "$url" refs/heads/main | awk '{print $1}')"
+            if [[ -z "$sha" ]]; then
+              echo "FAIL: $name returned no main SHA"
+              return 1
+            fi
+            if [[ "$sha" != "$EXPECTED_SHA" ]]; then
+              echo "FAIL: $name diverged"
+              echo "expected=$EXPECTED_SHA"
+              echo "actual=$sha"
+              return 1
+            fi
+            echo "PASS: $name $sha"
+          }
+
+          check_mirror "GitCode" "https://gitcode.com/jaminliu89/parchment-design-system.git"
+          check_mirror "Gitee" "https://gitee.com/jaminliu89/parchment-design-system.git"
+
+      - name: Summary
+        run: echo "STATUS: GitHub, GitCode and Gitee main branches are identical"
