@@ -1,75 +1,101 @@
-# Parchment 3.1 Visual Audit
+# Parchment 3.2 — Visual Role Audit
 
-## Decision
-Reset the visual language instead of polishing the current one. The old palette and mixed chrome created visual noise. Parchment now follows a neutral editorial direction: warm canvas, near-black typography, quiet borders, restrained earth signal, and one icon grammar.
+> Goal: remove the previous visual language rather than cosmetically patch it. The system is now neutral editorial, content-first, and iconically consistent.
 
-## Reference principles
-- Linear's March 2026 refresh: calmer, more consistent navigation and view controls; redrawn/resized icons; dimmer sidebars so content stands out.
-- Raycast: a coherent outline icon family with shared stroke/radius rules and compact, action-first UI.
-- Geist/Vercel: semantic neutral surfaces, borders, text/icon hierarchy, with color reserved for meaning.
+## Global rules
 
-## Non-negotiables
-1. No blue as brand/accent color.
-2. No mixed icon families.
-3. No emoji or text glyphs used as product icons.
-4. No decorative icon circles/squares in ordinary navigation.
-5. Icon-only controls are square hit targets; the icon itself has no container unless the interaction needs one.
-6. One radius language: 8px controls, 12px surfaces, 6px small structural elements; pills only for status.
-7. Primary actions use ink, not accent color.
-8. Signal color is semantic and sparse, never a gradient or glow.
-9. Borders are structural, not decoration.
-10. The canvas gets more visual weight than chrome.
+- No blue as brand, primary action, focus, or AI accent.
+- No gradients, glow, glass cards, or decorative shadows.
+- One icon family: 20px grid / 1.75px stroke / round caps / round joins / currentColor.
+- No emoji or text glyphs as product icons.
+- No generic circular icon containers. Circle is reserved for avatar / singular status.
+- Control radius: 8px. Surface radius: 12px. Status pill: 999px only.
+- Content > label > icon > chrome.
+- Pills communicate semantic status; they do not decorate copy.
+- Minimum interactive target: 40px; compact contexts must preserve 44px accessible target via hit area.
+- Focus must be visible without relying on color alone.
+- Reduced motion is respected.
 
-## Role-by-role audit
+## Role walkthrough
+
+### App shell
+- Header is 64px and visually quiet.
+- Navigation uses text-first items; icons are optional and secondary.
+- Theme control is a square control, not a circular ornament.
 
 ### Navigation
-- Quiet labels, one active treatment, 18–20px monochrome icons.
+- One active treatment: subtle surface fill + ink text.
+- No mixed selected shapes.
 - No colored icon tiles.
-- Active state is a neutral surface shift + text weight.
 
-### Header
-- One title, one context trail, one primary action zone.
-- Avoid badge clusters beside titles.
+### Toolbar
+- Icon buttons use the same 40px geometry as controls.
+- Dividers are structural and sparse.
+- Primary action is text-first.
 
-### Content / Canvas
-- Maximum whitespace. Avoid nested cards.
-- Use separators only where relationships need clarification.
+### Transcript / voice
+- Speaker, role, copy and timestamp have stable columns.
+- Labels never float beside spoken text as a badge pile.
+- AI suggestions occupy an explicit row/state, not a decorative tag attached to the sentence.
+- Timestamp is metadata, not a pill.
 
-### Forms
-- Labels sit above fields.
-- Helper text is plain secondary text, not a pill.
-- Validation uses semantic color + text/icon, never color alone.
+### Tags / status
+- Status pill is allowed only for compact semantic state.
+- Long labels use normal text, not pills.
+- Multiple status pills adjacent to content are a failure state.
 
-### Tags / Labels
-- Status tags may be pills.
-- Category labels should be plain text or compact outlined labels.
-- Do not put every metadata item in a rounded container.
+### Iconography
+- One visual family only.
+- No outline/filled mixing within a control cluster.
+- No circles around every icon.
+- Icons reinforce labels; they do not become the label when ambiguous.
 
-### Voice / Copy / Transcript
-- Spoken copy is content, not metadata.
-- Remove decorative chips beside sentences.
-- If speaker identity is needed: small mono/uppercase role label above the block; no circle unless it is an avatar.
-- If timing is needed: align timestamp in a dedicated metadata column.
+### Workspace
+- Navigation rail is low contrast.
+- Canvas receives the largest whitespace budget.
+- Inspector is contextual and visually subordinate.
+- Borders describe relationships; cards are not used to box every region.
 
 ### AI
-- AI is a behavior/state, not a permanent color theme.
-- Suggestions use a quiet inset or margin marker.
-- Generated text gets explicit state labels and reversible actions.
-- Confidence/citation/diff are structured metadata, not floating badges.
+- AI is a semantic behavior layer.
+- Suggestion, processing, generated, applied, diff and conflict are states.
+- No purple AI theme, sparkle decoration, or permanent AI glow.
+- AI changes must be distinguishable structurally and be reversible.
 
-### Tables / Lists
-- Prefer rows and alignment over cards.
-- Icons lead; text carries meaning; metadata recedes.
+### Empty / loading / error
+- Empty states are editorial and concise.
+- Loading uses restrained motion and text where needed.
+- Error uses a muted semantic red, never saturated red UI chrome.
 
-### Empty / Loading
-- Empty states are typographic and spacious.
-- Skeletons use surface contrast, not animation-heavy effects.
+### Dark mode
+- Invert surfaces and preserve hierarchy; do not simply darken the light palette.
+- Neutral signal remains warm/stone rather than blue-gray.
 
-## Icon contract
-20px base grid; 1.75px stroke; round caps/joins; currentColor. Optical centering over mathematical centering. 16px dense metadata, 18px normal UI, 20px primary controls, 24px feature-level. No mixed filled/outline families inside the same navigation or toolbar.
+### Mobile
+- Navigation collapses without introducing a second icon language.
+- Transcript changes from four columns to content-first layout.
+- Controls retain touch-safe hit areas.
 
-## Color contract
-The palette is intentionally not blue and not a generic gray SaaS palette. Warm paper establishes identity; near-black establishes authority; muted earth signal establishes interaction/semantic emphasis. Success/warning/error are reserved for actual state communication.
+## Anti-patterns to reject
 
-## Quality gate
-Before release, inspect every screen by role: shell, navigation, header, content, form, list, table, transcript/voice, AI panel, dialog, popover, empty, loading, error, dark mode, mobile. Reject any screen where a decorative container competes with content, icons change geometry, tags become noise, or color carries meaning without text/shape support.
+```text
+[blue primary] + [blue badge] + [blue icon] + [circle icon]
+
+[AI] [VOICE] [NEW] [12s] next to every sentence
+
+○ search   □ edit   ◉ AI   pill status
+
+card > card > card > card
+```
+
+## Acceptance gate
+
+A page is not done until:
+
+1. A first-time viewer can identify the content hierarchy in under three seconds.
+2. Adjacent controls look like one product, not multiple component libraries.
+3. Removing every icon leaves the layout understandable.
+4. Removing every color except neutral still leaves states understandable through structure/labels.
+5. There is no decorative shape whose only purpose is to make the UI look "AI" or "modern".
+6. Transcript labels do not visually compete with spoken copy.
+7. Desktop and mobile preserve the same visual grammar.
