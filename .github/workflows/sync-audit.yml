@@ -2,8 +2,8 @@ name: Parchment remote sync audit
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
+  schedule:
+    - cron: "17 * * * *"
 
 jobs:
   audit:
@@ -45,7 +45,7 @@ jobs:
               echo "actual=$sha"
               return 1
             fi
-            echo "PASS: $name $sha"
+            echo "PASS: $name ${sha:0:12}"
           }
 
           check_mirror "GitCode" "https://gitcode.com/jaminliu89/parchment-design-system.git"
