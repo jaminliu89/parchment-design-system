@@ -1,0 +1,21 @@
+name: Parchment remote sync audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify repository state
+        run: |
+          sha="$(git rev-parse HEAD)"
+          echo "Parchment main: ${sha}"
+          test -n "$sha"
+      - name: Verify sync script exists
+        run: test -x scripts/sync-all.sh || test -f scripts/sync-all.sh
