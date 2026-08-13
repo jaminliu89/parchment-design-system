@@ -1,56 +1,45 @@
-# Parchment Design System 3.0
+# Parchment Design System 3.2
 
-> **Quiet Intelligence — Quiet UI / Strong Content / Precise Interaction**
+> **Quiet Editorial — Content first / Precise interaction / Neutral visual language**
 
-Parchment 3.0 is a redesign of the design-system architecture for creator tools, AI workspaces, editors, and content products. The goal is not to accumulate components, but to make visual quality reproducible through a coherent system of **Visual DNA → Tokens → Components → Composition → AI Patterns → Quality Gates**.
+Parchment is a design system for creator tools and AI workspaces. The current source of truth is a restrained editorial system: warm neutral surfaces, carbon text, one icon family, deliberate typography, semantic AI states, and minimal chrome.
 
-## Status
+## Visual contract
 
-**v3.0 rebuild in progress** on branch `parchment-3.0-rebuild`.
+- No blue as brand or primary UI color.
+- Warm neutral surfaces + near-black primary text.
+- Sans for interface, serif for editorial emphasis, mono for metadata.
+- One icon family: 20px grid, 1.75px stroke, round caps/joins, `currentColor`.
+- Controls use 9px radius; surfaces use 12px radius.
+- Pills are semantic status only; circles are exceptional, not generic icon containers.
+- Content > label > icon > chrome.
+- No emoji/text glyphs as product icons; no mixed filled/outline icon sets.
+- AI is behavior/state, not a permanent purple visual theme.
+- Minimum interactive target: 44px; visible focus; reduced-motion support.
 
-The existing v2.1 files remain available as the legacy reference while v3 is rebuilt from first principles.
+## Role hierarchy
 
-## Architecture
+`App Shell → Navigation → Header → Toolbar → Content → Transcript/Voice → AI → Inspector → Dialog → Empty/Loading/Error → Responsive`
 
-```text
-Visual DNA
-    ↓
-Primitive Tokens
-    ↓
-Semantic Tokens
-    ↓
-State Tokens
-    ↓
-Component Tokens
-    ↓
-Composition Tokens
-    ↓
-Components + Patterns
-    ↓
-AI-native Patterns
-    ↓
-Quality Gates
-```
+### Transcript / voice
 
-## v3.0 documents
+Never stack floating tags beside spoken copy. Use a stable information row:
 
-- `PARCHMENT-3.0-ARCHITECTURE.md` — architecture, visual DNA, shape, elevation, motion, composition and AI principles
-- `parchment.v3.tokens.json` — v3 foundation / semantic / state / composition / AI tokens
-- `Parchment-DESIGN.md` — v2.1 legacy specification during migration
-- `parchment.tokens.json` — v2.1 legacy token export during migration
-- `parchment-preview.html` — v2.1 legacy preview; v3 preview migration follows the foundation pass
+`Speaker → Role → Spoken content → Time`
 
-## Design principles
+AI suggestions, processing, diffs and conflicts are separate semantic rows/panels rather than decorative labels attached to every sentence.
 
-1. **Quiet, not empty** — visual restraint creates hierarchy rather than removing information.
-2. **Content leads** — chrome stays quiet so the creator's work becomes the visual anchor.
-3. **Shape has semantics** — pill, soft rectangle, rectangle, circle and text actions communicate different interaction levels.
-4. **Elevation is semantic** — borders, surfaces and shadows express layer relationships; shadows are not banned, decoration is.
-5. **Optical rhythm over mathematical sameness** — spacing and typography are tuned for perceived balance, including CJK/Latin differences.
-6. **AI is a state, not a color** — generated, suggesting, processing, diff and conflict states must feel native to Parchment rather than becoming generic 'AI purple'.
-7. **Composition is first-class** — a design system must define how components form workspaces, editors and reading surfaces.
-8. **Every rule must be implementable and testable.**
+## Source files
 
-## Migration rule
+- `parchment.v3.tokens.json` — canonical tokens.
+- `parchment-preview.html` — primary visual preview.
+- `parchment-role-lab.html` — role/component walkthrough.
+- `PARCHMENT_3_1_VISUAL_AUDIT.md` — visual language audit.
+- `PARCHMENT_3_2_QA.md` — product-wide QA checklist.
+- `PARCHMENT_ICONOGRAPHY_V3.md` — iconography contract.
 
-v2.1 is frozen as legacy. New components and product work should target v3 tokens and principles. Existing v2 files are migrated incrementally instead of being rewritten blindly.
+## Definition of done
+
+A surface is ready only when it passes role-lab review at desktop/mobile and light/dark appearances; uses the same icon geometry and shape language; preserves content hierarchy without decorative chrome; and exposes AI state through semantics and structure rather than color alone.
+
+Historical experiments are reference material only and must not reintroduce the retired blue SaaS language, mixed icon families, decorative icon containers, or uncontrolled badge/pill usage.
