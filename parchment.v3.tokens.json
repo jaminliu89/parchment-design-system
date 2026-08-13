@@ -1,103 +1,12 @@
 {
   "$schema": "https://design-tokens.github.io/community-group/format/",
-  "$description": "Parchment Design System v3.0 foundation tokens — Quiet Intelligence.",
-  "color": {
-    "primitive": {
-      "parchment-50": { "$value": "#F6F7F9", "$type": "color" },
-      "parchment-0": { "$value": "#FDFDFC", "$type": "color" },
-      "parchment-100": { "$value": "#EEF0F3", "$type": "color" },
-      "parchment-200": { "$value": "#E2E5EA", "$type": "color" },
-      "ink-900": { "$value": "#1F2330", "$type": "color" },
-      "ink-700": { "$value": "#3D4457", "$type": "color" },
-      "ink-500": { "$value": "#6B7280", "$type": "color" },
-      "ink-400": { "$value": "#949BA8", "$type": "color" },
-      "accent-600": { "$value": "#5A6590", "$type": "color" },
-      "accent-500": { "$value": "#77819A", "$type": "color" },
-      "accent-700": { "$value": "#4A5477", "$type": "color" },
-      "white": { "$value": "#FFFFFF", "$type": "color" }
-    },
-    "semantic": {
-      "surface.page": { "$value": "{color.primitive.parchment-50}", "$type": "color" },
-      "surface.content": { "$value": "{color.primitive.parchment-0}", "$type": "color" },
-      "surface.muted": { "$value": "{color.primitive.parchment-100}", "$type": "color" },
-      "surface.subtle": { "$value": "{color.primitive.parchment-200}", "$type": "color" },
-      "text.primary": { "$value": "{color.primitive.ink-900}", "$type": "color" },
-      "text.secondary": { "$value": "{color.primitive.ink-700}", "$type": "color" },
-      "text.tertiary": { "$value": "{color.primitive.ink-500}", "$type": "color" },
-      "text.placeholder": { "$value": "{color.primitive.ink-400}", "$type": "color" },
-      "text.on-accent": { "$value": "{color.primitive.white}", "$type": "color" },
-      "border.default": { "$value": "{color.primitive.parchment-200}", "$type": "color" },
-      "border.subtle": { "$value": "{color.primitive.parchment-100}", "$type": "color" },
-      "accent.default": { "$value": "{color.primitive.accent-600}", "$type": "color" },
-      "accent.hover": { "$value": "{color.primitive.accent-500}", "$type": "color" },
-      "accent.pressed": { "$value": "{color.primitive.accent-700}", "$type": "color" }
-    }
-  },
-  "shape": {
-    "radius": {
-      "none": { "$value": "0px", "$type": "dimension" },
-      "sm": { "$value": "6px", "$type": "dimension" },
-      "md": { "$value": "10px", "$type": "dimension" },
-      "lg": { "$value": "14px", "$type": "dimension" },
-      "xl": { "$value": "20px", "$type": "dimension" },
-      "pill": { "$value": "999px", "$type": "dimension" },
-      "circle": { "$value": "50%", "$type": "dimension" }
-    },
-    "role": {
-      "primary": { "$value": "{shape.radius.pill}" },
-      "control": { "$value": "{shape.radius.md}" },
-      "structural": { "$value": "{shape.radius.sm}" },
-      "surface": { "$value": "{shape.radius.lg}" }
-    }
-  },
-  "elevation": {
-    "0": { "$value": "none" },
-    "1": { "$value": "0 1px 2px rgba(31, 35, 48, 0.04)" },
-    "2": { "$value": "0 4px 12px rgba(31, 35, 48, 0.06)" },
-    "3": { "$value": "0 12px 28px rgba(31, 35, 48, 0.08)" },
-    "4": { "$value": "0 20px 48px rgba(31, 35, 48, 0.12)" }
-  },
-  "spacing": {
-    "1": { "$value": "4px", "$type": "dimension" },
-    "2": { "$value": "8px", "$type": "dimension" },
-    "3": { "$value": "12px", "$type": "dimension" },
-    "4": { "$value": "16px", "$type": "dimension" },
-    "5": { "$value": "20px", "$type": "dimension" },
-    "6": { "$value": "24px", "$type": "dimension" },
-    "8": { "$value": "32px", "$type": "dimension" },
-    "10": { "$value": "40px", "$type": "dimension" },
-    "12": { "$value": "48px", "$type": "dimension" },
-    "16": { "$value": "64px", "$type": "dimension" },
-    "20": { "$value": "80px", "$type": "dimension" },
-    "24": { "$value": "96px", "$type": "dimension" },
-    "32": { "$value": "128px", "$type": "dimension" }
-  },
-  "composition": {
-    "shell.header": { "$value": "64px", "$type": "dimension" },
-    "shell.nav": { "$value": "240px", "$type": "dimension" },
-    "workspace.inspector": { "$value": "320px", "$type": "dimension" },
-    "workspace.gutter": { "$value": "24px", "$type": "dimension" },
-    "content.reading": { "$value": "720px", "$type": "dimension" },
-    "content.max": { "$value": "1440px", "$type": "dimension" },
-    "section.gap": { "$value": "64px", "$type": "dimension" }
-  },
-  "motion": {
-    "micro": { "$value": "120ms", "$type": "duration" },
-    "component": { "$value": "180ms", "$type": "duration" },
-    "container": { "$value": "280ms", "$type": "duration" },
-    "page": { "$value": "380ms", "$type": "duration" },
-    "ease.standard": { "$value": "cubic-bezier(0.2, 0, 0, 1)" },
-    "ease.exit": { "$value": "cubic-bezier(0.4, 0, 1, 1)" }
-  },
-  "ai": {
-    "suggestion": { "$value": "semantic state: suggestion" },
-    "processing": { "$value": "semantic state: processing" },
-    "generated": { "$value": "semantic state: generated" },
-    "applied": { "$value": "semantic state: applied" },
-    "diff": { "$value": "semantic state: diff" },
-    "conflict": { "$value": "semantic state: conflict" },
-    "attention": { "$value": "semantic state: attention" },
-    "confidence": { "$value": "semantic state: confidence" },
-    "citation": { "$value": "semantic state: citation" }
-  }
+  "$description": "Parchment Design System v3.0 canonical tokens — Quiet Intelligence.",
+  "color": {"primitive": {"parchment-50":{"$value":"#F6F7F9","$type":"color"},"parchment-0":{"$value":"#FDFDFC","$type":"color"},"parchment-100":{"$value":"#EEF0F3","$type":"color"},"parchment-200":{"$value":"#E2E5EA","$type":"color"},"ink-900":{"$value":"#1F2330","$type":"color"},"ink-700":{"$value":"#3D4457","$type":"color"},"ink-500":{"$value":"#6B7280","$type":"color"},"ink-400":{"$value":"#949BA8","$type":"color"},"accent-600":{"$value":"#5A6590","$type":"color"},"accent-500":{"$value":"#77819A","$type":"color"},"accent-700":{"$value":"#4A5477","$type":"color"},"white":{"$value":"#FFFFFF","$type":"color"}},"semantic":{"surface.page":{"$value":"{color.primitive.parchment-50}","$type":"color"},"surface.content":{"$value":"{color.primitive.parchment-0}","$type":"color"},"surface.muted":{"$value":"{color.primitive.parchment-100}","$type":"color"},"surface.subtle":{"$value":"{color.primitive.parchment-200}","$type":"color"},"text.primary":{"$value":"{color.primitive.ink-900}","$type":"color"},"text.secondary":{"$value":"{color.primitive.ink-700}","$type":"color"},"text.tertiary":{"$value":"{color.primitive.ink-500}","$type":"color"},"text.placeholder":{"$value":"{color.primitive.ink-400}","$type":"color"},"text.on-accent":{"$value":"{color.primitive.white}","$type":"color"},"border.default":{"$value":"{color.primitive.parchment-200}","$type":"color"},"border.subtle":{"$value":"{color.primitive.parchment-100}","$type":"color"},"accent.default":{"$value":"{color.primitive.accent-600}","$type":"color"},"accent.hover":{"$value":"{color.primitive.accent-500}","$type":"color"},"accent.pressed":{"$value":"{color.primitive.accent-700}","$type":"color"},"focus.ring":{"$value":"{color.primitive.accent-500}","$type":"color"},"state.success":{"$value":"#4A6B57","$type":"color"},"state.warning":{"$value":"#8A653F","$type":"color"},"state.error":{"$value":"#8A4A44","$type":"color"}}},
+  "shape":{"radius":{"none":{"$value":"0px","$type":"dimension"},"sm":{"$value":"6px","$type":"dimension"},"md":{"$value":"10px","$type":"dimension"},"lg":{"$value":"14px","$type":"dimension"},"xl":{"$value":"20px","$type":"dimension"},"pill":{"$value":"999px","$type":"dimension"},"circle":{"$value":"50%","$type":"dimension"}},"role":{"primary":{"$value":"{shape.radius.pill}"},"control":{"$value":"{shape.radius.md}"},"structural":{"$value":"{shape.radius.sm}"},"surface":{"$value":"{shape.radius.lg}"}}},
+  "elevation":{"0":{"$value":"none"},"1":{"$value":"0 1px 2px rgba(31,35,48,0.04)"},"2":{"$value":"0 4px 12px rgba(31,35,48,0.06)"},"3":{"$value":"0 12px 28px rgba(31,35,48,0.08)"},"4":{"$value":"0 20px 48px rgba(31,35,48,0.12)"}},
+  "spacing":{"1":{"$value":"4px","$type":"dimension"},"2":{"$value":"8px","$type":"dimension"},"3":{"$value":"12px","$type":"dimension"},"4":{"$value":"16px","$type":"dimension"},"5":{"$value":"20px","$type":"dimension"},"6":{"$value":"24px","$type":"dimension"},"8":{"$value":"32px","$type":"dimension"},"10":{"$value":"40px","$type":"dimension"},"12":{"$value":"48px","$type":"dimension"},"16":{"$value":"64px","$type":"dimension"},"20":{"$value":"80px","$type":"dimension"},"24":{"$value":"96px","$type":"dimension"},"32":{"$value":"128px","$type":"dimension"}},
+  "composition":{"shell.header":{"$value":"64px","$type":"dimension"},"shell.nav":{"$value":"240px","$type":"dimension"},"workspace.inspector":{"$value":"320px","$type":"dimension"},"workspace.gutter":{"$value":"24px","$type":"dimension"},"content.reading":{"$value":"720px","$type":"dimension"},"content.max":{"$value":"1440px","$type":"dimension"},"section.gap":{"$value":"64px","$type":"dimension"}},
+  "motion":{"micro":{"$value":"120ms","$type":"duration"},"component":{"$value":"180ms","$type":"duration"},"container":{"$value":"280ms","$type":"duration"},"page":{"$value":"380ms","$type":"duration"},"ease.standard":{"$value":"cubic-bezier(0.2,0,0,1)"},"ease.exit":{"$value":"cubic-bezier(0.4,0,1,1)"}},
+  "ai":{"suggestion":{"$value":"semantic state: suggestion"},"processing":{"$value":"semantic state: processing"},"generated":{"$value":"semantic state: generated"},"applied":{"$value":"semantic state: applied"},"diff":{"$value":"semantic state: diff"},"conflict":{"$value":"semantic state: conflict"},"attention":{"$value":"semantic state: attention"},"confidence":{"$value":"semantic state: confidence"},"citation":{"$value":"semantic state: citation"}},
+  "accessibility":{"focus.width":{"$value":"2px","$type":"dimension"},"focus.offset":{"$value":"2px","$type":"dimension"},"target.minimum":{"$value":"44px","$type":"dimension"}}
 }
