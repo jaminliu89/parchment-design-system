@@ -5,9 +5,17 @@ on:
   schedule:
     - cron: "17 * * * *"
 
+permissions:
+  contents: read
+
+concurrency:
+  group: parchment-sync-audit
+  cancel-in-progress: true
+
 jobs:
   audit:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
         with:
