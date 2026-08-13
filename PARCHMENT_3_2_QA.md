@@ -2,7 +2,7 @@
 
 ## Acceptance model
 
-A screen passes only when hierarchy, shape, iconography, semantic status, content density and responsive behavior all agree. Correct color alone is insufficient.
+A screen passes only when hierarchy, shape, iconography, semantic status, content density and responsive behavior agree. Correct color alone is insufficient.
 
 ## Global gate
 
@@ -10,7 +10,7 @@ A screen passes only when hierarchy, shape, iconography, semantic status, conten
 - [ ] No mixed icon libraries or icon styles
 - [ ] No emoji/text glyphs used as product icons
 - [ ] No decorative icon circles or square tiles
-- [ ] 8px control radius / 12px surface radius / pills only for semantic status
+- [ ] 9px control radius / 12px surface radius / pills only for semantic status
 - [ ] Primary action is neutral near-black / near-white
 - [ ] Borders are quiet and shadows are sparse
 - [ ] Content has greater visual weight than chrome
@@ -116,18 +116,8 @@ SPEAKER | ROLE | SPOKEN CONTENT | TIME
 
 ## Icon QA
 
-Canonical icon contract:
+Canonical icon contract: 20px grid, 1.75px stroke, round caps/joins, currentColor. One family only. No emoji, no text glyphs, no mixed filled/outline sets, no decorative icon tiles.
 
-```text
-20 × 20 grid
-1.75px stroke
-round cap
-round join
-currentColor
-```
+## Final gate
 
-Reject any icon that introduces a competing visual language.
-
-## Final visual test
-
-View the page at normal scale for 5 seconds. The first thing perceived should be the user's content and task. If the first thing perceived is a badge, icon, border, card, AI effect, or navigation chrome, the screen fails and must be simplified.
+This document is a checklist, not proof of completion. Every unchecked item requires a concrete UI correction before the system is called complete.
