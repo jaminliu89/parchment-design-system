@@ -2,13 +2,20 @@
 
 ## Current execution pointer
 
-**Next eligible task: `P1-002 Semantic color system`.**
+**Next eligible task: `P1-003 Typography system`.**
 
 ### P1-001 Canonical token source
 **Status:** DONE
 **Commit:** `8ea33a4ffd37853580805e0d8fd84b4662bb40a8`
 
-Consolidate duplicate token sources into one canonical token contract. Cover color, typography, spacing, sizing, density, radius, border, elevation, motion, focus, and semantic states.
+### P1-002 Semantic color system
+**Status:** DONE
+**Commit:** `e468565e128eec934b53d637a2a8d57401ad0772`
+
+Completed:
+- semantic color contract;
+- theme architecture contract;
+- component color usage rules.
 
 ## Execution protocol
 
