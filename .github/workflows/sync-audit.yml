@@ -59,5 +59,9 @@ jobs:
           check_mirror "GitCode" "https://gitcode.com/jaminliu89/parchment-design-system.git"
           check_mirror "Gitee" "https://gitee.com/jaminliu89/parchment-design-system.git"
 
+      - name: Drift recovery hint
+        if: failure()
+        run: echo "SYNC DRIFT: inspect the mirror history and restore from the known-good local commit; do not force-push automatically."
+
       - name: Summary
         run: echo "STATUS: GitHub, GitCode and Gitee main branches are identical"
