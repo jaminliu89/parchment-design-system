@@ -2,7 +2,7 @@
 
 ## Current execution pointer
 
-**Next eligible task: `P1-003 Typography system`.**
+**Next eligible task: `P1-004 Shape / Elevation / Motion system`.**
 
 ### P1-001 Canonical token source
 **Status:** DONE
@@ -12,10 +12,14 @@
 **Status:** DONE
 **Commit:** `e468565e128eec934b53d637a2a8d57401ad0772`
 
+### P1-003 Typography system
+**Status:** DONE
+**Commit:** `4207eb92d4af4789df6a39255e4f8faccc6e66ee`
+
 Completed:
-- semantic color contract;
-- theme architecture contract;
-- component color usage rules.
+- typography contract;
+- editorial/UI/mono usage model;
+- hierarchy and truncation rules.
 
 ## Execution protocol
 
