@@ -62,8 +62,8 @@ Create this Master Task and establish the non-drifting execution protocol.
 **Acceptance:** this document exists and defines priority, dependencies, DoD, and execution rules.
 
 ### P0-002 Product requirements baseline
-**Status:** TODO
-**Depends on:** P0-001
+**Status:** DONE
+**Commit:** `83058ec99aa8b90bfa71d2064e889f1eb3dedb9f`
 
 Create a canonical PRD defining users, jobs-to-be-done, design principles, product surfaces, quality bar, and explicit non-goals.
 
@@ -239,6 +239,6 @@ Version the completed system, update README and changelog, freeze the visual con
 
 ## Current execution pointer
 
-**Next eligible task: `P0-002 Product requirements baseline`.**
+**Next eligible task: `P0-003 Architecture baseline`.**
 
 Do not skip ahead to visual polish while a higher-priority foundation task remains unfinished.
