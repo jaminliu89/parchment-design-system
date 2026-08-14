@@ -2,7 +2,7 @@
 
 ## Current execution pointer
 
-**Next eligible task: `P1-301 Role Laboratory`.**
+**Next eligible task: `P1-302 Screen Matrix Audit`.**
 
 ## Completed
 
@@ -26,14 +26,7 @@
 - P1-203 Transcript / Voice pattern DONE
 - P1-204 AI interaction pattern DONE
 - P1-205 Asset / library pattern DONE
-
-## Latest batch
-
-Completed product patterns:
-- AI workflow states;
-- generation review and reversible actions;
-- asset discovery and management;
-- content-first library rules.
+- P1-301 Role Laboratory DONE
 
 ## Execution protocol
 
