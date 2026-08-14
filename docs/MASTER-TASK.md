@@ -2,13 +2,13 @@
 
 ## Current execution pointer
 
-**Next eligible task: `P1-001 Canonical token source`.**
+**Next eligible task: `P1-002 Semantic color system`.**
 
-### P0-004 Engineering quality contract
+### P1-001 Canonical token source
 **Status:** DONE
-**Commit:** `c976373c8cdf436cb4158928b5f439397b37fa2f`
+**Commit:** `8ea33a4ffd37853580805e0d8fd84b4662bb40a8`
 
-Define implementation conventions, naming, file structure, testing expectations, accessibility gates, visual regression strategy, and contribution rules.
+Consolidate duplicate token sources into one canonical token contract. Cover color, typography, spacing, sizing, density, radius, border, elevation, motion, focus, and semantic states.
 
 ## Execution protocol
 
