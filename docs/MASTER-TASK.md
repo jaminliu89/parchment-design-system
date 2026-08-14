@@ -2,7 +2,7 @@
 
 ## Current execution pointer
 
-**Next eligible task: `P1-201 App shell pattern`.**
+**Next eligible task: `P1-301 Role Laboratory`.**
 
 ## Completed
 
@@ -21,16 +21,19 @@
 - P1-104 Feedback primitives DONE
 - P1-105 Surfaces and data display DONE
 - P1-106 Overlay system DONE
+- P1-201 App shell pattern DONE
+- P1-202 Editor pattern DONE
+- P1-203 Transcript / Voice pattern DONE
+- P1-204 AI interaction pattern DONE
+- P1-205 Asset / library pattern DONE
 
 ## Latest batch
 
-Completed overlay contract:
-- dialog;
-- drawer;
-- modal;
-- popover;
-- focus and keyboard rules;
-- mobile adaptation.
+Completed product patterns:
+- AI workflow states;
+- generation review and reversible actions;
+- asset discovery and management;
+- content-first library rules.
 
 ## Execution protocol
 
