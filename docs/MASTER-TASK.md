@@ -2,7 +2,7 @@
 
 ## Current execution pointer
 
-**Next eligible task: `P1-101 Button family`.**
+**Next eligible task: `P1-102 Form controls`.**
 
 ### Completed foundation
 
@@ -15,11 +15,20 @@
 - P1-003 Typography system DONE
 - P1-004 Shape / Elevation / Motion system DONE
 - P1-005 Iconography system DONE
+- P1-101 Button family DONE
+
+### P1-101 Button family
+
+Completed:
+- variant contract;
+- size contract;
+- interaction states;
+- icon usage rules;
+- component governance.
 
 ## Latest commits
 
-- Shape/Elevation/Motion: `29f82ff2af0016b69db13c787f7d5d899fe0f52b`
-- Iconography: `0e7b6d3e40b8c0490abbb65cfb0d944a6e44f792`
+- Button: `d59a3a7f8be8efa002167b232ff895bca98a6a6b`
 
 ## Execution protocol
 
