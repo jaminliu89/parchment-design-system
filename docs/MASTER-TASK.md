@@ -2,13 +2,13 @@
 
 ## Current execution pointer
 
-**Next eligible task: `P0-004 Engineering quality contract`.**
+**Next eligible task: `P1-001 Canonical token source`.**
 
-### P0-003 Architecture baseline
+### P0-004 Engineering quality contract
 **Status:** DONE
-**Commit:** `26d11b868cf184bb31161385d954c46afa8698ea`
+**Commit:** `c976373c8cdf436cb4158928b5f439397b37fa2f`
 
-Create the canonical architecture for tokens → primitives → components → patterns → role surfaces → QA, including ownership and dependency direction.
+Define implementation conventions, naming, file structure, testing expectations, accessibility gates, visual regression strategy, and contribution rules.
 
 ## Execution protocol
 
