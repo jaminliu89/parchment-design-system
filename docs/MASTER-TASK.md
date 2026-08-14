@@ -2,9 +2,9 @@
 
 ## Current execution pointer
 
-**Next eligible task: `P1-102 Form controls`.**
+**Next eligible task: `P1-103 Navigation controls`.**
 
-### Completed foundation
+### Completed
 
 - P0-001 Master execution contract DONE
 - P0-002 Product requirements baseline DONE
@@ -16,19 +16,20 @@
 - P1-004 Shape / Elevation / Motion system DONE
 - P1-005 Iconography system DONE
 - P1-101 Button family DONE
+- P1-102 Form controls DONE
 
-### P1-101 Button family
+### P1-102 Form controls
 
 Completed:
-- variant contract;
-- size contract;
-- interaction states;
-- icon usage rules;
-- component governance.
+- field anatomy;
+- input/select/textarea contracts;
+- checkbox/radio/switch rules;
+- validation states;
+- accessibility requirements.
 
 ## Latest commits
 
-- Button: `d59a3a7f8be8efa002167b232ff895bca98a6a6b`
+- Form controls: `0b1f523c87f3d1e1782954fe3d7c706c5768f442`
 
 ## Execution protocol
 
