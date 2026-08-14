@@ -21,47 +21,24 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Verify repository state
-        run: |
-          set -euo pipefail
-          sha="$(git rev-parse HEAD)"
-          echo "Parchment main: ${sha}"
-          test -n "$sha"
-
       - name: Verify sync engine
-        run: |
-          set -euo pipefail
-          test -f scripts/sync-all.sh
-          bash -n scripts/sync-all.sh
+        run: bash -n scripts/sync-all.sh
 
       - name: Audit public mirror SHAs
         env:
           EXPECTED_SHA: ${{ github.sha }}
         run: |
           set -euo pipefail
-          check_mirror() {
-            name="$1"
-            url="$2"
+          for pair in \
+            "GitCode|https://gitcode.com/jaminliu89/parchment-design-system.git" \
+            "Gitee|https://gitee.com/jaminliu89/parchment-design-system.git"; do
+            name="${pair%%|*}"
+            url="${pair#*|}"
             sha="$(git ls-remote "$url" refs/heads/main | awk '{print $1}')"
-            if [[ -z "$sha" ]]; then
-              echo "FAIL: $name returned no main SHA"
-              return 1
-            fi
-            if [[ "$sha" != "$EXPECTED_SHA" ]]; then
-              echo "FAIL: $name diverged"
-              echo "expected=$EXPECTED_SHA"
-              echo "actual=$sha"
-              return 1
-            fi
+            test -n "$sha" || { echo "FAIL: $name returned no SHA"; exit 1; }
+            test "$sha" = "$EXPECTED_SHA" || { echo "FAIL: $name diverged"; exit 1; }
             echo "PASS: $name ${sha:0:12}"
-          }
-
-          check_mirror "GitCode" "https://gitcode.com/jaminliu89/parchment-design-system.git"
-          check_mirror "Gitee" "https://gitee.com/jaminliu89/parchment-design-system.git"
-
-      - name: Drift recovery hint
-        if: failure()
-        run: echo "SYNC DRIFT: inspect the mirror history and restore from the known-good local commit; do not force-push automatically."
+          done
 
       - name: Summary
-        run: echo "STATUS: GitHub, GitCode and Gitee main branches are identical"
+        run: echo "STATUS: mirrors match GitHub main"
