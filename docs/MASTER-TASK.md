@@ -2,9 +2,9 @@
 
 ## Current execution pointer
 
-**Next eligible task: `P1-103 Navigation controls`.**
+**Next eligible task: `P1-106 Overlay system`.**
 
-### Completed
+## Completed
 
 - P0-001 Master execution contract DONE
 - P0-002 Product requirements baseline DONE
@@ -17,30 +17,27 @@
 - P1-005 Iconography system DONE
 - P1-101 Button family DONE
 - P1-102 Form controls DONE
+- P1-103 Navigation controls DONE
+- P1-104 Feedback primitives DONE
+- P1-105 Surfaces and data display DONE
 
-### P1-102 Form controls
+## Latest batch
 
-Completed:
-- field anatomy;
-- input/select/textarea contracts;
-- checkbox/radio/switch rules;
-- validation states;
-- accessibility requirements.
-
-## Latest commits
-
-- Form controls: `0b1f523c87f3d1e1782954fe3d7c706c5768f442`
+Completed documentation contracts:
+- navigation controls;
+- feedback primitives;
+- surfaces and data display.
 
 ## Execution protocol
 
 For every `继续` or `开始` request:
 
 1. Read this Master Task.
-2. Select the highest-priority unfinished task whose dependencies are satisfied.
-3. Inspect the real repository implementation before changing it.
-4. Implement the smallest coherent change that closes that task.
-5. Run applicable validation.
-6. Update relevant documentation.
-7. Commit focused changes.
-8. Verify the commit.
-9. Only then mark the task DONE.
+2. Select highest-priority unfinished task.
+3. Inspect implementation.
+4. Implement.
+5. Validate.
+6. Update documentation.
+7. Commit.
+8. Verify.
+
