@@ -2,7 +2,7 @@
 
 ## Current execution pointer
 
-**Next eligible task: `P1-106 Overlay system`.**
+**Next eligible task: `P1-201 App shell pattern`.**
 
 ## Completed
 
@@ -20,13 +20,17 @@
 - P1-103 Navigation controls DONE
 - P1-104 Feedback primitives DONE
 - P1-105 Surfaces and data display DONE
+- P1-106 Overlay system DONE
 
 ## Latest batch
 
-Completed documentation contracts:
-- navigation controls;
-- feedback primitives;
-- surfaces and data display.
+Completed overlay contract:
+- dialog;
+- drawer;
+- modal;
+- popover;
+- focus and keyboard rules;
+- mobile adaptation.
 
 ## Execution protocol
 
@@ -40,4 +44,3 @@ For every `继续` or `开始` request:
 6. Update documentation.
 7. Commit.
 8. Verify.
-
