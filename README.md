@@ -1,13 +1,26 @@
-# Parchment Design System 3.2
+# Parchment 4.0
 
-> **Quiet Editorial — Content first / Precise interaction / Neutral visual language**
+> **Black & White Editorial UI system for creator tools and AI workspaces.**
 
-Parchment is a design system for creator tools and AI workspaces. The current source of truth is a restrained editorial system: warm neutral surfaces, carbon text, one icon family, deliberate typography, semantic AI states, and minimal chrome.
+Parchment is the design and interaction system for creator tools and AI workspaces. Its canonical language is white space, black typography and primary actions, restrained structural grays, one icon geometry, semantic AI states and quiet chrome.
+
+**Current status:** Specification ready · Token runtime foundation in progress · Component engine not yet released.
+
+## Source of truth
+
+1. `docs/MASTER-TASK.md` — execution order and release status.
+2. `docs/PRD.md` — product and governance contract.
+3. `parchment.v3.tokens.json` — canonical machine-readable tokens.
+4. `docs/ARCHITECTURE.md` — layer boundaries and consumption rules.
+
+Version meaning is intentionally separated: **Parchment 4.0** is the current design-language program; **UI OS v2** is the unfinished runtime architecture program.
 
 ## Visual contract
 
-- No blue as brand or primary UI color.
-- Warm neutral surfaces + near-black primary text.
+- No warm, cool or gray-cast foundational canvas.
+- White and near-white own the canvas and content surfaces; black and near-black own typography and primary actions.
+- Gray is structural only: borders, disabled states, placeholders and secondary hierarchy.
+- Color is reserved for functional success, warning and error meaning.
 - Sans for interface, serif for editorial emphasis, mono for metadata.
 - One icon family: 20px grid, 1.75px stroke, round caps/joins, `currentColor`.
 - Controls use 9px radius; surfaces use 12px radius.
@@ -36,10 +49,10 @@ AI suggestions, processing, diffs and conflicts are separate semantic rows/panel
 - `parchment-role-lab.html` — role/component walkthrough.
 - `PARCHMENT_3_1_VISUAL_AUDIT.md` — visual language audit.
 - `PARCHMENT_3_2_QA.md` — product-wide QA checklist.
-- `PARCHMENT_ICONOGRAPHY_V3.md` — iconography contract.
+- `docs/ICONOGRAPHY.md` — iconography contract.
 
 ## Definition of done
 
 A surface is ready only when it passes role-lab review at desktop/mobile and light/dark appearances; uses the same icon geometry and shape language; preserves content hierarchy without decorative chrome; and exposes AI state through semantics and structure rather than color alone.
 
-Historical experiments are reference material only and must not reintroduce the retired blue SaaS language, mixed icon families, decorative icon containers, or uncontrolled badge/pill usage.
+Historical experiments are `CONSOLIDATE_THEN_DELETE`: they may not override the four sources of truth above and may be physically removed only after unique references are migrated, references reach zero and release checks pass.

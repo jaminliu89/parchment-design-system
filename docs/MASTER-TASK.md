@@ -2,25 +2,51 @@
 
 ## Current execution pointer
 
-**Next eligible task: COMPLETE.**
+**P0 — Canonical cleanup and Black & White Editorial correction. IN PROGRESS.**
 
-## Completed
+## Product/version contract
 
-- P0 Foundation DONE
-- P1 Design System Foundation DONE
-- P1 Components DONE
-- P1 Patterns DONE
-- P1 Role Laboratory DONE
-- P1 Screen Matrix Audit DONE
-- P1 Responsive Audit DONE
-- P1 Dark Mode Audit DONE
-- P1 Accessibility Gate DONE
-- P2 Final Product Quality Gate DONE
-- P3 Release Documentation DONE
+- Product: **Parchment**
+- Current design language: **Parchment 4.0 · Black & White Editorial**
+- Runtime architecture program: **UI OS v2 · NOT RELEASED**
+- Current release status: **Specification ready / component runtime in progress**
 
-## Release Status
+## P0 — Canonical cleanup
 
-Parchment Design System v1.0 READY.
+- [x] Retire warm, cloud-white and gray-cast directions; white/black dominate while gray remains structural
+- [x] Make README, tokens and Master agree on product/version/status
+- [ ] Update GitHub repository description
+- [ ] Consolidate PRD/Architecture version labels
+- [ ] Inventory every legacy/duplicate/broken reference
+- [ ] Mark unique legacy value migrated and references zero before `DELETE_READY`
+- [ ] Remove broken README references and pass link audit
+
+## P1 — Token runtime
+
+- [ ] Validate DTCG token schema
+- [ ] Generate committed CSS variables artifact
+- [ ] Add light/dark theme contract
+- [ ] Add drift and contrast gates
+
+## P2 — Component engine
+
+- [ ] Registry contract and install path
+- [ ] First 12 accessible primitives
+- [ ] State matrix and keyboard tests
+- [ ] Creator workspace components
+
+## P3 — Pattern engine and Creator OS adoption
+
+- [ ] Editor / transcript / AI / workspace patterns
+- [ ] Creator OS component migration
+- [ ] Responsive and visual regression
+
+## P4 — Release
+
+- [ ] Migration guide
+- [ ] Playground
+- [ ] Release checklist green
+- [ ] Parchment 4.0 release
 
 ## Execution protocol
 
