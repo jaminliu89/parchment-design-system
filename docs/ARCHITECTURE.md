@@ -125,3 +125,5 @@ This architecture defines how those requirements become an implementable system.
 ## Consumer contract
 
 Products consume Parchment in this order: generated tokens, accessible primitives, workflow components, then product patterns. Local product CSS may position or compose those layers, but may not introduce a competing palette, component state model or icon family.
+
+`parchment.css` currently implements the visual primitive layer only. Framework components remain responsible for semantic roles, controlled state, focus movement, dismissal, keyboard navigation and announcements. A CSS selector existing is not evidence that the corresponding accessible component is complete.

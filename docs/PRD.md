@@ -83,6 +83,8 @@ Navigation and utility UI should recede. The work remains the visual protagonist
 ### 5.3 One visual language
 No arbitrary mixture of rounded cards, circular icon containers, square icon tiles, unrelated gradients, or unrelated icon families.
 
+Icons use one 20px monoline geometric family with 1.75px stroke, round caps/joins, `currentColor` and accessible names on icon-only actions.
+
 ### 5.4 Color is semantic
 The product is visually led by black and white. White and near-white own foundational surfaces; black and near-black own content and primary actions. Gray is limited to structural hierarchy, while color exists only to communicate functional state—not brand decoration.
 
