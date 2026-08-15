@@ -50,8 +50,7 @@ AI suggestions, processing, diffs and conflicts are separate semantic rows/panel
 - `dist/parchment.css` — generated consumer artifact; never edit by hand.
 - `parchment-preview.html` — primary visual preview.
 - `parchment-role-lab.html` — role/component walkthrough.
-- `PARCHMENT_3_1_VISUAL_AUDIT.md` — visual language audit.
-- `PARCHMENT_3_2_QA.md` — product-wide QA checklist.
+- `docs/QUALITY-GATE.md` — canonical visual, interaction and release gate.
 - `docs/ICONOGRAPHY.md` — iconography contract.
 
 ## Definition of done
