@@ -1,4 +1,4 @@
-# Parchment UI OS v2 — Token Runtime Contract
+# Parchment 4.0 — Token Runtime Contract
 
 ## Purpose
 
