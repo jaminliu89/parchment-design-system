@@ -9,7 +9,7 @@
 - Product: **Parchment**
 - Current design language: **Parchment 4.0 · Black & White Editorial**
 - Runtime architecture program: **UI OS v2 · NOT RELEASED**
-- Current release status: **Specification ready / component runtime in progress**
+- Current release status: **Specification + token runtime + CSS primitives ready / accessible behavior engine in progress**
 
 ## P0 — Canonical cleanup
 
@@ -25,11 +25,12 @@
 
 - [x] Validate DTCG token hierarchy and reference resolution
 - [x] Generate committed CSS variables artifact
-- [ ] Add light/dark theme contract
+- [x] Add light/dark theme token contract
 - [ ] Add drift and contrast gates
 
 ## P2 — Component engine
 
+- [x] Publish checked CSS primitives for 10 component families
 - [ ] Registry contract and install path
 - [ ] First 12 accessible primitives
 - [ ] State matrix and keyboard tests

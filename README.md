@@ -4,7 +4,7 @@
 
 Parchment is the design and interaction system for creator tools and AI workspaces. Its canonical language is white space, black typography and primary actions, restrained structural grays, one icon geometry, semantic AI states and quiet chrome.
 
-**Current status:** Specification ready · Token runtime foundation in progress · Component engine not yet released.
+**Current status:** Specification ready · Token runtime available · CSS component primitives available · Accessible behavior engine in progress.
 
 ## Source of truth
 
@@ -23,7 +23,7 @@ Version meaning is intentionally separated: **Parchment 4.0** is the current des
 - Color is reserved for functional success, warning and error meaning.
 - Sans for interface, serif for editorial emphasis, mono for metadata.
 - One icon family: 20px grid, 1.75px stroke, round caps/joins, `currentColor`.
-- Controls use 9px radius; surfaces use 12px radius.
+- Controls use 8px radius; surfaces use 12px radius.
 - Pills are semantic status only; circles are exceptional, not generic icon containers.
 - Content > label > icon > chrome.
 - No emoji/text glyphs as product icons; no mixed filled/outline icon sets.
@@ -45,6 +45,9 @@ AI suggestions, processing, diffs and conflicts are separate semantic rows/panel
 ## Source files
 
 - `parchment.v3.tokens.json` — canonical tokens.
+- `dist/parchment.tokens.css` — generated token runtime; never edit by hand.
+- `parchment.css` — canonical CSS component primitives.
+- `dist/parchment.css` — generated consumer artifact; never edit by hand.
 - `parchment-preview.html` — primary visual preview.
 - `parchment-role-lab.html` — role/component walkthrough.
 - `PARCHMENT_3_1_VISUAL_AUDIT.md` — visual language audit.
@@ -54,5 +57,7 @@ AI suggestions, processing, diffs and conflicts are separate semantic rows/panel
 ## Definition of done
 
 A surface is ready only when it passes role-lab review at desktop/mobile and light/dark appearances; uses the same icon geometry and shape language; preserves content hierarchy without decorative chrome; and exposes AI state through semantics and structure rather than color alone.
+
+CSS classes are visual primitives, not a claim of accessible component completion. Dialog, tabs, switch and other stateful widgets still require semantic markup, keyboard behavior and runtime tests in the consuming framework.
 
 Historical experiments are `CONSOLIDATE_THEN_DELETE`: they may not override the four sources of truth above and may be physically removed only after unique references are migrated, references reach zero and release checks pass.
