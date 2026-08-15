@@ -1,0 +1,11 @@
+{
+  "name": "parchment-design-system",
+  "version": "4.0.0",
+  "private": true,
+  "description": "Black & White Editorial UI system for creator tools and AI workspaces.",
+  "scripts": {
+    "tokens:build": "node scripts/generate-css-vars.js",
+    "tokens:check": "node scripts/generate-css-vars.js --check",
+    "check": "npm run tokens:check"
+  }
+}

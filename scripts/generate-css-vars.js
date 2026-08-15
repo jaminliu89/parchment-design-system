@@ -9,26 +9,51 @@
 
 const fs = require('fs');
 
-const input = process.argv[2] || 'parchment.v3.tokens.json';
-const output = process.argv[3] || 'dist/parchment.tokens.css';
+const positionalArgs = process.argv.slice(2).filter((argument) => !argument.startsWith('--'));
+const input = positionalArgs[0] || 'parchment.v3.tokens.json';
+const output = positionalArgs[1] || 'dist/parchment.tokens.css';
+const checkOnly = process.argv.includes('--check');
 
-function flatten(node, prefix = [], result = {}) {
+function getToken(root, path) {
+  return path.split('.').reduce((node, key) => node && node[key], root);
+}
+
+function resolveValue(value, root, stack = []) {
+  if (typeof value !== 'string') return value;
+
+  const match = value.match(/^\{(.+)\}$/);
+  if (!match) return value;
+
+  const path = match[1];
+  if (stack.includes(path)) {
+    throw new Error(`Circular token reference: ${[...stack, path].join(' -> ')}`);
+  }
+
+  const token = getToken(root, path);
+  if (!token || !('$value' in token)) {
+    throw new Error(`Unknown token reference: ${path}`);
+  }
+
+  return resolveValue(token.$value, root, [...stack, path]);
+}
+
+function flatten(node, root, prefix = [], result = {}) {
   if (!node || typeof node !== 'object') return result;
 
   if ('$value' in node) {
-    result[prefix.join('-')] = node.$value;
+    result[prefix.join('-')] = resolveValue(node.$value, root);
     return result;
   }
 
   for (const [key, value] of Object.entries(node)) {
-    if (!key.startsWith('$')) flatten(value, [...prefix, key], result);
+    if (!key.startsWith('$')) flatten(value, root, [...prefix, key], result);
   }
 
   return result;
 }
 
 const tokens = JSON.parse(fs.readFileSync(input, 'utf8'));
-const variables = flatten(tokens);
+const variables = flatten(tokens, tokens);
 
 const css = [
   ':root {',
@@ -37,7 +62,14 @@ const css = [
   ''
 ].join('\n');
 
-fs.mkdirSync(output.split('/').slice(0, -1).join('/') || '.', { recursive: true });
-fs.writeFileSync(output, css);
+if (checkOnly) {
+  if (!fs.existsSync(output) || fs.readFileSync(output, 'utf8') !== css) {
+    console.error(`${output} is stale. Run npm run tokens:build.`);
+    process.exit(1);
+  }
+} else {
+  fs.mkdirSync(output.split('/').slice(0, -1).join('/') || '.', { recursive: true });
+  fs.writeFileSync(output, css);
+}
 
-console.log(`Generated ${Object.keys(variables).length} variables.`);
+console.log(`${checkOnly ? 'Verified' : 'Generated'} ${Object.keys(variables).length} variables.`);
