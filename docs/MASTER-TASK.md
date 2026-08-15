@@ -19,7 +19,7 @@
 - [x] Consolidate PRD/Architecture version labels
 - [x] Inventory every legacy/duplicate/broken reference
 - [x] Mark unique legacy value migrated and references zero before `DELETE_READY`
-- [ ] Physically remove the final promoted legacy design monolith and rerun all gates
+- [x] Physically remove the final promoted legacy design monolith and rerun all gates
 - [x] Remove broken README references and pass link audit
 - [x] Retire legacy token, v3 architecture and UI OS v2 documents after migration gates pass
 

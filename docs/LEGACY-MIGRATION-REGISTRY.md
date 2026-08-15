@@ -29,4 +29,4 @@ No entry may skip a gate. A historical version label does not make a file safe t
 
 Only rows explicitly marked `DELETE_READY` may be physically removed. The registry retains the promotion evidence after deletion.
 
-Physical deletion commits preserve recovery history: quality/release documents in `d88b807`; legacy tokens, v3 architecture and UI OS v2 Master in `282cc3a`; UI OS v2 Architecture in `77770cc`. `Parchment-DESIGN.md` is promoted only after its valid contracts were split into canonical 4.0 documents.
+Physical deletion commits preserve recovery history: quality/release documents in `d88b807`; legacy tokens, v3 architecture and UI OS v2 Master in `282cc3a`; UI OS v2 Architecture in `77770cc`. `Parchment-DESIGN.md` was promoted only after its valid contracts were split into canonical 4.0 documents and is preserved by the final cleanup commit.
