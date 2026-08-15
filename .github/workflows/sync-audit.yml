@@ -1,44 +1,44 @@
-name: Parchment remote sync audit
+name: Parchment quality gate
 
 on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
-  schedule:
-    - cron: "17 * * * *"
 
 permissions:
   contents: read
 
 concurrency:
-  group: parchment-sync-audit
+  group: parchment-quality-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  audit:
+  quality:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          fetch-depth: 0
+          node-version: 22
 
-      - name: Verify sync engine
-        run: bash -n scripts/sync-all.sh
+      - name: Build
+        run: npm run build
 
-      - name: Audit public mirror SHAs
-        env:
-          EXPECTED_SHA: ${{ github.sha }}
+      - name: Verify generated artifacts and components
+        run: npm run check
+
+      - name: Reject retired Parchment versions
         run: |
           set -euo pipefail
-          for pair in \
-            "GitCode|https://gitcode.com/jaminliu89/parchment-design-system.git" \
-            "Gitee|https://gitee.com/jaminliu89/parchment-design-system.git"; do
-            name="${pair%%|*}"
-            url="${pair#*|}"
-            sha="$(git ls-remote "$url" refs/heads/main | awk '{print $1}')"
-            test -n "$sha" || { echo "FAIL: $name returned no SHA"; exit 1; }
-            test "$sha" = "$EXPECTED_SHA" || { echo "FAIL: $name diverged"; exit 1; }
-            echo "PASS: $name ${sha:0:12}"
-          done
-
-      - name: Summary
-        run: echo "STATUS: mirrors match GitHub main"
+          if grep -RInE \
+            --exclude-dir=.git \
+            --exclude=LEGACY-MIGRATION-REGISTRY.md \
+            --exclude=sync-audit.yml \
+            '云雾白|石墨蓝|#F6F7F9|#5A6590|Parchment 3\.|Parchment v[123]' .; then
+            echo 'Retired Parchment design language detected.'
+            exit 1
+          fi
