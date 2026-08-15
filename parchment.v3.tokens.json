@@ -15,8 +15,16 @@
         "$value": "#FFFFFF",
         "$type": "color"
       },
+      "surfaceMuted": {
+        "$value": "#F5F5F5",
+        "$type": "color"
+      },
       "line": {
         "$value": "#E5E5E5",
+        "$type": "color"
+      },
+      "lineSubtle": {
+        "$value": "#F0F0F0",
         "$type": "color"
       },
       "ink": {
@@ -54,6 +62,38 @@
       "error": {
         "$value": "#784B46",
         "$type": "color"
+      },
+      "darkCanvas": {
+        "$value": "#0B0B0C",
+        "$type": "color"
+      },
+      "darkSurface": {
+        "$value": "#141415",
+        "$type": "color"
+      },
+      "darkSurfaceRaised": {
+        "$value": "#1A1A1C",
+        "$type": "color"
+      },
+      "darkLine": {
+        "$value": "#2A2A2C",
+        "$type": "color"
+      },
+      "darkInk": {
+        "$value": "#F5F5F5",
+        "$type": "color"
+      },
+      "darkInk2": {
+        "$value": "#D4D4D4",
+        "$type": "color"
+      },
+      "darkInk3": {
+        "$value": "#A3A3A3",
+        "$type": "color"
+      },
+      "darkInk4": {
+        "$value": "#737373",
+        "$type": "color"
       }
     },
     "semantic": {
@@ -66,8 +106,14 @@
       "raised": {
         "$value": "{color.primitive.surfaceRaised}"
       },
+      "muted": {
+        "$value": "{color.primitive.surfaceMuted}"
+      },
       "border": {
         "$value": "{color.primitive.line}"
+      },
+      "borderSubtle": {
+        "$value": "{color.primitive.lineSubtle}"
       },
       "text": {
         "$value": "{color.primitive.ink}"
@@ -92,6 +138,15 @@
       },
       "signalSoft": {
         "$value": "{color.primitive.signalSoft}"
+      },
+      "success": {
+        "$value": "{color.primitive.success}"
+      },
+      "warning": {
+        "$value": "{color.primitive.warning}"
+      },
+      "error": {
+        "$value": "{color.primitive.error}"
       }
     }
   },
@@ -108,7 +163,7 @@
   },
   "shape": {
     "control": {
-      "$value": "9px"
+      "$value": "8px"
     },
     "surface": {
       "$value": "12px"
@@ -181,6 +236,9 @@
     },
     "24": {
       "$value": "96px"
+    },
+    "32": {
+      "$value": "128px"
     }
   },
   "density": {
@@ -203,6 +261,29 @@
     },
     "focusOffset": {
       "$value": "2px"
+    }
+  },
+  "component": {
+    "control": {
+      "minimumHeight": {
+        "$value": "{accessibility.targetMinimum}"
+      },
+      "radius": {
+        "$value": "{shape.control}"
+      }
+    },
+    "card": {
+      "radius": {
+        "$value": "{shape.surface}"
+      },
+      "padding": {
+        "$value": "{spacing.6}"
+      }
+    },
+    "dialog": {
+      "maximumWidth": {
+        "$value": "440px"
+      }
     }
   }
 }
