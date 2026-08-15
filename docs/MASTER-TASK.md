@@ -15,16 +15,16 @@
 
 - [x] Retire warm, cloud-white and gray-cast directions; white/black dominate while gray remains structural
 - [x] Make README, tokens and Master agree on product/version/status
-- [ ] Update GitHub repository description
-- [ ] Consolidate PRD/Architecture version labels
-- [ ] Inventory every legacy/duplicate/broken reference
+- [x] Update GitHub repository description
+- [x] Consolidate PRD/Architecture version labels
+- [x] Inventory every legacy/duplicate/broken reference
 - [ ] Mark unique legacy value migrated and references zero before `DELETE_READY`
 - [ ] Remove broken README references and pass link audit
 
 ## P1 — Token runtime
 
-- [ ] Validate DTCG token schema
-- [ ] Generate committed CSS variables artifact
+- [x] Validate DTCG token hierarchy and reference resolution
+- [x] Generate committed CSS variables artifact
 - [ ] Add light/dark theme contract
 - [ ] Add drift and contrast gates
 
