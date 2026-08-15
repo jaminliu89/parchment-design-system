@@ -6,6 +6,9 @@
   "scripts": {
     "tokens:build": "node scripts/generate-css-vars.js",
     "tokens:check": "node scripts/generate-css-vars.js --check",
-    "check": "npm run tokens:check"
+    "components:build": "node scripts/build-components.js",
+    "components:check": "node scripts/check-component-css.js && node scripts/build-components.js --check",
+    "build": "npm run tokens:build && npm run components:build",
+    "check": "npm run tokens:check && npm run components:check"
   }
 }
