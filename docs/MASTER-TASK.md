@@ -19,13 +19,15 @@
 - [x] Consolidate PRD/Architecture version labels
 - [x] Inventory every legacy/duplicate/broken reference
 - [ ] Mark unique legacy value migrated and references zero before `DELETE_READY`
-- [ ] Remove broken README references and pass link audit
+- [x] Remove broken README references and pass link audit
+- [ ] Retire legacy token, v3 architecture and UI OS v2 documents after migration gates pass
 
 ## P1 — Token runtime
 
 - [x] Validate DTCG token hierarchy and reference resolution
 - [x] Generate committed CSS variables artifact
 - [x] Add light/dark theme token contract
+- [x] Migrate typography scale, composition, motion and neutral elevation tokens
 - [ ] Add drift and contrast gates
 
 ## P2 — Component engine
@@ -33,12 +35,14 @@
 - [x] Publish checked CSS primitives for 10 component families
 - [ ] Registry contract and install path
 - [ ] First 12 accessible primitives
+- [ ] Headless interaction runtime for layout, controlled state, focus, dismissal and announcements
 - [ ] State matrix and keyboard tests
 - [ ] Creator workspace components
 
 ## P3 — Pattern engine and Creator OS adoption
 
 - [ ] Editor / transcript / AI / workspace patterns
+- [ ] Reversible AI suggestion/diff/conflict behavior without color-only meaning
 - [ ] Creator OS component migration
 - [ ] Responsive and visual regression
 

@@ -40,6 +40,8 @@ Own visual decisions:
 
 Components must consume tokens, never invent raw values.
 
+The canonical runtime also owns composition, motion and elevation values. The shell baseline is a 64px header, 240px navigation rail, 320px contextual inspector, 24px workspace gutter, 720px reading measure and 1440px maximum content width. These are defaults with responsive collapse rules, not reasons to force overflow on smaller screens.
+
 ### Primitives
 Small reusable building blocks:
 - icon wrapper
@@ -61,6 +63,8 @@ Reusable interaction units:
 
 Every component owns anatomy, states, accessibility behavior and variants.
 
+Motion communicates intent: micro feedback, component transitions, container changes and page transitions use progressively longer tokenized durations. Default motion never bounces. Under `prefers-reduced-motion`, spatial transforms are removed while essential state changes remain perceivable.
+
 ### Patterns
 Workflow-level compositions:
 - editor
@@ -70,6 +74,8 @@ Workflow-level compositions:
 - workspace shell
 
 Patterns combine components but do not redefine component behavior.
+
+AI patterns represent suggestion, processing, generated, applied, diff, conflict, attention, confidence and citation as behavior and state, never as a decorative color family. Suggestions remain subordinate until accepted; generated changes require a reversible representation; diff and conflict cannot rely on color alone.
 
 ### Role experiences
 Optimized views for:
@@ -110,6 +116,12 @@ Engineering owns:
 - maintainability
 
 No layer may bypass another layer to create a local exception without documentation.
+
+## Runtime boundary
+
+The token runtime resolves semantic values and generates platform artifacts. The UI runtime owns layout calculation, responsive behavior and interaction state. Accessible primitives own semantic HTML, keyboard operation, focus movement, dismissal and announcements. Components expose API, variants and states; patterns compose them; product applications provide domain data and workflows.
+
+The runtime is headless at the behavior boundary: a product may select React or another supported renderer, but it may not fork token semantics or accessibility behavior. Light and dark are supported appearance modes; “Creator” and “Enterprise” are product configurations, not alternate visual themes.
 
 ## Source of truth
 
