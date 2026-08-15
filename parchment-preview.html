@@ -32,7 +32,7 @@
     .rail { padding: 20px; border-right: 1px solid var(--p-line); }
     .rail.right { border: 0; border-left: 1px solid var(--p-line); }
     .rail-title { font-family: var(--p-mono); font-size: 10px; color: var(--p-ink4); letter-spacing: 0.1em; }
-    .rail-item { height: 36px; display: flex; align-items: center; padding: 0 10px; border-radius: var(--p-r-control); color: var(--p-ink3); font-size: 12px; }
+    .rail-item { height: 36px; display: flex; align-items: center; gap: 8px; padding: 0 10px; border-radius: var(--p-r-control); color: var(--p-ink3); font-size: 12px; }
     .rail-item.active { background: var(--p-surface-muted); color: var(--p-ink); font-weight: 500; }
     .canvas { background: var(--p-bg); display: grid; place-items: center; }
     .sheet { width: 65%; height: 75%; background: var(--p-surface); border: 1px solid var(--p-line); padding: 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
@@ -49,6 +49,7 @@
 
     .icons-showcase { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
     .icon-box { height: 72px; border: 1px solid var(--p-line); border-radius: var(--p-r-control); background: var(--p-surface); display: grid; place-items: center; color: var(--p-ink2); }
+    .icon-box span { font-family: var(--p-mono); font-size: 10px; color: var(--p-ink4); margin-top: 4px; }
 
     @media (max-width: 800px) {
       .shell { padding: 0 18px; }
@@ -56,6 +57,7 @@
       .hero h1 { font-size: 56px; }
       .head { grid-template-columns: 1fr; }
       .comp-grid { grid-template-columns: 1fr; }
+      .icons-showcase { grid-template-columns: repeat(3, 1fr); }
       .workspace { grid-template-columns: 70px 1fr 90px; }
       .utterance { grid-template-columns: 48px 1fr 46px; .role { display: none; } }
     }
@@ -69,6 +71,7 @@
       <nav>
         <a class="active" href="#buttons">Buttons</a>
         <a href="#forms">Forms & Controls</a>
+        <a href="#icons">Icons</a>
         <a href="#components">Data & Feedback</a>
         <a href="#voice">Voice</a>
         <a href="#workspace">Workspace</a>
@@ -178,11 +181,51 @@
       </div>
     </section>
 
-    <!-- 03 DATA DISPLAY & TABLES -->
+    <!-- 03 ICONOGRAPHY (ARENA.AI MONOLINE STYLE) -->
+    <section id="icons">
+      <div class="head">
+        <div>
+          <div class="p-eyebrow">03 / ICONOGRAPHY</div>
+          <h2>Are.na Style Monoline Geometry</h2>
+        </div>
+        <p>Pure monoline wireframe geometry, crisp 1.75px stroke, 20px grid, un-filled vector precision.</p>
+      </div>
+
+      <div class="p-panel">
+        <div class="icons-showcase">
+          <div class="icon-box">
+            <svg class="p-icon" viewBox="0 0 20 20"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><rect x="11" y="11" width="6" height="6" rx="1"/></svg>
+            <span>grid</span>
+          </div>
+          <div class="icon-box">
+            <svg class="p-icon" viewBox="0 0 20 20"><rect x="3" y="4" width="14" height="12" rx="1"/><path d="M3 8h14"/></svg>
+            <span>block</span>
+          </div>
+          <div class="icon-box">
+            <svg class="p-icon" viewBox="0 0 20 20"><circle cx="9" cy="9" r="5"/><path d="m13 13 4 4"/></svg>
+            <span>search</span>
+          </div>
+          <div class="icon-box">
+            <svg class="p-icon" viewBox="0 0 20 20"><path d="M4 10h12M12 6l4 4-4 4"/></svg>
+            <span>arrow-right</span>
+          </div>
+          <div class="icon-box">
+            <svg class="p-icon" viewBox="0 0 20 20"><path d="M10 4v12M4 10h12"/></svg>
+            <span>plus</span>
+          </div>
+          <div class="icon-box">
+            <svg class="p-icon" viewBox="0 0 20 20"><path d="M3 5h5l2 2h7v8H3z"/></svg>
+            <span>channel</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 DATA DISPLAY & TABLES -->
     <section id="components">
       <div class="head">
         <div>
-          <div class="p-eyebrow">03 / DATA & TABLES</div>
+          <div class="p-eyebrow">04 / DATA & TABLES</div>
           <h2>Tabular & Badge System</h2>
         </div>
         <p>Clean metadata presentation, semantic status chips, and crisp tabular data structures.</p>
@@ -231,11 +274,11 @@
       </div>
     </section>
 
-    <!-- 04 TRANSCRIPT & VOICE -->
+    <!-- 05 TRANSCRIPT & VOICE -->
     <section id="voice">
       <div class="head">
         <div>
-          <div class="p-eyebrow">04 / TRANSCRIPT & VOICE</div>
+          <div class="p-eyebrow">05 / TRANSCRIPT & VOICE</div>
           <h2>Information Row Architecture</h2>
         </div>
         <p>Fixed row layout: Speaker | Role | Spoken Content | Time. AI suggestions stay in separate structural rows.</p>
@@ -263,11 +306,11 @@
       </div>
     </section>
 
-    <!-- 05 WORKSPACE SHELL -->
+    <!-- 06 WORKSPACE SHELL -->
     <section id="workspace">
       <div class="head">
         <div>
-          <div class="p-eyebrow">05 / WORKSPACE SHELL</div>
+          <div class="p-eyebrow">06 / WORKSPACE SHELL</div>
           <h2>Quiet Canvas</h2>
         </div>
         <p>Chrome remains visually quiet, allowing the primary content canvas to dominate focus.</p>
@@ -276,9 +319,15 @@
       <div class="workspace">
         <aside class="rail">
           <div class="rail-title">NAVIGATE</div>
-          <div class="rail-item active" style="margin-top: 8px;">Documents</div>
-          <div class="rail-item">Asset Library</div>
-          <div class="rail-item">Settings</div>
+          <div class="rail-item active" style="margin-top: 8px;">
+            <svg class="p-icon" viewBox="0 0 20 20"><path d="M4 4h12v12H4zM7 8h6M7 11h4"/></svg> Documents
+          </div>
+          <div class="rail-item">
+            <svg class="p-icon" viewBox="0 0 20 20"><path d="M3 5h5l2 2h7v8H3z"/></svg> Channels
+          </div>
+          <div class="rail-item">
+            <svg class="p-icon" viewBox="0 0 20 20"><circle cx="10" cy="10" r="6"/><path d="M10 2v4M10 14v4M2 10h4M14 10h4"/></svg> Settings
+          </div>
         </aside>
         <div class="canvas">
           <div class="sheet">
