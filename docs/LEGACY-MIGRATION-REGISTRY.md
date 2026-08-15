@@ -13,13 +13,13 @@ No entry may skip a gate. A historical version label does not make a file safe t
 | Asset | Current state | Unique value to migrate | Required zero-reference check |
 |---|---|---|---|
 | `Parchment-DESIGN.md` | `CONSOLIDATE_THEN_DELETE` | component anatomy, usage guidance and anti-patterns that remain valid without the retired cloud-white palette | no canonical or consumer link treats it as current |
-| `parchment.tokens.json` | `CONSOLIDATE_THEN_DELETE` | any token category absent from `parchment.v3.tokens.json` | no generator, documentation or consumer import |
-| `PARCHMENT-3.0-ARCHITECTURE.md` | `CONSOLIDATE_THEN_DELETE` | migration reasoning and component-layer decisions | no canonical or consumer link |
+| `parchment.tokens.json` | `DELETE_READY` | typography scale, motion and component-independent geometry migrated; cloud-white/graphite-blue palettes, universal radius scale and duplicated component styling explicitly retired | zero imports and links outside this registry; canonical token build/check passes |
+| `PARCHMENT-3.0-ARCHITECTURE.md` | `DELETE_READY` | composition, motion, AI reversibility and accessibility boundaries migrated to canonical tokens and `docs/ARCHITECTURE.md` | zero canonical or consumer links outside this registry |
 | `PARCHMENT_3_1_VISUAL_AUDIT.md` | `DELETE_READY` | reusable visual QA criteria migrated to `docs/QUALITY-GATE.md` | zero current references outside this registry; canonical checks pass |
 | `PARCHMENT_3_2_QA.md` | `DELETE_READY` | reusable role/component QA migrated to `docs/QUALITY-GATE.md` | zero current references outside this registry; canonical checks pass |
 | `docs/RELEASE-v1.0.md` | `DELETE_READY` | historical release claim replaced by evidence-based Parchment 4.0 release gate | zero current references outside this registry; canonical checks pass |
-| `docs/UI-OS-V2-MASTER-TASK.md` | `CONSOLIDATE_THEN_DELETE` | unfinished runtime backlog | all eligible work represented in `docs/MASTER-TASK.md` |
-| `docs/UI-OS-V2-ARCHITECTURE.md` | `CONSOLIDATE_THEN_DELETE` | runtime boundaries not yet present in `docs/ARCHITECTURE.md` | no unique architecture contract remains |
+| `docs/UI-OS-V2-MASTER-TASK.md` | `DELETE_READY` | eligible runtime, component, pattern, Creator OS and release work migrated to `docs/MASTER-TASK.md`; obsolete alternate-theme plan rejected | all eligible work represented in canonical Master Task; zero links outside this registry |
+| `docs/UI-OS-V2-ARCHITECTURE.md` | `DELETE_READY` | token/UI/component/pattern/product boundaries migrated to `docs/ARCHITECTURE.md` | no unique architecture contract remains; zero links outside this registry |
 
 ## Known reference correction
 

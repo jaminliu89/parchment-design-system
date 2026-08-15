@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 /**
- * Parchment UI OS v2
- * Token Runtime Foundation
+ * Parchment 4.0
+ * Canonical token runtime
  *
  * Converts design token JSON values into CSS variables.
  */
