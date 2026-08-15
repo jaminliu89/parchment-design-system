@@ -1,6 +1,6 @@
-# Parchment Design System — Architecture Baseline
+# Parchment 4.0 — Architecture Contract
 
-**Status:** Canonical architecture v1.0
+**Status:** Canonical layer contract / runtime implementation in progress
 
 ## Architecture objective
 
@@ -115,4 +115,13 @@ No layer may bypass another layer to create a local exception without documentat
 
 Execution order is controlled by `docs/MASTER-TASK.md`.
 Product requirements are controlled by `docs/PRD.md`.
+Machine-readable visual decisions are controlled by `parchment.v3.tokens.json` until the 4.0 migration renames the artifact without breaking consumers.
 This architecture defines how those requirements become an implementable system.
+
+## Version boundary
+
+**Parchment 4.0** names the current Black & White Editorial design language. **UI OS v2** names the unfinished runtime architecture program; it is not a released design-system version. Historical v1/v2/v3 documents are migration evidence only and cannot override the canonical chain.
+
+## Consumer contract
+
+Products consume Parchment in this order: generated tokens, accessible primitives, workflow components, then product patterns. Local product CSS may position or compose those layers, but may not introduce a competing palette, component state model or icon family.

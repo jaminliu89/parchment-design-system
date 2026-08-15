@@ -1,7 +1,7 @@
-# Parchment Design System — Product Requirements
+# Parchment 4.0 — Product Requirements
 
-**Status:** Baseline / v1.0  
-**Owner:** Product + Design Systems  
+**Status:** Canonical product contract / implementation in progress
+**Owner:** Product + Design Systems
 **Source of truth:** `docs/MASTER-TASK.md`
 
 ## 1. Product definition
@@ -18,6 +18,17 @@ The system is not a collection of attractive components. It is a shared visual a
 4. **AI without visual noise:** AI actions are understandable, reversible, and integrated into the workflow instead of becoming a permanent neon layer.
 5. **Production readiness:** components have complete states, accessibility behavior, responsive rules, and implementation guidance.
 6. **Scalability:** new products and screens can consume the same tokens and primitives without inventing local styles.
+
+## 2.1 Desired character
+
+Parchment should feel black-and-white led, slightly cold, humanistic, spacious, restrained, epic and modern-minimal. These qualities come from proportion, editorial typography, pacing and deliberate empty space—not cinematic effects or decorative spectacle.
+
+- **Slightly cold:** crisp contrast and precise edges without blue-gray canvas tint.
+- **Humanistic:** writing, imagery and human decisions remain warmer than the interface chrome.
+- **Spacious:** empty space carries hierarchy and tempo; it is not leftover area.
+- **Restrained:** one clear action and one clear reading order beat dense decoration.
+- **Epic:** scale contrast and narrative rhythm create gravity without gradients, glow or ornamental drama.
+- **Modern-minimal:** every visible element earns its place through information or interaction value.
 
 ## 3. Target users and jobs
 
@@ -64,6 +75,8 @@ The system must also define shared empty, loading, error, success, permission, a
 ### 5.1 Hierarchy before decoration
 A user should understand what matters first from type scale, spacing, grouping, and contrast—not from color or ornament.
 
+Large editorial moments may use dramatic scale and generous negative space, but utility surfaces remain compact, legible and operational.
+
 ### 5.2 Quiet chrome
 Navigation and utility UI should recede. The work remains the visual protagonist.
 
@@ -71,7 +84,7 @@ Navigation and utility UI should recede. The work remains the visual protagonist
 No arbitrary mixture of rounded cards, circular icon containers, square icon tiles, unrelated gradients, or unrelated icon families.
 
 ### 5.4 Color is semantic
-The base palette should be neutral and brand-led without blue as the primary product color. Accent colors exist to communicate action or state, not decoration.
+The product is visually led by black and white. White and near-white own foundational surfaces; black and near-black own content and primary actions. Gray is limited to structural hierarchy, while color exists only to communicate functional state—not brand decoration.
 
 ### 5.5 Density is intentional
 Dense creator tools need compact controls, but every reduction in space must preserve scanability, touch safety, and hierarchy.
@@ -103,6 +116,7 @@ A production-ready component must satisfy all applicable requirements:
 ## 7. Explicit visual decisions
 
 ### Retire
+- warm, cloud-white, gray-cast, or tinted foundational canvases;
 - blue primary SaaS treatment;
 - mixed icon families;
 - arbitrary icon circles and icon squares;
@@ -113,7 +127,8 @@ A production-ready component must satisfy all applicable requirements:
 - component-local colors that bypass semantic tokens.
 
 ### Prefer
-- restrained neutral surfaces;
+- white/near-white surfaces and black/near-black content;
+- structural gray only for borders, disabled states, placeholders and secondary hierarchy;
 - editorial typography and strong type hierarchy;
 - disciplined spacing rhythm;
 - subtle borders and elevation;
