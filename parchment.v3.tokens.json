@@ -1,1 +1,130 @@
-{"$schema":"https://design-tokens.github.io/community-group/format/","$description":"Parchment 3.2 — Quiet Editorial / Neutral Signal","color":{"primitive":{"canvas":{"$value":"#F4F1EA","$type":"color"},"surface":{"$value":"#FAF8F3","$type":"color"},"surfaceRaised":{"$value":"#FFFDF8","$type":"color"},"line":{"$value":"#D9D4CA","$type":"color"},"ink":{"$value":"#181816","$type":"color"},"ink2":{"$value":"#3C3B37","$type":"color"},"ink3":{"$value":"#706D65","$type":"color"},"ink4":{"$value":"#9A968C","$type":"color"},"signal":{"$value":"#655D52","$type":"color"},"signalSoft":{"$value":"#ECE7DE","$type":"color"},"success":{"$value":"#50634F","$type":"color"},"warning":{"$value":"#806544","$type":"color"},"error":{"$value":"#7A5049","$type":"color"}},"semantic":{"page":{"$value":"{color.primitive.canvas}"},"content":{"$value":"{color.primitive.surface}"},"raised":{"$value":"{color.primitive.surfaceRaised}"},"border":{"$value":"{color.primitive.line}"},"text":{"$value":"{color.primitive.ink}"},"textSecondary":{"$value":"{color.primitive.ink2}"},"textTertiary":{"$value":"{color.primitive.ink3}"},"textPlaceholder":{"$value":"{color.primitive.ink4}"},"interactive":{"$value":"{color.primitive.ink}"},"interactiveHover":{"$value":"{color.primitive.ink2}"},"signal":{"$value":"{color.primitive.signal}"},"signalSoft":{"$value":"{color.primitive.signalSoft}"}},"typography":{"ui":{"$value":"Inter, Noto Sans SC, -apple-system, BlinkMacSystemFont, sans-serif"},"editorial":{"$value":"Instrument Serif, Noto Serif SC, Georgia, serif"},"mono":{"$value":"DM Mono, ui-monospace, monospace"}},"shape":{"control":{"$value":"9px"},"surface":{"$value":"12px"},"small":{"$value":"6px"},"pill":{"$value":"999px"}},"icon":{"grid":{"$value":"20px"},"size":{"small":{"$value":"16px"},"default":{"$value":"18px"},"control":{"$value":"20px"},"feature":{"$value":"24px"}},"stroke":{"$value":"1.75px"},"cap":{"$value":"round"},"join":{"$value":"round"},"color":{"$value":"currentColor"}},"spacing":{"1":{"$value":"4px"},"2":{"$value":"8px"},"3":{"$value":"12px"},"4":{"$value":"16px"},"5":{"$value":"20px"},"6":{"$value":"24px"},"8":{"$value":"32px"},"12":{"$value":"48px"},"16":{"$value":"64px"},"24":{"$value":"96px"}},"density":{"compact":{"$value":"36px"},"regular":{"$value":"40px"},"comfortable":{"$value":"44px"}},"accessibility":{"targetMinimum":{"$value":"44px"},"focusWidth":{"$value":"2px"},"focusOffset":{"$value":"2px"}}}}
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$description": "Parchment 3.3 — Stark Black & White / Cold Editorial / Modern Minimalism",
+  "color": {
+    "primitive": {
+      "canvas": { "$value": "#F8F9FA", "$type": "color" },
+      "surface": { "$value": "#FFFFFF", "$type": "color" },
+      "surfaceRaised": { "$value": "#FFFFFF", "$type": "color" },
+      "surfaceMuted": { "$value": "#F1F3F5", "$type": "color" },
+      "line": { "$value": "#E2E4E8", "$type": "color" },
+      "lineSubtle": { "$value": "#ECEEEF", "$type": "color" },
+      "ink": { "$value": "#111215", "$type": "color" },
+      "ink2": { "$value": "#2D3036", "$type": "color" },
+      "ink3": { "$value": "#5A606A", "$type": "color" },
+      "ink4": { "$value": "#959CA6", "$type": "color" },
+      "signal": { "$value": "#4A505A", "$type": "color" },
+      "signalSoft": { "$value": "#F0F2F5", "$type": "color" },
+      "success": { "$value": "#2E5A3C", "$type": "color" },
+      "warning": { "$value": "#7A5B28", "$type": "color" },
+      "error": { "$value": "#8C3333", "$type": "color" },
+      "darkCanvas": { "$value": "#0B0C0E", "$type": "color" },
+      "darkSurface": { "$value": "#121418", "$type": "color" },
+      "darkSurfaceRaised": { "$value": "#1A1D24", "$type": "color" },
+      "darkSurfaceMuted": { "$value": "#1E222A", "$type": "color" },
+      "darkLine": { "$value": "#282C34", "$type": "color" },
+      "darkInk": { "$value": "#F5F6F8", "$type": "color" },
+      "darkInk2": { "$value": "#C8CCD4", "$type": "color" },
+      "darkInk3": { "$value": "#8C929E", "$type": "color" },
+      "darkInk4": { "$value": "#5A606C", "$type": "color" }
+    },
+    "semantic": {
+      "page": { "$value": "{color.primitive.canvas}" },
+      "content": { "$value": "{color.primitive.surface}" },
+      "raised": { "$value": "{color.primitive.surfaceRaised}" },
+      "muted": { "$value": "{color.primitive.surfaceMuted}" },
+      "border": { "$value": "{color.primitive.line}" },
+      "borderSubtle": { "$value": "{color.primitive.lineSubtle}" },
+      "text": { "$value": "{color.primitive.ink}" },
+      "textSecondary": { "$value": "{color.primitive.ink2}" },
+      "textTertiary": { "$value": "{color.primitive.ink3}" },
+      "textPlaceholder": { "$value": "{color.primitive.ink4}" },
+      "interactive": { "$value": "{color.primitive.ink}" },
+      "interactiveHover": { "$value": "{color.primitive.ink2}" },
+      "signal": { "$value": "{color.primitive.signal}" },
+      "signalSoft": { "$value": "{color.primitive.signalSoft}" },
+      "success": { "$value": "{color.primitive.success}" },
+      "warning": { "$value": "{color.primitive.warning}" },
+      "error": { "$value": "{color.primitive.error}" }
+    }
+  },
+  "typography": {
+    "ui": { "$value": "Inter, 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif" },
+    "editorial": { "$value": "'Instrument Serif', 'Noto Serif SC', Georgia, serif" },
+    "mono": { "$value": "'DM Mono', ui-monospace, monospace" }
+  },
+  "shape": {
+    "control": { "$value": "8px" },
+    "surface": { "$value": "12px" },
+    "small": { "$value": "6px" },
+    "pill": { "$value": "999px" }
+  },
+  "icon": {
+    "grid": { "$value": "20px" },
+    "size": {
+      "small": { "$value": "16px" },
+      "default": { "$value": "18px" },
+      "control": { "$value": "20px" },
+      "feature": { "$value": "24px" }
+    },
+    "stroke": { "$value": "1.75px" },
+    "cap": { "$value": "round" },
+    "join": { "$value": "round" },
+    "color": { "$value": "currentColor" }
+  },
+  "spacing": {
+    "1": { "$value": "4px" },
+    "2": { "$value": "8px" },
+    "3": { "$value": "12px" },
+    "4": { "$value": "16px" },
+    "5": { "$value": "20px" },
+    "6": { "$value": "24px" },
+    "8": { "$value": "32px" },
+    "12": { "$value": "48px" },
+    "16": { "$value": "64px" },
+    "24": { "$value": "96px" },
+    "32": { "$value": "128px" }
+  },
+  "density": {
+    "compact": { "$value": "36px" },
+    "regular": { "$value": "40px" },
+    "comfortable": { "$value": "44px" }
+  },
+  "accessibility": {
+    "targetMinimum": { "$value": "44px" },
+    "focusWidth": { "$value": "2px" },
+    "focusOffset": { "$value": "2px" }
+  },
+  "components": {
+    "button": {
+      "height": { "$value": "38px" },
+      "radius": { "$value": "{shape.control}" },
+      "font": { "$value": "{typography.ui}" },
+      "fontSize": { "$value": "13px" },
+      "fontWeight": { "$value": "500" }
+    },
+    "input": {
+      "height": { "$value": "38px" },
+      "radius": { "$value": "{shape.control}" },
+      "background": { "$value": "{color.semantic.content}" },
+      "border": { "$value": "{color.semantic.border}" },
+      "color": { "$value": "{color.semantic.text}" }
+    },
+    "card": {
+      "radius": { "$value": "{shape.surface}" },
+      "background": { "$value": "{color.semantic.content}" },
+      "border": { "$value": "{color.semantic.border}" },
+      "padding": { "$value": "{spacing.6}" }
+    },
+    "badge": {
+      "radius": { "$value": "{shape.pill}" },
+      "fontSize": { "$value": "11px" },
+      "fontWeight": { "$value": "500" }
+    },
+    "dialog": {
+      "radius": { "$value": "{shape.surface}" },
+      "background": { "$value": "{color.semantic.content}" },
+      "shadow": { "$value": "0 16px 40px rgba(0,0,0,0.12)" }
+    }
+  }
+}

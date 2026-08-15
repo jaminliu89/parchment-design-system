@@ -1,1 +1,108 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Parchment 3.2 Role Lab</title><style>:root{--bg:#f2eee7;--surface:#faf8f3;--surface2:#e9e4db;--line:#d8d1c6;--ink:#181715;--ink2:#383631;--ink3:#716c63;--ink4:#9a9388;--signal:#665d50;--soft:#ebe5da;--good:#536457;--warn:#7c674c;--bad:#7a514b;--r9:9px;--r12:12px;--sans:Inter,system-ui,sans-serif;--serif:Georgia,'Noto Serif SC',serif;--mono:ui-monospace,monospace}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.6 var(--sans)}main{max-width:1160px;margin:auto;padding:56px 28px 100px}header{display:flex;justify-content:space-between;align-items:end;margin-bottom:48px}h1{font:400 64px/.9 var(--serif);letter-spacing:-.04em;margin:0}h2{font:400 34px/1.1 var(--serif);margin:0 0 10px}h3{font-size:12px;margin:0 0 16px}.eyebrow{font:500 10px var(--mono);letter-spacing:.1em;color:var(--ink4);text-transform:uppercase}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r12);padding:22px}.toolbar{display:flex;gap:4px;padding:8px;border:1px solid var(--line);background:var(--surface);border-radius:var(--r9)}button{height:40px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:var(--r9);padding:0 14px;font-weight:500}button:focus-visible,input:focus-visible{outline:2px solid var(--signal);outline-offset:2px}.primary{background:var(--ink);color:var(--surface);border-color:var(--ink)}.icon{width:40px;padding:0}.transcript{border:1px solid var(--line);border-radius:var(--r12);overflow:hidden;background:var(--surface)}.row{display:grid;grid-template-columns:60px 84px 1fr 56px;gap:14px;padding:17px 18px;border-bottom:1px solid var(--line)}.row:last-child{border:0}.speaker,.role,.time{font:10px var(--mono);color:var(--ink4);padding-top:4px}.speech{font:18px/1.55 var(--serif)}.ai{background:var(--soft);border-left:2px solid var(--signal)}.ai .speech{font:13px/1.7 var(--sans);color:var(--ink2)}.state{display:flex;gap:10px;align-items:flex-start;padding:14px;border:1px solid var(--line);border-radius:var(--r9);background:var(--surface)}.dot{width:6px;height:6px;border-radius:50%;background:currentColor;margin-top:7px;flex:none}.good{color:var(--good)}.warn{color:var(--warn)}.bad{color:var(--bad)}.neutral{color:var(--signal)}.empty{border:1px dashed var(--line);border-radius:var(--r12);padding:46px;text-align:center}.empty strong{font:400 28px var(--serif);display:block}.empty span{color:var(--ink4);font-size:12px}.dialog{max-width:440px;border:1px solid var(--line);border-radius:var(--r12);background:var(--surface);padding:24px;box-shadow:0 16px 40px #18171514}.dialog p{color:var(--ink3);font-size:13px}.actions{display:flex;justify-content:flex-end;gap:8px;margin-top:22px}.field{height:40px;border:1px solid var(--line);border-radius:var(--r9);background:var(--surface);padding:0 12px;width:100%;color:var(--ink)}.loading{height:6px;border-radius:3px;background:var(--surface2);overflow:hidden}.loading i{display:block;width:42%;height:100%;background:var(--ink);opacity:.2}.rule{height:1px;background:var(--line);margin:18px 0}@media(max-width:760px){main{padding:36px 18px}h1{font-size:50px}.grid{grid-template-columns:1fr}.row{grid-template-columns:48px 1fr 46px}.role{display:none}.speech{font-size:16px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}</style><body><main><header><div><div class="eyebrow">PARCHMENT / 3.2 ROLE LAB</div><h1>Every role<br>has a place.</h1></div><div class="eyebrow">Neutral / Editorial / Content-first</div></header><section><div class="eyebrow">01 / TOOLBAR</div><h2>Action hierarchy</h2><div class="panel"><div class="toolbar"><button class="primary">Save</button><button>Preview</button><button>Share</button><span style="flex:1"></span><button class="icon" aria-label="More actions">···</button></div></div></section><section style="margin-top:64px"><div class="eyebrow">02 / VOICE</div><h2>Transcript without label soup</h2><div class="transcript"><div class="row"><div class="speaker">HOST</div><div class="role">Narration</div><div class="speech">今天我们先解决一个问题：为什么内容明明拍出来了，却还是不好看。</div><div class="time">00:14</div></div><div class="row"><div class="speaker">HOST</div><div class="role">Narration</div><div class="speech">因为真正决定观感的，不只是镜头，而是信息的顺序。</div><div class="time">00:22</div></div><div class="row ai"><div class="speaker">AI</div><div class="role">Suggestion</div><div class="speech"><strong>建议</strong><br>把“信息的顺序”提前作为本段结论，可以减少铺垫。</div><div class="time">—</div></div></div></section><section style="margin-top:64px"><div class="eyebrow">03 / STATUS</div><h2>Signal, not decoration</h2><div class="grid"><div class="state good"><i class="dot"></i><div><strong>Saved</strong><div style="font-size:12px;color:var(--ink4)">All changes are synced.</div></div></div><div class="state warn"><i class="dot"></i><div><strong>Needs review</strong><div style="font-size:12px;color:var(--ink4)">One suggestion is unresolved.</div></div></div><div class="state bad"><i class="dot"></i><div><strong>Could not publish</strong><div style="font-size:12px;color:var(--ink4)">Check the connection and retry.</div></div></div><div class="state neutral"><i class="dot"></i><div><strong>Draft</strong><div style="font-size:12px;color:var(--ink4)">Not yet published.</div></div></div></div></section><section style="margin-top:64px"><div class="eyebrow">04 / FORM + DIALOG</div><h2>Quiet structure</h2><div class="grid"><div class="panel"><h3>PROJECT NAME</h3><input class="field" value="Parchment workspace"><div class="rule"></div><button class="primary">Continue</button></div><div class="panel"><div class="dialog"><div class="eyebrow">CONFIRM</div><h3 style="font:400 26px var(--serif);margin:7px 0">Delete this draft?</h3><p>This action cannot be undone. The content will be removed from the current workspace.</p><div class="actions"><button>Cancel</button><button class="primary">Delete draft</button></div></div></div></div></section><section style="margin-top:64px"><div class="eyebrow">05 / RECOVERY</div><h2>Empty / Loading / Error</h2><div class="grid"><div class="empty"><strong>No projects yet.</strong><span>Create the first workspace to begin.</span><div style="margin-top:18px"><button class="primary">Create project</button></div></div><div class="panel"><h3>LOADING</h3><div class="loading"><i></i></div><div class="rule"></div><div class="state bad"><i class="dot"></i><div><strong>Could not load</strong><div style="font-size:12px;color:var(--ink4)">Retry without losing your current work.</div></div></div></div></div></section></main></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Parchment 3.3 Role Laboratory</title>
+  <link rel="stylesheet" href="parchment.css">
+  <style>
+    main { max-width: 1160px; margin: auto; padding: 56px 28px 100px; }
+    header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; }
+    h1 { font-family: var(--p-serif); font-size: 64px; line-height: 0.9; letter-spacing: -0.04em; margin: 0; }
+    h2 { font-family: var(--p-serif); font-size: 34px; line-height: 1.1; margin: 0 0 10px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; }
+    .toolbar-box { display: flex; gap: 6px; padding: 8px; border: 1px solid var(--p-line); background: var(--p-surface); border-radius: var(--p-r-control); }
+
+    .state-card { display: flex; gap: 12px; align-items: flex-start; padding: 16px; border: 1px solid var(--p-line); border-radius: var(--p-r-control); background: var(--p-surface); }
+    .state-card strong { font-size: 13px; display: block; }
+    .state-card p { margin: 2px 0 0; color: var(--p-ink3); font-size: 12px; }
+
+    .dialog-box { border: 1px solid var(--p-line); border-radius: var(--p-r-surface); background: var(--p-surface); padding: 24px; box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
+
+    @media (max-width: 760px) {
+      main { padding: 36px 18px; }
+      h1 { font-size: 48px; }
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <div class="p-eyebrow">PARCHMENT / 3.3 ROLE LABORATORY</div>
+        <h1>Every component<br>in its proper place.</h1>
+      </div>
+      <div class="p-eyebrow">Stark B&W / Editorial / Modern Minimalism</div>
+    </header>
+
+    <!-- SECTION 01: TOOLBAR -->
+    <section>
+      <div class="p-eyebrow">01 / TOOLBAR ROLE</div>
+      <h2>Action Hierarchy</h2>
+      <div class="p-panel">
+        <div class="toolbar-box">
+          <button class="p-btn p-btn-primary">Save Document</button>
+          <button class="p-btn p-btn-secondary">Preview</button>
+          <button class="p-btn p-btn-secondary">Export</button>
+          <span style="flex:1"></span>
+          <button class="p-icon-btn" aria-label="More options">
+            <svg class="p-icon" viewBox="0 0 20 20"><circle cx="4" cy="10" r="1.2" fill="currentColor"/><circle cx="10" cy="10" r="1.2" fill="currentColor"/><circle cx="16" cy="10" r="1.2" fill="currentColor"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 02: DIALOG & FORM -->
+    <section style="margin-top: 60px;">
+      <div class="p-eyebrow">02 / OVERLAY & FORM ROLES</div>
+      <h2>Quiet Dialogs & Input Fields</h2>
+      <div class="grid-2">
+        <div class="p-panel">
+          <div class="p-field">
+            <label class="p-label">Workspace Title</label>
+            <input class="p-input" value="Parchment AI Studio">
+          </div>
+          <div class="p-field">
+            <label class="p-label">System Prompt</label>
+            <textarea class="p-textarea">Maintain stark black and white tone, restrained chrome, precise editorial typography.</textarea>
+          </div>
+          <button class="p-btn p-btn-primary" style="margin-top: 8px;">Update Settings</button>
+        </div>
+
+        <div class="dialog-box">
+          <div class="p-eyebrow">CONFIRM ACTION</div>
+          <h3 style="font-family: var(--p-serif); font-size: 26px; margin: 8px 0 12px;">Delete draft copy?</h3>
+          <p style="color: var(--p-ink3); font-size: 13px; margin-bottom: 20px;">This action cannot be undone. The draft will be permanently removed from the editorial index.</p>
+          <div style="display: flex; justify-content: flex-end; gap: 8px;">
+            <button class="p-btn p-btn-tertiary">Cancel</button>
+            <button class="p-btn p-btn-destructive">Delete draft</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 03: STATUS & SIGNALS -->
+    <section style="margin-top: 60px;">
+      <div class="p-eyebrow">03 / STATUS & SIGNALS</div>
+      <h2>Semantic Non-Color Signals</h2>
+      <div class="grid-2">
+        <div class="state-card">
+          <span class="p-badge" style="color: var(--p-success);"><i class="p-badge-dot"></i></span>
+          <div>
+            <strong>Synced to Cloud</strong>
+            <p>All editorial revisions saved safely.</p>
+          </div>
+        </div>
+        <div class="state-card">
+          <span class="p-badge" style="color: var(--p-warning);"><i class="p-badge-dot"></i></span>
+          <div>
+            <strong>Review Pending</strong>
+            <p>One AI suggestion requires approval.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

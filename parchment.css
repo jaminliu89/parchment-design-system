@@ -1,0 +1,506 @@
+/* ==========================================================================
+   Parchment Design System 3.3 Framework (parchment.css)
+   Stark Black & White / Cold Editorial / Modern Minimalism
+   ========================================================================== */
+
+@import url("dist/parchment.tokens.css");
+
+:root {
+  /* Core Token Maps */
+  --p-bg: var(--p-color-semantic-page, #f8f9fa);
+  --p-surface: var(--p-color-semantic-content, #ffffff);
+  --p-surface-raised: var(--p-color-semantic-raised, #ffffff);
+  --p-surface-muted: var(--p-color-semantic-muted, #f1f3f5);
+  --p-line: var(--p-color-semantic-border, #e2e4e8);
+  --p-line-subtle: var(--p-color-semantic-borderSubtle, #eceeef);
+
+  --p-ink: var(--p-color-semantic-text, #111215);
+  --p-ink2: var(--p-color-semantic-textSecondary, #2d3036);
+  --p-ink3: var(--p-color-semantic-textTertiary, #5a606a);
+  --p-ink4: var(--p-color-semantic-textPlaceholder, #959ca6);
+
+  --p-signal: var(--p-color-semantic-signal, #4a505a);
+  --p-signal-soft: var(--p-color-semantic-signalSoft, #f0f2f5);
+  --p-success: var(--p-color-semantic-success, #2e5a3c);
+  --p-warning: var(--p-color-semantic-warning, #7a5b28);
+  --p-error: var(--p-color-semantic-error, #8c3333);
+
+  --p-r-control: var(--p-shape-control, 8px);
+  --p-r-surface: var(--p-shape-surface, 12px);
+  --p-r-pill: var(--p-shape-pill, 999px);
+
+  --p-sans: var(--p-typography-ui, Inter, 'Noto Sans SC', system-ui, sans-serif);
+  --p-serif: var(--p-typography-editorial, 'Instrument Serif', 'Noto Serif SC', Georgia, serif);
+  --p-mono: var(--p-typography-mono, 'DM Mono', ui-monospace, monospace);
+}
+
+.dark {
+  --p-bg: #0b0c0e;
+  --p-surface: #121418;
+  --p-surface-raised: #1a1d24;
+  --p-surface-muted: #1e222a;
+  --p-line: #282c34;
+  --p-line-subtle: #1f232b;
+
+  --p-ink: #f5f6f8;
+  --p-ink2: #c8ccd4;
+  --p-ink3: #8c929e;
+  --p-ink4: #5a606c;
+
+  --p-signal: #8c929e;
+  --p-signal-soft: #1a1d24;
+  --p-success: #438257;
+  --p-warning: #b38842;
+  --p-error: #c25252;
+}
+
+/* --------------------------------------------------------------------------
+   Reset & Base
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--p-bg);
+  color: var(--p-ink);
+  font-family: var(--p-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------------------------------------------------------------
+   Typography Elements
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: var(--p-serif);
+  font-weight: 400;
+  color: var(--p-ink);
+}
+
+.p-eyebrow {
+  font-family: var(--p-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--p-ink4);
+}
+
+/* --------------------------------------------------------------------------
+   Buttons (Full Suite)
+   -------------------------------------------------------------------------- */
+.p-btn {
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: var(--p-r-control);
+  background: transparent;
+  color: var(--p-ink);
+  font-family: var(--p-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background 0.14s ease, border-color 0.14s ease, color 0.14s ease, transform 0.08s ease;
+}
+
+.p-btn-primary {
+  background: var(--p-ink);
+  color: var(--p-surface);
+  border-color: var(--p-ink);
+}
+
+.p-btn-primary:hover {
+  background: var(--p-ink2);
+  border-color: var(--p-ink2);
+}
+
+.p-btn-secondary {
+  background: var(--p-surface);
+  color: var(--p-ink);
+  border-color: var(--p-line);
+}
+
+.p-btn-secondary:hover {
+  background: var(--p-surface-muted);
+  border-color: var(--p-ink3);
+}
+
+.p-btn-tertiary {
+  height: 34px;
+  padding: 0 8px;
+  color: var(--p-ink3);
+}
+
+.p-btn-tertiary:hover {
+  background: var(--p-surface-muted);
+  color: var(--p-ink);
+}
+
+.p-btn-destructive {
+  background: transparent;
+  color: var(--p-error);
+  border-color: var(--p-line);
+}
+
+.p-btn-destructive:hover {
+  background: var(--p-signal-soft);
+  border-color: var(--p-error);
+}
+
+.p-btn:active {
+  transform: translateY(1px);
+}
+
+.p-btn:focus-visible, .p-icon-btn:focus-visible, .p-input:focus-visible, .p-select:focus-visible, .p-textarea:focus-visible {
+  outline: 2px solid var(--p-ink);
+  outline-offset: 2px;
+}
+
+.p-btn:disabled, .p-icon-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.p-btn-loading {
+  color: transparent !important;
+  position: relative;
+  cursor: wait;
+  pointer-events: none;
+}
+
+.p-btn-loading::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid var(--p-surface);
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: p-spin 0.7s linear infinite;
+}
+
+@keyframes p-spin {
+  to { transform: rotate(360deg); }
+}
+
+.p-icon-btn {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--p-line);
+  border-radius: var(--p-r-control);
+  background: var(--p-surface);
+  color: var(--p-ink3);
+  cursor: pointer;
+}
+
+.p-icon-btn:hover {
+  background: var(--p-surface-muted);
+  color: var(--p-ink);
+  border-color: var(--p-ink3);
+}
+
+/* --------------------------------------------------------------------------
+   Form Controls
+   -------------------------------------------------------------------------- */
+.p-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.p-label {
+  font-family: var(--p-sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--p-ink2);
+}
+
+.p-input, .p-select, .p-textarea {
+  width: 100%;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--p-line);
+  border-radius: var(--p-r-control);
+  background: var(--p-surface);
+  color: var(--p-ink);
+  font-family: var(--p-sans);
+  font-size: 13px;
+  transition: border-color 0.14s ease;
+}
+
+.p-textarea {
+  height: auto;
+  min-height: 80px;
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+.p-input::placeholder, .p-textarea::placeholder {
+  color: var(--p-ink4);
+}
+
+.p-checkbox-label, .p-radio-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--p-ink);
+  cursor: pointer;
+  user-select: none;
+}
+
+.p-checkbox, .p-radio {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--p-ink);
+  cursor: pointer;
+}
+
+/* Switch Component */
+.p-switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+}
+
+.p-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.p-switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--p-line);
+  border-radius: 20px;
+  transition: 0.2s;
+}
+
+.p-switch-slider::before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--p-surface);
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.p-switch input:checked + .p-switch-slider {
+  background-color: var(--p-ink);
+}
+
+.p-switch input:checked + .p-switch-slider::before {
+  transform: translateX(16px);
+}
+
+/* --------------------------------------------------------------------------
+   Cards & Panels
+   -------------------------------------------------------------------------- */
+.p-panel, .p-card {
+  background: var(--p-surface);
+  border: 1px solid var(--p-line);
+  border-radius: var(--p-r-surface);
+  padding: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   Badges & Tags
+   -------------------------------------------------------------------------- */
+.p-badge, .p-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 10px;
+  border-radius: var(--p-r-pill);
+  border: 1px solid var(--p-line);
+  background: var(--p-surface-muted);
+  color: var(--p-ink2);
+  font-family: var(--p-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.p-badge-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   Tabs
+   -------------------------------------------------------------------------- */
+.p-tabs {
+  display: flex;
+  gap: 2px;
+  border-bottom: 1px solid var(--p-line);
+  margin-bottom: 20px;
+}
+
+.p-tab {
+  padding: 8px 16px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--p-ink3);
+  font-family: var(--p-sans);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.14s ease, border-color 0.14s ease;
+}
+
+.p-tab:hover {
+  color: var(--p-ink);
+}
+
+.p-tab.active {
+  color: var(--p-ink);
+  border-bottom-color: var(--p-ink);
+}
+
+/* --------------------------------------------------------------------------
+   Table Component
+   -------------------------------------------------------------------------- */
+.p-table-container {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--p-line);
+  border-radius: var(--p-r-surface);
+  background: var(--p-surface);
+}
+
+.p-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+}
+
+.p-table th {
+  padding: 12px 16px;
+  background: var(--p-surface-muted);
+  color: var(--p-ink3);
+  font-family: var(--p-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--p-line);
+}
+
+.p-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--p-line-subtle);
+  color: var(--p-ink);
+}
+
+.p-table tr:last-child td {
+  border-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Dialog & Popover
+   -------------------------------------------------------------------------- */
+.p-dialog-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+
+.p-dialog {
+  width: 100%;
+  max-width: 440px;
+  background: var(--p-surface);
+  border: 1px solid var(--p-line);
+  border-radius: var(--p-r-surface);
+  padding: 28px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.p-dialog-title {
+  font-family: var(--p-serif);
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.p-dialog-desc {
+  color: var(--p-ink3);
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+
+.p-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   Toast / Notification
+   -------------------------------------------------------------------------- */
+.p-toast {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--p-ink);
+  color: var(--p-surface);
+  border-radius: var(--p-r-control);
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* --------------------------------------------------------------------------
+   Icon System Base
+   -------------------------------------------------------------------------- */
+.p-icon {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility & Motion Reduced
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

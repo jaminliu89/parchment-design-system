@@ -1,1 +1,300 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Parchment 3.3 — Button System</title><style>:root{--bg:#f2eee7;--surface:#faf8f3;--surface2:#e9e4db;--line:#d8d1c6;--ink:#181715;--ink2:#383631;--ink3:#716c63;--ink4:#9a9388;--signal:#665d52;--soft:#ebe5da;--r6:6px;--r9:9px;--r12:12px;--sans:Inter,'Noto Sans SC',system-ui,sans-serif;--serif:'Instrument Serif','Noto Serif SC',Georgia,serif;--mono:'DM Mono',ui-monospace,monospace}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.6 var(--sans);-webkit-font-smoothing:antialiased}.shell{max-width:1180px;margin:auto;padding:0 28px}.top{height:64px;border-bottom:1px solid var(--line);display:flex;align-items:center}.top .shell{width:100%;display:flex;align-items:center;justify-content:space-between}.brand{font:22px var(--serif)}nav{display:flex;gap:2px}nav a{padding:7px 10px;border-radius:var(--r6);color:var(--ink3);text-decoration:none;font-size:12px}nav a.active,nav a:hover{background:var(--surface2);color:var(--ink)}.hero{padding:100px 0 110px;max-width:900px}.eyebrow{font:500 10px var(--mono);letter-spacing:.12em;color:var(--ink4);text-transform:uppercase;margin-bottom:20px}.hero h1{font:400 clamp(68px,9vw,118px)/.86 var(--serif);letter-spacing:-.045em;margin:0 0 26px}.hero p{font:20px/1.65 var(--serif);color:var(--ink3);max-width:650px}section{padding:76px 0;border-top:1px solid var(--line)}.head{display:grid;grid-template-columns:280px 1fr;gap:56px;margin-bottom:34px}.head h2{font:400 40px/1.05 var(--serif);margin:4px 0}.head p{color:var(--ink3);max-width:650px}.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r12);padding:24px}.button-set{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.btn{height:38px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 14px;border:1px solid transparent;border-radius:var(--r9);background:transparent;color:var(--ink);font:500 13px/1 var(--sans);letter-spacing:-.01em;cursor:pointer;transition:background .14s ease,border-color .14s ease,color .14s ease,transform .08s ease}.btn.primary{background:var(--ink);color:var(--surface);border-color:var(--ink);padding-inline:16px}.btn.secondary{border-color:var(--line);background:var(--surface)}.btn.tertiary{height:34px;padding-inline:8px;color:var(--ink3)}.btn.destructive{height:34px;padding-inline:8px;color:#704b45}.btn:hover{background:var(--surface2)}.btn.primary:hover{background:var(--ink2);border-color:var(--ink2)}.btn.secondary:hover{border-color:#bcb5a9}.btn.tertiary:hover{color:var(--ink);background:var(--surface2)}.btn.destructive:hover{background:#eee3de}.btn:active{transform:translateY(1px)}.btn.primary:active{background:#4a4742;border-color:#4a4742}.btn.secondary:active{background:var(--surface2);border-color:#c4bdb1}.btn.tertiary:active{background:var(--line)}.btn.destructive:active{background:#e5d8d2}.btn:focus-visible,.icon-btn:focus-visible,.input:focus-visible{outline:2px solid var(--signal);outline-offset:2px}.btn:disabled{opacity:.42;cursor:not-allowed}.btn:disabled,.btn:disabled:hover,.btn:disabled:active{transform:none}.btn.primary:disabled{background:var(--ink);border-color:var(--ink)}.btn.secondary:disabled{background:var(--surface);border-color:var(--line)}.btn.loading{color:transparent;position:relative;cursor:wait;pointer-events:none}.btn.loading:after{content:"";position:absolute;width:12px;height:12px;border:1.5px solid var(--surface);border-right-color:transparent;border-radius:50%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.icon-btn{width:38px;height:38px;display:grid;place-items:center;padding:0;border:0;border-radius:var(--r9);background:transparent;color:var(--ink3);cursor:pointer}.icon-btn:hover{background:var(--surface2);color:var(--ink)}.icon-btn:active{background:var(--line);transform:translateY(1px)}.icon-btn:disabled{opacity:.4;cursor:not-allowed}.icon-btn .icon{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}.status{display:inline-flex;align-items:center;gap:6px;color:var(--signal);font:500 10px var(--mono);letter-spacing:.04em}.status i{width:5px;height:5px;border-radius:50%;background:currentColor}.input{height:38px;width:100%;border:1px solid var(--line);border-radius:var(--r9);background:var(--surface);color:var(--ink);padding:0 12px}.rule{height:1px;background:var(--line);margin:18px 0}.icons{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.icon-cell{height:72px;border:1px solid var(--line);border-radius:var(--r9);background:var(--surface);display:grid;place-items:center;color:var(--ink3)}.icon{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}.workspace{display:grid;grid-template-columns:180px 1fr 240px;height:300px;border:1px solid var(--line);border-radius:var(--r12);overflow:hidden;background:var(--surface)}.rail{padding:18px;border-right:1px solid var(--line)}.rail.right{border:0;border-left:1px solid var(--line)}.rail-title{font:10px var(--mono);color:var(--ink4);letter-spacing:.1em}.rail-item{height:34px;display:flex;align-items:center;padding:0 8px;border-radius:var(--r6);color:var(--ink3);font-size:12px}.rail-item.active{background:var(--surface2);color:var(--ink);font-weight:500}.canvas{background:var(--bg);display:grid;place-items:center}.sheet{width:62%;height:72%;background:var(--surface);border:1px solid var(--line);padding:26px;box-shadow:0 6px 18px #1817150d}.line{height:5px;background:var(--ink);opacity:.1;margin-bottom:13px}.transcript{background:var(--surface);border:1px solid var(--line);border-radius:var(--r12);overflow:hidden}.utterance{display:grid;grid-template-columns:58px 82px 1fr 55px;gap:14px;padding:17px 18px;border-bottom:1px solid var(--line)}.utterance:last-child{border:0}.meta{font:10px var(--mono);color:var(--ink4);padding-top:4px}.spoken{font:17px/1.55 var(--serif)}.time{text-align:right}.ai{background:var(--soft);border-left:2px solid var(--signal)}.ai .spoken{font:13px/1.7 var(--sans);color:var(--ink2)}.state{display:flex;gap:10px;padding:14px;border:1px solid var(--line);border-radius:var(--r9);background:var(--surface)}.dot{width:6px;height:6px;border-radius:50%;background:currentColor;margin-top:7px}.state p{margin:3px 0 0;color:var(--ink4);font-size:11px}.empty{padding:52px;text-align:center;border:1px dashed var(--line);border-radius:var(--r12)}.empty strong{display:block;font:400 28px var(--serif)}@media(max-width:800px){.shell{padding:0 18px}nav{display:none}.hero{padding:80px 0}.hero h1{font-size:68px}.head{grid-template-columns:1fr}.icons{grid-template-columns:repeat(3,1fr)}.workspace{grid-template-columns:70px 1fr 90px}.utterance{grid-template-columns:48px 1fr 46px}.role{display:none}.button-set{align-items:center}.button-set .btn{flex:0 1 auto}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}</style><body><header class="top"><div class="shell"><div class="brand">Parchment</div><nav><a class="active" href="#buttons">Buttons</a><a href="#voice">Voice</a><a href="#icons">Icons</a><a href="#workspace">Workspace</a></nav></div></header><main class="shell"><div class="hero"><div class="eyebrow">PARCHMENT / 3.3 VISUAL STRESS TEST</div><h1>Quiet action.<br>Clear intent.</h1><p>Buttons should support hierarchy, not become the hierarchy.</p></div><section id="buttons"><div class="head"><div><div class="eyebrow">01 / BUTTON SYSTEM</div><h2>Weight, not decoration.</h2></div><p>One primary action. Secondary stays outlined. Tertiary recedes. Destructive stays semantic.</p></div><div class="panel"><div class="eyebrow">ACTION HIERARCHY</div><div class="button-set"><button class="btn primary">Create project</button><button class="btn secondary">Save draft</button><button class="btn tertiary">Cancel</button><button class="btn destructive">Delete</button><button class="icon-btn" aria-label="More actions"><svg class="icon" viewBox="0 0 20 20"><circle cx="4" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="10" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="16" cy="10" r="1" fill="currentColor" stroke="none"/></svg></button></div><div class="rule"></div><div class="eyebrow">STATES</div><div class="button-set"><button class="btn primary">Default</button><button class="btn primary" style="background:var(--ink2);border-color:var(--ink2)">Hover</button><button class="btn secondary">Secondary</button><button class="btn secondary" disabled>Disabled</button><button class="btn primary loading" aria-label="Saving"></button></div><div class="rule"></div><div class="status"><i></i>Saved · semantic status, not a button</div></div></section><section id="voice"><div class="head"><div><div class="eyebrow">02 / VOICE</div><h2>Transcript without label soup.</h2></div><p>Speaker, role, spoken content and time have fixed hierarchy. AI suggestions live in their own semantic row.</p></div><div class="transcript"><div class="utterance"><div class="meta">HOST</div><div class="meta role">Narration</div><div class="spoken">今天我们先解决一个问题：为什么内容明明拍出来了，却还是不好看。</div><div class="meta time">00:14</div></div><div class="utterance"><div class="meta">HOST</div><div class="meta role">Narration</div><div class="spoken">真正决定观感的，不只是镜头，而是信息的顺序。</div><div class="meta time">00:22</div></div><div class="utterance ai"><div class="meta">AI</div><div class="meta role">Suggestion</div><div class="spoken"><strong>建议</strong><br>把“信息的顺序”提前作为本段结论，可以减少铺垫。</div><div class="meta time">—</div></div></div></section><section id="icons"><div class="head"><div><div class="eyebrow">03 / ICONOGRAPHY</div><h2>One family.</h2></div><p>20px grid · 1.75px stroke · round caps/joins · currentColor.</p></div><div class="panel"><div class="icons"><div class="icon-cell"><svg class="icon" viewBox="0 0 20 20"><path d="M3 5h14M3 10h14M3 15h9"/></svg></div><div class="icon-cell"><svg class="icon" viewBox="0 0 20 20"><path d="M4 4h12v12H4zM7 8h6M7 11h4"/></svg></div><div class="icon-cell"><svg class="icon" viewBox="0 0 20 20"><circle cx="9" cy="9" r="5"/><path d="m13 13 4 4"/></svg></div><div class="icon-cell"><svg class="icon" viewBox="0 0 20 20"><path d="M10 3v14M3 10h14"/></svg></div><div class="icon-cell"><svg class="icon" viewBox="0 0 20 20"><path d="M5 4h10v12H5zM8 7h4M8 10h4"/></svg></div><div class="icon-cell"><svg class="icon" viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg></div></div></div></section><section id="workspace"><div class="head"><div><div class="eyebrow">04 / WORKSPACE</div><h2>Structure is felt.</h2></div><p>Navigation stays quiet, canvas receives whitespace, inspector remains contextual.</p></div><div class="workspace"><aside class="rail"><div class="rail-title">WORKSPACE</div><div class="rail-item active">Projects</div><div class="rail-item">Library</div><div class="rail-item">Settings</div></aside><div class="canvas"><div class="sheet"><div class="line" style="width:55%"></div><div class="line" style="width:85%"></div><div class="line" style="width:76%"></div></div></div><aside class="rail right"><div class="rail-title">INSPECTOR</div><div class="rail-item">Context</div><div class="rail-item">Properties</div><div class="rail-item">AI</div></aside></div></section></main></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Parchment 3.3 — Stark Minimalist Component System</title>
+  <link rel="stylesheet" href="parchment.css">
+  <style>
+    .shell { max-width: 1180px; margin: auto; padding: 0 28px; }
+    .top { height: 64px; border-bottom: 1px solid var(--p-line); display: flex; align-items: center; }
+    .top .shell { width: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .brand { font-family: var(--p-serif); font-size: 24px; letter-spacing: -0.02em; }
+    nav { display: flex; gap: 4px; }
+    nav a { padding: 6px 12px; border-radius: var(--p-r-control); color: var(--p-ink3); text-decoration: none; font-size: 12px; }
+    nav a.active, nav a:hover { background: var(--p-surface-muted); color: var(--p-ink); }
+    .theme-toggle { margin-left: 12px; }
+
+    .hero { padding: 90px 0 100px; max-width: 920px; }
+    .hero h1 { font-family: var(--p-serif); font-size: clamp(64px, 8vw, 112px); line-height: 0.88; letter-spacing: -0.04em; margin: 0 0 28px; }
+    .hero p { font-family: var(--p-serif); font-size: 22px; line-height: 1.6; color: var(--p-ink3); max-width: 680px; }
+
+    section { padding: 72px 0; border-top: 1px solid var(--p-line); }
+    .head { display: grid; grid-template-columns: 280px 1fr; gap: 56px; margin-bottom: 36px; }
+    .head h2 { font-size: 40px; line-height: 1.05; margin: 4px 0; }
+    .head p { color: var(--p-ink3); max-width: 650px; }
+
+    .comp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .button-set { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .rule { height: 1px; background: var(--p-line); margin: 24px 0; }
+
+    .workspace { display: grid; grid-template-columns: 200px 1fr 240px; height: 320px; border: 1px solid var(--p-line); border-radius: var(--p-r-surface); overflow: hidden; background: var(--p-surface); }
+    .rail { padding: 20px; border-right: 1px solid var(--p-line); }
+    .rail.right { border: 0; border-left: 1px solid var(--p-line); }
+    .rail-title { font-family: var(--p-mono); font-size: 10px; color: var(--p-ink4); letter-spacing: 0.1em; }
+    .rail-item { height: 36px; display: flex; align-items: center; padding: 0 10px; border-radius: var(--p-r-control); color: var(--p-ink3); font-size: 12px; }
+    .rail-item.active { background: var(--p-surface-muted); color: var(--p-ink); font-weight: 500; }
+    .canvas { background: var(--p-bg); display: grid; place-items: center; }
+    .sheet { width: 65%; height: 75%; background: var(--p-surface); border: 1px solid var(--p-line); padding: 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
+    .sheet-line { height: 6px; background: var(--p-ink); opacity: 0.12; margin-bottom: 14px; border-radius: 3px; }
+
+    .transcript { background: var(--p-surface); border: 1px solid var(--p-line); border-radius: var(--p-r-surface); overflow: hidden; }
+    .utterance { display: grid; grid-template-columns: 60px 90px 1fr 60px; gap: 16px; padding: 18px 20px; border-bottom: 1px solid var(--p-line); }
+    .utterance:last-child { border: 0; }
+    .meta { font-family: var(--p-mono); font-size: 10px; color: var(--p-ink4); padding-top: 4px; }
+    .spoken { font-family: var(--p-serif); font-size: 18px; line-height: 1.55; }
+    .time { text-align: right; }
+    .ai-row { background: var(--p-surface-muted); border-left: 2px solid var(--p-ink); }
+    .ai-row .spoken { font-family: var(--p-sans); font-size: 13px; color: var(--p-ink2); }
+
+    .icons-showcase { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+    .icon-box { height: 72px; border: 1px solid var(--p-line); border-radius: var(--p-r-control); background: var(--p-surface); display: grid; place-items: center; color: var(--p-ink2); }
+
+    @media (max-width: 800px) {
+      .shell { padding: 0 18px; }
+      nav { display: none; }
+      .hero h1 { font-size: 56px; }
+      .head { grid-template-columns: 1fr; }
+      .comp-grid { grid-template-columns: 1fr; }
+      .workspace { grid-template-columns: 70px 1fr 90px; }
+      .utterance { grid-template-columns: 48px 1fr 46px; .role { display: none; } }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top">
+    <div class="shell">
+      <div class="brand">Parchment</div>
+      <nav>
+        <a class="active" href="#buttons">Buttons</a>
+        <a href="#forms">Forms & Controls</a>
+        <a href="#components">Data & Feedback</a>
+        <a href="#voice">Voice</a>
+        <a href="#workspace">Workspace</a>
+      </nav>
+      <button class="p-btn p-btn-secondary theme-toggle" onclick="document.body.classList.toggle('dark')">Dark Mode</button>
+    </div>
+  </header>
+
+  <main class="shell">
+
+    <div class="hero">
+      <div class="p-eyebrow">PARCHMENT / 3.3 STARK EDITORIAL SYSTEM</div>
+      <h1>Cold precision.<br>Humanistic contrast.</h1>
+      <p>Stark black & white, vast whitespace, and restrained chrome. Designed for AI workspaces and content tools.</p>
+    </div>
+
+    <!-- 01 BUTTONS -->
+    <section id="buttons">
+      <div class="head">
+        <div>
+          <div class="p-eyebrow">01 / BUTTON SYSTEM</div>
+          <h2>Intent & Hierarchy</h2>
+        </div>
+        <p>Stark hierarchy. Primary actions use crisp solid ink; supporting actions recede cleanly into fine borders.</p>
+      </div>
+
+      <div class="p-panel">
+        <div class="p-eyebrow" style="margin-bottom: 12px;">ACTION SUITE</div>
+        <div class="button-set">
+          <button class="p-btn p-btn-primary">Create project</button>
+          <button class="p-btn p-btn-secondary">Save draft</button>
+          <button class="p-btn p-btn-tertiary">Cancel</button>
+          <button class="p-btn p-btn-destructive">Delete</button>
+          <button class="p-icon-btn" aria-label="More options">
+            <svg class="p-icon" viewBox="0 0 20 20"><circle cx="4" cy="10" r="1.2" fill="currentColor"/><circle cx="10" cy="10" r="1.2" fill="currentColor"/><circle cx="16" cy="10" r="1.2" fill="currentColor"/></svg>
+          </button>
+        </div>
+
+        <div class="rule"></div>
+
+        <div class="p-eyebrow" style="margin-bottom: 12px;">STATES & SIZES</div>
+        <div class="button-set">
+          <button class="p-btn p-btn-primary">Default</button>
+          <button class="p-btn p-btn-secondary">Secondary</button>
+          <button class="p-btn p-btn-secondary" disabled>Disabled</button>
+          <button class="p-btn p-btn-primary p-btn-loading" aria-label="Loading"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 FORMS & CONTROLS -->
+    <section id="forms">
+      <div class="head">
+        <div>
+          <div class="p-eyebrow">02 / FORM CONTROLS</div>
+          <h2>Inputs, Selects & Toggles</h2>
+        </div>
+        <p>Complete form primitive library sharing strict 8px radii, quiet borders, and stark high-contrast focus states.</p>
+      </div>
+
+      <div class="comp-grid">
+        <div class="p-panel">
+          <div class="p-field">
+            <label class="p-label">Document Title</label>
+            <input class="p-input" value="Architectural Principles v3">
+          </div>
+          <div class="p-field">
+            <label class="p-label">Visibility</label>
+            <select class="p-select">
+              <option>Private Workspace</option>
+              <option>Team Shared</option>
+              <option>Public Editorial</option>
+            </select>
+          </div>
+          <div class="p-field">
+            <label class="p-label">Executive Summary</label>
+            <textarea class="p-textarea" placeholder="Enter concise summary..."></textarea>
+          </div>
+        </div>
+
+        <div class="p-panel" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div class="p-eyebrow" style="margin-bottom: 16px;">SELECTION & SWITCHES</div>
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <label class="p-checkbox-label">
+                <input type="checkbox" class="p-checkbox" checked> Auto-save document changes
+              </label>
+              <label class="p-checkbox-label">
+                <input type="checkbox" class="p-checkbox"> Enable AI editorial suggestions
+              </label>
+              <div class="rule" style="margin: 8px 0;"></div>
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span class="p-label">High-Contrast Mode</span>
+                <label class="p-switch">
+                  <input type="checkbox" checked>
+                  <span class="p-switch-slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-toast">
+            <svg class="p-icon" viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg>
+            Workspace settings saved successfully.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 DATA DISPLAY & TABLES -->
+    <section id="components">
+      <div class="head">
+        <div>
+          <div class="p-eyebrow">03 / DATA & TABLES</div>
+          <h2>Tabular & Badge System</h2>
+        </div>
+        <p>Clean metadata presentation, semantic status chips, and crisp tabular data structures.</p>
+      </div>
+
+      <div class="p-panel" style="padding: 0; overflow: hidden; margin-bottom: 24px;">
+        <div style="padding: 16px 20px 0;">
+          <div class="p-tabs">
+            <button class="p-tab active">All Projects</button>
+            <button class="p-tab">Published</button>
+            <button class="p-tab">Drafts</button>
+            <button class="p-tab">Archived</button>
+          </div>
+        </div>
+
+        <table class="p-table">
+          <thead>
+            <tr>
+              <th>Document</th>
+              <th>Author</th>
+              <th>Status</th>
+              <th>Updated</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Parchment Architecture Contract</strong></td>
+              <td>Editorial Board</td>
+              <td><span class="p-badge"><i class="p-badge-dot"></i> Published</span></td>
+              <td>Just now</td>
+            </tr>
+            <tr>
+              <td><strong>Tone & Contrast Guidelines</strong></td>
+              <td>Design Systems</td>
+              <td><span class="p-badge"><i class="p-badge-dot"></i> Review</span></td>
+              <td>2h ago</td>
+            </tr>
+            <tr>
+              <td><strong>AI Voice Integration Specs</strong></td>
+              <td>Workspace Team</td>
+              <td><span class="p-badge"><i class="p-badge-dot"></i> Draft</span></td>
+              <td>1d ago</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 04 TRANSCRIPT & VOICE -->
+    <section id="voice">
+      <div class="head">
+        <div>
+          <div class="p-eyebrow">04 / TRANSCRIPT & VOICE</div>
+          <h2>Information Row Architecture</h2>
+        </div>
+        <p>Fixed row layout: Speaker | Role | Spoken Content | Time. AI suggestions stay in separate structural rows.</p>
+      </div>
+
+      <div class="transcript">
+        <div class="utterance">
+          <div class="meta">HOST</div>
+          <div class="meta role">Narration</div>
+          <div class="spoken">今天我们先解决一个问题：为什么内容明明拍出来了，却还是不好看。</div>
+          <div class="meta time">00:14</div>
+        </div>
+        <div class="utterance">
+          <div class="meta">HOST</div>
+          <div class="meta role">Narration</div>
+          <div class="spoken">真正决定观感的，不只是镜头，而是信息的顺序。</div>
+          <div class="meta time">00:22</div>
+        </div>
+        <div class="utterance ai-row">
+          <div class="meta">AI</div>
+          <div class="meta role">Suggestion</div>
+          <div class="spoken"><strong>建议</strong><br>把“信息的顺序”提前作为本段结论，可以减少铺垫。</div>
+          <div class="meta time">—</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 WORKSPACE SHELL -->
+    <section id="workspace">
+      <div class="head">
+        <div>
+          <div class="p-eyebrow">05 / WORKSPACE SHELL</div>
+          <h2>Quiet Canvas</h2>
+        </div>
+        <p>Chrome remains visually quiet, allowing the primary content canvas to dominate focus.</p>
+      </div>
+
+      <div class="workspace">
+        <aside class="rail">
+          <div class="rail-title">NAVIGATE</div>
+          <div class="rail-item active" style="margin-top: 8px;">Documents</div>
+          <div class="rail-item">Asset Library</div>
+          <div class="rail-item">Settings</div>
+        </aside>
+        <div class="canvas">
+          <div class="sheet">
+            <div class="sheet-line" style="width: 50%;"></div>
+            <div class="sheet-line" style="width: 80%;"></div>
+            <div class="sheet-line" style="width: 70%;"></div>
+          </div>
+        </div>
+        <aside class="rail right">
+          <div class="rail-title">INSPECTOR</div>
+          <div class="rail-item" style="margin-top: 8px;">Properties</div>
+          <div class="rail-item">AI Copilot</div>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
