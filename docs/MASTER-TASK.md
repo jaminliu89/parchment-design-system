@@ -18,9 +18,9 @@
 - [x] Update GitHub repository description
 - [x] Consolidate PRD/Architecture version labels
 - [x] Inventory every legacy/duplicate/broken reference
-- [ ] Mark unique legacy value migrated and references zero before `DELETE_READY`
+- [ ] Mark unique legacy value migrated and references zero before `DELETE_READY` (remaining: `Parchment-DESIGN.md`)
 - [x] Remove broken README references and pass link audit
-- [ ] Retire legacy token, v3 architecture and UI OS v2 documents after migration gates pass
+- [x] Retire legacy token, v3 architecture and UI OS v2 documents after migration gates pass
 
 ## P1 — Token runtime
 
