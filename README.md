@@ -12,6 +12,7 @@ Parchment is the design and interaction system for creator tools and AI workspac
 2. `docs/PRD.md` — product and governance contract.
 3. `parchment.v3.tokens.json` — canonical machine-readable tokens.
 4. `docs/ARCHITECTURE.md` — layer boundaries and consumption rules.
+5. `docs/COMPONENT-CONTRACTS.md`, `docs/CONTENT-AND-STATES.md` and `docs/GOVERNANCE.md` — behavior, content and lifecycle contracts.
 
 Version meaning is intentionally separated: **Parchment 4.0** is the current design-language program; **UI OS v2** is the unfinished runtime architecture program.
 
@@ -52,6 +53,9 @@ AI suggestions, processing, diffs and conflicts are separate semantic rows/panel
 - `parchment-role-lab.html` — role/component walkthrough.
 - `docs/QUALITY-GATE.md` — canonical visual, interaction and release gate.
 - `docs/ICONOGRAPHY.md` — iconography contract.
+- `docs/COMPONENT-CONTRACTS.md` — semantic anatomy, state and interaction requirements.
+- `docs/CONTENT-AND-STATES.md` — voice, empty/loading, i18n/RTL and data-presentation rules.
+- `docs/GOVERNANCE.md` — maturity, compatibility, deprecation and acceptance evidence.
 
 ## Definition of done
 

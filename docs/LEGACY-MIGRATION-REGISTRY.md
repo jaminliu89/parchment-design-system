@@ -12,7 +12,7 @@ No entry may skip a gate. A historical version label does not make a file safe t
 
 | Asset | Current state | Unique value to migrate | Required zero-reference check |
 |---|---|---|---|
-| `Parchment-DESIGN.md` | `CONSOLIDATE_THEN_DELETE` | component anatomy, usage guidance and anti-patterns that remain valid without the retired cloud-white palette | no canonical or consumer link treats it as current |
+| `Parchment-DESIGN.md` | `DELETE_READY` | valid component anatomy, content/state, loading, i18n/RTL, headless and governance rules migrated to `docs/COMPONENT-CONTRACTS.md`, `docs/CONTENT-AND-STATES.md`, `docs/ARCHITECTURE.md` and `docs/GOVERNANCE.md`; retired palette, chart colors, shadows and shape rules rejected | zero links outside this registry; canonical runtime checks pass |
 | `parchment.tokens.json` | `DELETE_READY` | typography scale, motion and component-independent geometry migrated; cloud-white/graphite-blue palettes, universal radius scale and duplicated component styling explicitly retired | zero imports and links outside this registry; canonical token build/check passes |
 | `PARCHMENT-3.0-ARCHITECTURE.md` | `DELETE_READY` | composition, motion, AI reversibility and accessibility boundaries migrated to canonical tokens and `docs/ARCHITECTURE.md` | zero canonical or consumer links outside this registry |
 | `PARCHMENT_3_1_VISUAL_AUDIT.md` | `DELETE_READY` | reusable visual QA criteria migrated to `docs/QUALITY-GATE.md` | zero current references outside this registry; canonical checks pass |
@@ -29,4 +29,4 @@ No entry may skip a gate. A historical version label does not make a file safe t
 
 Only rows explicitly marked `DELETE_READY` may be physically removed. The registry retains the promotion evidence after deletion.
 
-Physical deletion commits preserve recovery history: quality/release documents in `d88b807`; legacy tokens, v3 architecture and UI OS v2 Master in `282cc3a`; UI OS v2 Architecture in the subsequent cleanup commit. `Parchment-DESIGN.md` remains the only active consolidation source.
+Physical deletion commits preserve recovery history: quality/release documents in `d88b807`; legacy tokens, v3 architecture and UI OS v2 Master in `282cc3a`; UI OS v2 Architecture in `77770cc`. `Parchment-DESIGN.md` is promoted only after its valid contracts were split into canonical 4.0 documents.
