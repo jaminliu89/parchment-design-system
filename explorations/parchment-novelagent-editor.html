@@ -138,13 +138,14 @@ svg{display:block;flex-shrink:0;}
 }
 .prose .fl{
   cursor:pointer;border-bottom:1px dotted var(--warning);
-  background:linear-gradient(transparent 60%,#F6EDE2 60%);
+  background:linear-gradient(transparent 60%,var(--signalSoft) 60%);
 }
 .cursor{
   display:inline-block;width:2px;height:1.1em;background:var(--ink);
   vertical-align:text-bottom;animation:blink 1.1s steps(1) infinite;
 }
 @keyframes blink{50%{opacity:0;}}
+@media(prefers-reduced-motion:reduce){.cursor{animation:none;}}
 
 /* ===== Status bar ===== */
 .sb{
@@ -173,7 +174,7 @@ svg{display:block;flex-shrink:0;}
   display:inline-block;font-size:11px;padding:5px 9px;border-radius:var(--r6);
   background:var(--signalSoft);color:var(--signal);margin:0 6px 6px 0;line-height:1.3;
 }
-.rc-w{background:#F6EDE2;color:var(--warning);}
+.rc-w{background:var(--signalSoft);color:var(--warning);}
 
 /* ===== Agent console ===== */
 .ag-row{
