@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parchment 4.0 — Theme Preview · B&W vs NovelAgent</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box; margin:0; padding:0}
+html,body{height:100%}
+body{font-family:Inter,'Noto Sans SC',system-ui,sans-serif; -webkit-font-smoothing:antialiased}
+
+/* Parchment 4.0 — pure B&W editorial */
+html.theme-parchment{
+  --bg:#FAFAFA; --surface:#FFFFFF; --surface2:#F4F4F0; --line:#E0E0E0;
+  --ink:#1A1A1A; --ink2:#555555; --ink3:#999999; --ink4:#BBBBBB;
+  --signal:#000000; --signalSoft:#F0F0F0; --good:#2E7D32; --warn:#E65100; --bad:#C62828;
+  --r6:6px; --r8:8px; --r12:12px;
+  --sans:Inter,'Noto Sans SC',system-ui,sans-serif;
+  --serif:'Instrument Serif','Noto Serif SC',Georgia,serif;
+  --mono:'DM Mono',ui-monospace,monospace;
+}
+
+/* NovelAgent — warm canvas + muted navy */
+html.theme-novelagent{
+  --bg:#FAF8F3; --surface:#FFFEFC; --surface2:#F4F1E9; --line:#E6E1D5;
+  --ink:#211F1B; --ink2:#4A473E; --ink3:#938D7C; --ink4:#A8A395;
+  --signal:#2E3A52; --signalSoft:#EDEFF3; --good:#7A9B7E; --warn:#B0803C; --bad:#9A5E55;
+  --r6:6px; --r8:8px; --r12:12px;
+  --sans:'Noto Sans SC',-apple-system,sans-serif;
+  --serif:'Noto Serif SC','Source Serif 4','Instrument Serif',Georgia,serif;
+  --mono:ui-monospace,'SF Mono','Cascadia Code',monospace;
+}
+
+/* shared */
+html{background:var(--bg);color:var(--ink);}
+.theme-bar{
+  height:52px; display:flex; align-items:center; justify-content:space-between;
+  padding:0 28px; border-bottom:1px solid var(--line);
+  background:var(--surface); position:sticky; top:0; z-index:100;
+}
+.theme-bar .brand{font:600 14px var(--serif); letter-spacing:.3px;}
+.theme-bar .brand span{color:var(--ink3); font-weight:400;}
+.theme-switcher{display:flex; gap:1px; background:var(--line); border-radius:var(--r8); overflow:hidden;}
+.theme-btn{
+  padding:7px 16px; font-size:12px; font-weight:500; border:none;
+  background:var(--surface); color:var(--ink2); cursor:pointer;
+  transition:all .15s ease; font-family:var(--sans);
+}
+.theme-btn.active{background:var(--signal); color:#fff;}
+.theme-btn:not(.active):hover{background:var(--surface2);}
+
+.layout{display:grid; grid-template-columns:1fr 1fr; height:calc(100vh - 52px);}
+.col{border-right:1px solid var(--line); overflow-y:auto; padding:32px 24px 100px;}
+.col:last-child{border-right:none;}
+.col-label{font:500 10px var(--mono); letter-spacing:.1em; color:var(--ink4); text-transform:uppercase; margin-bottom:24px; padding-bottom:12px; border-bottom:1px solid var(--line);}
+
+h1{font:400 40px/1.05 var(--serif); margin:0 0 6px;}
+h2{font:400 28px/1.1 var(--serif); margin:36px 0 16px;}
+.eyebrow{font:500 10px var(--mono); letter-spacing:.1em; color:var(--ink4); text-transform:uppercase; margin-bottom:20px;}
+
+.panel{background:var(--surface); border:1px solid var(--line); border-radius:var(--r12); padding:24px; margin-bottom:24px;}
+
+.button-set{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;}
+.btn{
+  height:38px; display:inline-flex; align-items:center; justify-content:center;
+  gap:6px; padding:0 14px; border:1px solid var(--line);
+  border-radius:var(--r8); background:transparent; color:var(--ink2);
+  font:500 13px var(--sans); cursor:pointer; transition:.15s ease;
+}
+.btn:hover{border-color:var(--signal); color:var(--signal); background:var(--signalSoft);}
+.btn.primary{background:var(--signal); color:#fff; border-color:var(--signal);}
+.btn.ghost{border-color:transparent;}
+.btn.ghost:hover{background:var(--surface2); border-color:transparent; color:var(--ink);}
+.btn .badge{font:500 10px var(--mono); background:var(--signalSoft); color:var(--signal); padding:1px 7px; border-radius:999px; margin-left:3px;}
+
+.chip{display:inline-block; padding:4px 10px; border-radius:999px; background:var(--signalSoft); color:var(--signal); font:500 11px var(--sans); margin:0 4px 4px 0;}
+.chip.warn{background:#fef0e5; color:var(--warn);}
+.chip.good{background:#eaf5ea; color:var(--good);}
+
+.card{background:var(--surface); border:1px solid var(--line); border-radius:var(--r12); padding:16px; margin-bottom:12px;}
+.card-title{font:600 13px var(--sans); color:var(--ink); margin-bottom:4px;}
+.card-desc{font-size:12px; color:var(--ink3); line-height:1.5;}
+
+.tree-node{display:flex; align-items:center; gap:6px; padding:6px 8px; border-radius:6px; font-size:13px; color:var(--ink2); cursor:pointer; transition:.1s ease;}
+.tree-node:hover{background:var(--surface);}
+.tree-node.active{background:var(--surface); color:var(--signal); font-weight:500; box-shadow:0 0 0 1px var(--line);}
+.tree-node .led{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.tree-node .led.done{background:var(--good);}
+.tree-node .led.draft{background:var(--warn);}
+.tree-node .led.empty{background:var(--line);}
+
+.statusbar{height:30px; border-top:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; padding:0 14px; font-size:11px; color:var(--ink3);}
+
+.prose{font-family:var(--serif); font-size:16px; line-height:2.05; color:var(--ink);}
+.prose p{margin-bottom:1.4em;}
+.prose .accent-line{background:linear-gradient(transparent 60%, var(--signalSoft) 60%); border-bottom:1px dotted var(--signal); cursor:pointer;}
+.prose .flag-line{background:linear-gradient(transparent 60%, #fef0e5 60%); border-bottom:1px dotted var(--warn); cursor:pointer;}
+
+.flywheel-wrap{display:flex; align-items:center; gap:14px; padding:8px 0;}
+.flywheel{position:relative; width:74px; height:74px; flex-shrink:0;}
+.flywheel svg{width:100%; height:100%; animation:spin 26s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+@media (prefers-reduced-motion:reduce){.flywheel svg{animation:none;}}
+.flywheel-core{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:15px; font-weight:700; color:var(--signal);}
+.flywheel-stat{flex:1;}
+.flywheel-stat .big{font-family:var(--serif); font-size:20px; font-weight:600; color:var(--ink);}
+.flywheel-stat .lbl{font-size:11px; color:var(--ink3); margin-top:4px;}
+
+.agent-row{display:flex; align-items:center; gap:9px; padding:7px 0; border-bottom:1px solid var(--surface2); font-size:12px;}
+.agent-row:last-child{border-bottom:none;}
+.agent-led{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.agent-led.working{background:var(--signal); animation:pulse 1.6s ease-in-out infinite;}
+.agent-led.idle{background:var(--line);}
+.agent-led.done{background:var(--good);}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+.agent-name{color:var(--ink2);flex:1;}
+.agent-state{color:var(--ink3);font-size:11px;}
+
+.diff-note{font-size:11.5px; color:var(--ink2); line-height:1.6; background:var(--signalSoft); border-radius:8px; padding:10px 11px; margin-top:8px;}
+.signal-feed{margin-top:10px; border-top:1px solid var(--surface2); padding-top:10px;}
+.signal-item{display:flex; gap:8px; font-size:11.5px; color:var(--ink2); padding:5px 0; line-height:1.5;}
+.signal-item .tick{color:var(--ink3); flex-shrink:0;}
+.signal-item b{color:var(--signal); font-weight:600;}
+
+.swatch-row{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:24px;}
+.swatch{width:36px; height:36px; border-radius:6px; border:1px solid var(--line); flex-shrink:0; position:relative;}
+.swatch::after{content:attr(data-label); position:absolute; bottom:-18px; left:50%; transform:translateX(-50%); font:9px var(--mono); color:var(--ink3); white-space:nowrap;}
+
+.footer-note{position:fixed; bottom:0; left:0; right:0; background:var(--surface); padding:8px 28px; border-top:1px solid var(--line); z-index:200; font-size:11px; color:var(--ink2); line-height:1.7;}
+.footer-note code{font-family:var(--mono); background:var(--surface2); padding:2px 6px; border-radius:4px; font-size:10.5px;}
+</style>
+</head>
+<body>
+
+<div class="theme-bar">
+  <div class="brand">Parchment <span>4.0 · Theme Preview</span></div>
+  <div class="theme-switcher">
+    <button class="theme-btn active" onclick="switchTheme('parchment')">B&W Editorial</button>
+    <button class="theme-btn" onclick="switchTheme('novelagent')">NovelAgent 墨蓝</button>
+  </div>
+</div>
+
+<div class="layout">
+  <!-- LEFT: Parchment 4.0 B&W -->
+  <div class="col">
+    <div class="col-label">Parchment 4.0 — Monochrome Editorial / Default</div>
+    <div class="eyebrow">Color swatches</div>
+    <div class="swatch-row" id="swatches-parchment"></div>
+
+    <div class="eyebrow" style="margin-top:32px">Typography</div>
+    <h1>静夜思</h1>
+    <p style="font:15px/1.7 var(--serif); color:var(--ink3); max-width:520px; margin-bottom:28px;">
+      床前明月光，疑是地上霜。举头望明月，低头思故乡。
+    </p>
+
+    <div class="eyebrow">Buttons</div>
+    <div class="button-set">
+      <button class="btn primary">主要操作</button>
+      <button class="btn">次要操作</button>
+      <button class="btn ghost">幽灵按钮</button>
+      <button class="btn">订阅 <span class="badge">Pro</span></button>
+    </div>
+
+    <div class="eyebrow">Chips</div>
+    <div>
+      <span class="chip">场景卡 3/5</span>
+      <span class="chip warn">灯不可离眼三丈</span>
+      <span class="chip good">已同步</span>
+    </div>
+
+    <div class="eyebrow">Cards & Tree</div>
+    <div class="card">
+      <div class="card-title">沈砚（男主）</div>
+      <div class="card-desc">左手三年前受刑致残，说话惯用短句，忌讳被人提「灰烬之城」旧事</div>
+    </div>
+    <div style="margin-bottom:14px;">
+      <div class="tree-node" style="font-weight:600;color:var(--ink);font-size:12.5px;">
+        <span style="font-size:9px;color:var(--ink3);width:10px;">▾</span> 卷一 · 灰烬之城
+      </div>
+      <div style="padding-left:16px;">
+        <div class="tree-node"><span class="led done"></span> 第1章 雨夜来客</div>
+        <div class="tree-node"><span class="led draft"></span> 第2章 铁栅之约</div>
+      </div>
+      <div class="tree-node" style="font-weight:600;color:var(--ink);font-size:12.5px;">
+        <span style="font-size:9px;color:var(--ink3);width:10px;">▾</span> 卷二 · 灯下影
+      </div>
+      <div style="padding-left:16px;">
+        <div class="tree-node active"><span class="led draft"></span> 第17章 执灯人</div>
+        <div class="tree-node"><span class="led empty"></span> 第18章 断骨令</div>
+      </div>
+    </div>
+
+    <div class="eyebrow">Flywheel</div>
+    <div class="panel">
+      <div style="font:600 13px var(--sans); color:var(--ink); margin-bottom:10px;">进化飞轮 <span style="font-weight:400;font-size:10.5px;color:var(--ink3);">本书第17章</span></div>
+      <div class="flywheel-wrap">
+        <div class="flywheel">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="44" fill="none" stroke="var(--line)" stroke-width="3"/>
+            <circle cx="50" cy="50" r="44" fill="none" stroke="var(--signal)" stroke-width="3" stroke-dasharray="70 210" stroke-linecap="round"/>
+            <circle cx="50" cy="50" r="30" fill="none" stroke="var(--line)" stroke-width="2"/>
+            <circle cx="50" cy="50" r="30" fill="none" stroke="var(--warn)" stroke-width="2" stroke-dasharray="40 140" stroke-linecap="round" transform="rotate(140 50 50)"/>
+          </svg>
+          <div class="flywheel-core">28%</div>
+        </div>
+        <div class="flywheel-stat">
+          <div class="big">↓ 34%</div>
+          <div class="lbl">初稿与终稿差异度</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="eyebrow">Agent Panel</div>
+    <div class="panel">
+      <div style="font:600 13px var(--sans); color:var(--ink); margin-bottom:6px;">Claude 协同控制台</div>
+      <div class="agent-row">
+        <span class="agent-led working"></span>
+        <span class="agent-name">场景生成子代理</span>
+        <span class="agent-state">生成中…</span>
+      </div>
+      <div class="agent-row">
+        <span class="agent-led idle"></span>
+        <span class="agent-name">一致性校验子代理</span>
+        <span class="agent-state">待触发</span>
+      </div>
+      <div class="agent-row">
+        <span class="agent-led done"></span>
+        <span class="agent-name">节奏分析子代理</span>
+        <span class="agent-state">本章节奏：正常</span>
+      </div>
+    </div>
+
+    <div class="diff-note">系统学到：你偏好把心理描写换成动作细节，本章已自动应用该风格指南。</div>
+    <div class="signal-feed">
+      <div class="signal-item"><span class="tick">·</span> 检测到 <b>去副词</b> 信号 ×12</div>
+      <div class="signal-item"><span class="tick">·</span> <b>短句偏好</b> 置信度提升至 91%</div>
+    </div>
+  </div>
+
+  <!-- RIGHT: NovelAgent -->
+  <div class="col">
+    <div class="col-label" style="color:var(--signal);">NovelAgent — Warm Canvas + Muted Navy</div>
+    <div class="eyebrow">Color swatches</div>
+    <div class="swatch-row" id="swatches-novelagent"></div>
+
+    <div class="eyebrow" style="margin-top:32px">Typography</div>
+    <h1>静夜思</h1>
+    <p style="font:15px/1.7 var(--serif); color:var(--ink3); max-width:520px; margin-bottom:28px;">
+      床前明月光，疑是地上霜。举头望明月，低头思故乡。
+    </p>
+
+    <div class="eyebrow">Buttons</div>
+    <div class="button-set">
+      <button class="btn primary">主要操作</button>
+      <button class="btn">次要操作</button>
+      <button class="btn ghost">幽灵按钮</button>
+      <button class="btn">订阅 <span class="badge">Pro</span></button>
+    </div>
+
+    <div class="eyebrow">Chips</div>
+    <div>
+      <span class="chip">场景卡 3/5</span>
+      <span class="chip warn">灯不可离眼三丈</span>
+      <span class="chip good">已同步</span>
+    </div>
+
+    <div class="eyebrow">Cards & Tree</div>
+    <div class="card">
+      <div class="card-title">沈砚（男主）</div>
+      <div class="card-desc">左手三年前受刑致残，说话惯用短句，忌讳被人提「灰烬之城」旧事</div>
+    </div>
+    <div style="margin-bottom:14px;">
+      <div class="tree-node" style="font-weight:600;color:var(--ink);font-size:12.5px;">
+        <span style="font-size:9px;color:var(--ink3);width:10px;">▾</span> 卷一 · 灰烬之城
+      </div>
+      <div style="padding-left:16px;">
+        <div class="tree-node"><span class="led done"></span> 第1章 雨夜来客</div>
+        <div class="tree-node"><span class="led draft"></span> 第2章 铁栅之约</div>
+      </div>
+      <div class="tree-node" style="font-weight:600;color:var(--ink);font-size:12.5px;">
+        <span style="font-size:9px;color:var(--ink3);width:10px;">▾</span> 卷二 · 灯下影
+      </div>
+      <div style="padding-left:16px;">
+        <div class="tree-node active"><span class="led draft"></span> 第17章 执灯人</div>
+        <div class="tree-node"><span class="led empty"></span> 第18章 断骨令</div>
+      </div>
+    </div>
+
+    <div class="eyebrow">Flywheel</div>
+    <div class="panel">
+      <div style="font:600 13px var(--sans); color:var(--ink); margin-bottom:10px;">进化飞轮 <span style="font-weight:400;font-size:10.5px;color:var(--ink3);">本书第17章</span></div>
+      <div class="flywheel-wrap">
+        <div class="flywheel">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="44" fill="none" stroke="var(--line)" stroke-width="3"/>
+            <circle cx="50" cy="50" r="44" fill="none" stroke="var(--signal)" stroke-width="3" stroke-dasharray="70 210" stroke-linecap="round"/>
+            <circle cx="50" cy="50" r="30" fill="none" stroke="var(--line)" stroke-width="2"/>
+            <circle cx="50" cy="50" r="30" fill="none" stroke="var(--warn)" stroke-width="2" stroke-dasharray="40 140" stroke-linecap="round" transform="rotate(140 50 50)"/>
+          </svg>
+          <div class="flywheel-core">28%</div>
+        </div>
+        <div class="flywheel-stat">
+          <div class="big">↓ 34%</div>
+          <div class="lbl">初稿与终稿差异度</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="eyebrow">Agent Panel</div>
+    <div class="panel">
+      <div style="font:600 13px var(--sans); color:var(--ink); margin-bottom:6px;">Claude 协同控制台</div>
+      <div class="agent-row">
+        <span class="agent-led working"></span>
+        <span class="agent-name">场景生成子代理</span>
+        <span class="agent-state">生成中…</span>
+      </div>
+      <div class="agent-row">
+        <span class="agent-led idle"></span>
+        <span class="agent-name">一致性校验子代理</span>
+        <span class="agent-state">待触发</span>
+      </div>
+      <div class="agent-row">
+        <span class="agent-led done"></span>
+        <span class="agent-name">节奏分析子代理</span>
+        <span class="agent-state">本章节奏：正常</span>
+      </div>
+    </div>
+
+    <div class="diff-note">系统学到：你偏好把心理描写换成动作细节，本章已自动应用该风格指南。</div>
+    <div class="signal-feed">
+      <div class="signal-item"><span class="tick">·</span> 检测到 <b>去副词</b> 信号 ×12</div>
+      <div class="signal-item"><span class="tick">·</span> <b>短句偏好</b> 置信度提升至 91%</div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.documentElement.className = 'theme-parchment';
+const swatchesData = {
+  parchment: [
+    {label:'canvas', color:'#FAFAFA'},{label:'surface', color:'#FFFFFF'},{label:'surface2', color:'#F4F4F0'},
+    {label:'line', color:'#E0E0E0'},{label:'ink', color:'#1A1A1A'},{label:'ink2', color:'#555555'},
+    {label:'ink3', color:'#999999'},{label:'signal', color:'#000000'},{label:'good', color:'#2E7D32'},
+    {label:'warn', color:'#E65100'},{label:'bad', color:'#C62828'}
+  ],
+  novelagent: [
+    {label:'canvas', color:'#FAF8F3'},{label:'surface', color:'#FFFEFC'},{label:'surface2', color:'#F4F1E9'},
+    {label:'line', color:'#E6E1D5'},{label:'ink', color:'#211F1B'},{label:'ink2', color:'#4A473E'},
+    {label:'ink3', color:'#938D7C'},{label:'signal', color:'#2E3A52'},{label:'good', color:'#7A9B7E'},
+    {label:'warn', color:'#B0803C'},{label:'bad', color:'#9A5E55'}
+  ]
+};
+for (const [key, data] of Object.entries(swatchesData)) {
+  const el = document.getElementById('swatches-' + key);
+  if (!el) continue;
+  data.forEach(s => {
+    const div = document.createElement('div');
+    div.className = 'swatch';
+    div.style.background = s.color;
+    div.dataset.label = s.label;
+    el.appendChild(div);
+  });
+}
+function switchTheme(name) {
+  document.documentElement.className = 'theme-' + name;
+  document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.theme-btn').forEach(b => {
+    if (name === 'parchment' && b.textContent.includes('B&W')) b.classList.add('active');
+    if (name === 'novelagent' && b.textContent.includes('墨蓝')) b.classList.add('active');
+  });
+}
+</script>
+
+<div class="footer-note">
+  <b>架构</b>：Parchment 4.0 = 纯黑白编辑系统（默认）。NovelAgent 主题 = 暖底 + 墨蓝信号（从 NovelAgent-OS 写作原型提取完整 palette），作为一等 CSS 变量主题。用法：<code>&lt;html class="theme-novelagent"&gt;</code> 或 scoped <code>.theme-novelagent</code>。两者可在同一项目中共存，组件层不感知主题。
+</div>
+</body>
+</html>

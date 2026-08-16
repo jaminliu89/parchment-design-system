@@ -1,0 +1,87 @@
+/* ===========================================================
+   Parchment 3.2 — Theme: NovelAgent
+   Auto-generated from parchment.theme-novelagent.tokens.json
+   + hand-aliased flat runtime names for component consumption.
+
+   Apply: <html class="theme-novelagent">
+   =========================================================== */
+
+/* ---- Canonical DTCG tokens (auto-gen source match) ---- */
+.theme-novelagent,
+html.theme-novelagent {
+  --p-color-primitive-canvas: #FAF8F3;
+  --p-color-primitive-surface: #FFFEFC;
+  --p-color-primitive-surfaceRaised: #FFFFFF;
+  --p-color-primitive-panel: #F4F1E9;
+  --p-color-primitive-line: #E6E1D5;
+  --p-color-primitive-lineSoft: #F0EDE3;
+  --p-color-primitive-ink: #211F1B;
+  --p-color-primitive-ink2: #4A473E;
+  --p-color-primitive-ink3: #938D7C;
+  --p-color-primitive-ink4: #A8A395;
+  --p-color-primitive-signal: #2E3A52;
+  --p-color-primitive-signalSoft: #EDEFF3;
+  --p-color-primitive-success: #7A9B7E;
+  --p-color-primitive-warning: #B0803C;
+  --p-color-primitive-warningSoft: #F6EEDE;
+  --p-color-primitive-error: #9A5E55;
+
+  --p-typography-ui: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  --p-typography-editorial: 'Noto Serif SC', 'Source Serif 4', 'Instrument Serif', Georgia, serif;
+  --p-typography-mono: ui-monospace, 'SF Mono', 'Cascadia Code', monospace;
+
+  --p-shape-control: 9px;
+  --p-shape-surface: 12px;
+  --p-shape-small: 6px;
+  --p-shape-pill: 999px;
+  --p-shape-card: 10px;
+
+  --p-icon-grid: 20px;
+  --p-icon-stroke: 1.75px;
+  --p-icon-cap: round;
+  --p-icon-join: round;
+  --p-icon-color: currentColor;
+}
+
+/* ---- Flat runtime names (what components actually use) ---- */
+.theme-novelagent,
+html.theme-novelagent {
+  --bg: #FAF8F3;
+  --surface: #FFFEFC;
+  --surface2: #F4F1E9;
+  --surfaceRaised: #FFFFFF;
+  --line: #E6E1D5;
+  --lineSoft: #F0EDE3;
+  --ink: #211F1B;
+  --ink2: #4A473E;
+  --ink3: #938D7C;
+  --ink4: #A8A395;
+  --signal: #2E3A52;
+  --signalSoft: #EDEFF3;
+  --good: #7A9B7E;
+  --warn: #B0803C;
+  --warnSoft: #F6EEDE;
+  --bad: #9A5E55;
+
+  /* NovelAgent prototype compat aliases */
+  --canvas: #FFFEFC;
+  --panel: #F4F1E9;
+  --ink-soft: #4A473E;
+  --muted: #938D7C;
+  --hairline: #E6E1D5;
+  --hairline-soft: #F0EDE3;
+  --accent: #2E3A52;
+  --accent-soft: #EDEFF3;
+  --amber: #B0803C;
+  --amber-soft: #F6EEDE;
+
+  --sans: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --serif: 'Noto Serif SC', 'Source Serif 4', 'Instrument Serif', Georgia, serif;
+  --mono: ui-monospace, 'SF Mono', 'Cascadia Code', monospace;
+
+  --r6: 6px;
+  --r9: 9px;
+  --r10: 10px;
+  --r12: 12px;
+  --r: 10px;
+}

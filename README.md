@@ -6,6 +6,17 @@ Parchment is the design and interaction system for creator tools and AI workspac
 
 **Current status:** Specification ready · Token runtime available · CSS component primitives available · Accessible behavior engine in progress.
 
+## Multi-theme variants
+
+Parchment 4.0 is a **monochrome editorial** system by default. Theme variants are available for warmer / commercial visual identities:
+
+| Theme | Signal accent | Tone | Use case |
+|---|---|---|---|
+| Parchment (default, 4.0) | `#000000` black | Pure B&W editorial | Creator OS, writing, editorial |
+| NovelAgent | `#2E3A52` muted navy | Warm canvas + navy accent | Commercial tools, professional writing OS |
+
+See `docs/THEME-ARCHITECTURE.md` for the full theme contract and `parchment-theme-preview.html` for a live side-by-side comparison.
+
 ## Source of truth
 
 1. `docs/MASTER-TASK.md` — execution order and release status.
@@ -13,8 +24,6 @@ Parchment is the design and interaction system for creator tools and AI workspac
 3. `parchment.v3.tokens.json` — canonical machine-readable tokens.
 4. `docs/ARCHITECTURE.md` — layer boundaries and consumption rules.
 5. `docs/COMPONENT-CONTRACTS.md`, `docs/CONTENT-AND-STATES.md` and `docs/GOVERNANCE.md` — behavior, content and lifecycle contracts.
-
-Version meaning is intentionally separated: **Parchment 4.0** is the current design-language program; **UI OS v2** is the unfinished runtime architecture program.
 
 ## Visual contract
 
@@ -28,34 +37,24 @@ Version meaning is intentionally separated: **Parchment 4.0** is the current des
 - Pills are semantic status only; circles are exceptional, not generic icon containers.
 - Content > label > icon > chrome.
 - No emoji/text glyphs as product icons; no mixed filled/outline icon sets.
-- AI is behavior/state, not a permanent purple visual theme.
+- AI is behavior/state, not a permanent visual theme.
 - Minimum interactive target: 44px; visible focus; reduced-motion support.
 
 ## Role hierarchy
 
 `App Shell → Navigation → Header → Toolbar → Content → Transcript/Voice → AI → Inspector → Dialog → Empty/Loading/Error → Responsive`
 
-### Transcript / voice
-
-Never stack floating tags beside spoken copy. Use a stable information row:
-
-`Speaker → Role → Spoken content → Time`
-
-AI suggestions, processing, diffs and conflicts are separate semantic rows/panels rather than decorative labels attached to every sentence.
-
 ## Source files
 
 - `parchment.v3.tokens.json` — canonical tokens.
-- `dist/parchment.tokens.css` — generated token runtime; never edit by hand.
-- `parchment.css` — canonical CSS component primitives.
-- `dist/parchment.css` — generated consumer artifact; never edit by hand.
 - `parchment-preview.html` — primary visual preview.
 - `parchment-role-lab.html` — role/component walkthrough.
-- `docs/QUALITY-GATE.md` — canonical visual, interaction and release gate.
+- `parchment-theme-preview.html` — side-by-side theme comparison.
+- `parchment.theme-novelagent.tokens.json` — NovelAgent theme tokens.
+- `dist/theme-novelagent.css` — NovelAgent runtime CSS.
+- `docs/QUALITY-GATE.md` — visual, interaction and release gate.
 - `docs/ICONOGRAPHY.md` — iconography contract.
-- `docs/COMPONENT-CONTRACTS.md` — semantic anatomy, state and interaction requirements.
-- `docs/CONTENT-AND-STATES.md` — voice, empty/loading, i18n/RTL and data-presentation rules.
-- `docs/GOVERNANCE.md` — maturity, compatibility, deprecation and acceptance evidence.
+- `docs/THEME-ARCHITECTURE.md` — theme contract and adding new themes.
 
 ## Definition of done
 
