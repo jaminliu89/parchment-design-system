@@ -64,3 +64,7 @@ A surface is ready only when it passes role-lab review at desktop/mobile and lig
 CSS classes are visual primitives, not a claim of accessible component completion. Dialog, tabs, switch and other stateful widgets still require semantic markup, keyboard behavior and runtime tests in the consuming framework.
 
 Historical experiments are `CONSOLIDATE_THEN_DELETE`: they may not override the four sources of truth above and may be physically removed only after unique references are migrated, references reach zero and release checks pass.
+
+## Surface explorations
+
+`explorations/` contains additive visual references — real creative-tool surfaces rebuilt with Parchment tokens. These are not system modifications. See `docs/patterns/EDITOR-AI-FUSION.md` for the fusion methodology.
