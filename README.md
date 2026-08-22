@@ -68,3 +68,19 @@ Historical experiments are `CONSOLIDATE_THEN_DELETE`: they may not override the 
 ## Surface explorations
 
 `explorations/` contains additive visual references — real creative-tool surfaces rebuilt with Parchment tokens. These are not system modifications. See `docs/patterns/EDITOR-AI-FUSION.md` for the fusion methodology.
+
+---
+
+## Support
+
+Parchment is free and open-source. If it has saved you time or improved the quality of your product, you can support its continued development.
+
+**GitHub Sponsors** — preferred. Monthly or one-time, directly integrated with GitHub.
+[github.com/sponsors/jaminliu89](https://github.com/sponsors/jaminliu89)
+
+**Buy Me a Coffee** — one-time or membership tiers.
+[buymeacoffee.com/jaminliu](https://buymeacoffee.com/jaminliu)
+
+**WeChat / Alipay** — coming soon.
+
+Sponsorship tiers are structured around access rather than features — the system itself stays free and open for everyone.
