@@ -12,4 +12,4 @@ lfx_crowdfunding: # Replace with a single LFX Crowdfunding project-name
 polar: # Replace with a single Polar username
 buy_me_a_coffee: jaminliu # Replace with your Buy Me a Coffee username
 thanks_dev: # Replace with a single thanks.dev username
-custom: ['https://example.com/donate'] # WeChat / Alipay page, replace when ready
+custom: # WeChat + Alipay page: docs/sponsor.html (add URL after GitHub Pages is set up)

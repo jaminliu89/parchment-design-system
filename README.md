@@ -81,6 +81,7 @@ Parchment is free and open-source. If it has saved you time or improved the qual
 **Buy Me a Coffee** — one-time or membership tiers.
 [buymeacoffee.com/jaminliu](https://buymeacoffee.com/jaminliu)
 
-**WeChat / Alipay** — coming soon.
+**WeChat / Alipay** — for users in mainland China.
+[Scan to pay →](docs/sponsor.html)
 
 Sponsorship tiers are structured around access rather than features — the system itself stays free and open for everyone.

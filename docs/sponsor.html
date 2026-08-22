@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support Parchment</title>
+<link rel="stylesheet" href="../../dist/parchment.css">
+<link rel="stylesheet" href="../../dist/parchment.tokens.css">
+<style>
+  :root {
+    --page-max: 720px;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--parchment-canvas);
+    color: var(--parchment-ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: 96px 24px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--parchment-ink-3);
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 16px 0;
+    letter-spacing: -0.01em;
+  }
+
+  .lead {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--parchment-ink-2);
+    margin: 0 0 48px 0;
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--parchment-line);
+    margin: 48px 0;
+  }
+
+  .qr-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin: 32px 0;
+  }
+
+  @media (max-width: 560px) {
+    .qr-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .qr-card {
+    text-align: center;
+    padding: 24px;
+    border: 1px solid var(--parchment-line);
+    border-radius: var(--parchment-radius-surface);
+    background: var(--parchment-surface);
+  }
+
+  .qr-card img {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    display: block;
+    margin: 0 auto 16px auto;
+    border-radius: var(--parchment-radius-control);
+  }
+
+  .qr-label {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .qr-sub {
+    font-size: 13px;
+    color: var(--parchment-ink-3);
+    margin: 0;
+  }
+
+  .channels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 24px 0 0 0;
+  }
+
+  .channel-btn {
+    display: inline-flex;
+    align-items: center;
+    height: 36px;
+    padding: 0 16px;
+    border: 1px solid var(--parchment-line);
+    border-radius: var(--parchment-radius-control);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--parchment-ink);
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+
+  .channel-btn:hover {
+    background: var(--parchment-muted);
+  }
+
+  .channel-btn.primary {
+    background: var(--parchment-ink);
+    color: var(--parchment-canvas);
+    border-color: var(--parchment-ink);
+  }
+
+  .channel-btn.primary:hover {
+    opacity: 0.9;
+  }
+
+  .note {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--parchment-ink-3);
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--parchment-line);
+  }
+
+  .note p {
+    margin: 0 0 8px 0;
+  }
+
+  .note p:last-child {
+    margin-bottom: 0;
+  }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--parchment-line);
+    font-size: 12px;
+    color: var(--parchment-ink-4);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="eyebrow">Support Parchment</div>
+    <h1>请我喝杯咖啡</h1>
+    <p class="lead">
+      Parchment 是免费且开源的设计系统。如果它帮你节省了时间、或提升了你产品的质感，
+      你可以通过以下方式支持它的持续开发。所有赞助将用于维护系统、增加组件和完善文档。
+    </p>
+
+    <div class="qr-grid">
+      <div class="qr-card">
+        <img src="assets/sponsor/wechat-qr.png" alt="微信支付二维码">
+        <div class="qr-label">微信支付</div>
+        <p class="qr-sub">长按识别或扫码</p>
+      </div>
+      <div class="qr-card">
+        <img src="assets/sponsor/alipay-qr.png" alt="支付宝二维码">
+        <div class="qr-label">支付宝</div>
+        <p class="qr-sub">长按识别或扫码</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2 style="font-size: 20px; font-weight: 600; margin: 0 0 8px 0;">其他方式</h2>
+    <p style="font-size: 14px; color: var(--parchment-ink-2); margin: 0 0 16px 0;">
+      海外用户推荐使用 GitHub Sponsors 或 Buy Me a Coffee。
+    </p>
+
+    <div class="channels">
+      <a href="https://github.com/sponsors/jaminliu89" class="channel-btn primary" target="_blank" rel="noopener">
+        GitHub Sponsors
+      </a>
+      <a href="https://buymeacoffee.com/jaminliu" class="channel-btn" target="_blank" rel="noopener">
+        Buy Me a Coffee
+      </a>
+    </div>
+
+    <div class="note">
+      <p>系统本身始终免费且开源，赞助不影响功能使用。</p>
+      <p>赞助 tier 提供的是参与感和优先支持，不是付费墙。</p>
+      <p>如果你在公司里使用 Parchment，可以让公司走企业赞助，支持额度可抵税（视地区政策）。</p>
+    </div>
+
+    <footer>Parchment Design System · Maintained by 柳俊明</footer>
+  </div>
+</body>
+</html>
