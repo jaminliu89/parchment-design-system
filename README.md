@@ -73,15 +73,12 @@ Historical experiments are `CONSOLIDATE_THEN_DELETE`: they may not override the 
 
 ## Support
 
-Parchment is free and open-source. If it has saved you time or improved the quality of your product, you can support its continued development.
+Parchment is free and open-source. If it's been useful to you, there are a few ways to help keep it going.
 
-**GitHub Sponsors** — preferred. Monthly or one-time, directly integrated with GitHub.
+**GitHub Sponsors** — the best way. Monthly or one-time, goes straight to keeping the lights on.
 [github.com/sponsors/jaminliu89](https://github.com/sponsors/jaminliu89)
 
-**Buy Me a Coffee** — one-time or membership tiers.
-[buymeacoffee.com/jaminliu](https://buymeacoffee.com/jaminliu)
+**WeChat / Alipay** — for folks in China who want to buy me a coffee.
+[Scan the code →](docs/sponsor.html)
 
-**WeChat / Alipay** — for users in mainland China.
-[Scan to pay →](docs/sponsor.html)
-
-Sponsorship tiers are structured around access rather than features — the system itself stays free and open for everyone.
+It's just one person working on this in between photography gigs, so anything helps. The system stays free either way — sponsorship just means fewer compromises and faster progress.
