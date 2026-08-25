@@ -8,10 +8,11 @@ export interface AIApprovalProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function AIApproval({ title, description, actions, className, ...props }: AIApprovalProps) {
+  const titleId = React.useId();
   return (
-    <section className={cn("p-ai-approval", className)} aria-labelledby="p-ai-approval-title" {...props}>
+    <section className={cn("p-ai-approval", className)} aria-labelledby={titleId} {...props}>
       <div className="p-ai-approval-copy">
-        <div id="p-ai-approval-title" className="p-ai-approval-title">{title}</div>
+        <div id={titleId} className="p-ai-approval-title">{title}</div>
         {description ? <div className="p-ai-approval-description">{description}</div> : null}
       </div>
       <div className="p-ai-approval-actions">{actions}</div>
