@@ -13,10 +13,10 @@ export interface TreeViewProps extends React.HTMLAttributes<HTMLDivElement> {
   nodes: TreeNode[];
   selectedId?: string;
   defaultExpandedIds?: string[];
-  onSelect?: (id: string) => void;
+  onNodeSelect?: (id: string) => void;
 }
 
-export function TreeView({ nodes, selectedId, defaultExpandedIds = [], onSelect, className, ...props }: TreeViewProps) {
+export function TreeView({ nodes, selectedId, defaultExpandedIds = [], onNodeSelect, className, ...props }: TreeViewProps) {
   const [expanded, setExpanded] = React.useState(() => new Set(defaultExpandedIds));
   const toggle = (id: string) => setExpanded((current) => { const next = new Set(current); next.has(id) ? next.delete(id) : next.add(id); return next; });
   const renderNodes = (items: TreeNode[], level: number) => items.map((node) => {
@@ -28,7 +28,7 @@ export function TreeView({ nodes, selectedId, defaultExpandedIds = [], onSelect,
           type="button"
           disabled={node.disabled}
           className={cn("p-tree-row", node.id === selectedId && "p-tree-row-selected")}
-          onClick={() => onSelect?.(node.id)}
+          onClick={() => onNodeSelect?.(node.id)}
           onKeyDown={(event) => {
             if (!hasChildren) return;
             if (event.key === "ArrowRight" && !isExpanded) { event.preventDefault(); toggle(node.id); }
