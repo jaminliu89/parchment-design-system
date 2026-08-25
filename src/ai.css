@@ -1,0 +1,54 @@
+@import "./workspace.css";
+
+.p-ai-status { display: inline-flex; align-items: center; gap: 8px; min-height: 28px; color: var(--p-ink-2); font: 500 12px/1.4 var(--p-sans); }
+.p-ai-status-marker { width: 8px; height: 8px; border-radius: var(--p-pill-radius); background: var(--p-ink-3); }
+.p-ai-status-processing .p-ai-status-marker { background: var(--p-ink); animation: p-ai-pulse 1.2s ease-in-out infinite; }
+.p-ai-status-generated .p-ai-status-marker, .p-ai-status-applied .p-ai-status-marker { background: var(--p-success); }
+.p-ai-status-attention .p-ai-status-marker { background: var(--p-warning); }
+.p-ai-status-error .p-ai-status-marker { background: var(--p-error); }
+
+.p-ai-thinking { display: inline-flex; align-items: center; gap: 10px; min-height: 32px; color: var(--p-ink-3); font: 500 12px/1.4 var(--p-sans); }
+.p-ai-thinking-bar { width: 48px; height: 4px; overflow: hidden; border-radius: var(--p-pill-radius); background: var(--p-surface-muted); position: relative; }
+.p-ai-thinking-bar::after { content: ""; position: absolute; inset-block: 0; width: 45%; background: var(--p-ink); animation: p-ai-slide 1.1s ease-in-out infinite; }
+
+.p-ai-message { border: 1px solid var(--p-line); border-radius: var(--p-surface-radius); background: var(--p-surface); padding: 16px; }
+.p-ai-message-user { background: var(--p-surface-muted); }
+.p-ai-message-system { border-style: dashed; }
+.p-ai-message-meta { margin-bottom: 8px; color: var(--p-ink-3); font: 500 11px/1.4 var(--p-mono); }
+.p-ai-message-content { color: var(--p-ink); font: 400 14px/1.65 var(--p-sans); }
+
+.p-ai-tool-call { border: 1px solid var(--p-line); border-radius: var(--p-control-radius); background: var(--p-surface); overflow: hidden; }
+.p-ai-tool-call-head { display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 12px; }
+.p-ai-tool-call-marker { width: 7px; height: 7px; border-radius: var(--p-pill-radius); background: var(--p-ink-3); }
+.p-ai-tool-call-running .p-ai-tool-call-marker { background: var(--p-ink); animation: p-ai-pulse 1.2s ease-in-out infinite; }
+.p-ai-tool-call-success .p-ai-tool-call-marker { background: var(--p-success); }
+.p-ai-tool-call-error .p-ai-tool-call-marker { background: var(--p-error); }
+.p-ai-tool-call-name { flex: 1; min-width: 0; color: var(--p-ink); font: 500 12px/1.4 var(--p-mono); }
+.p-ai-tool-call-state { color: var(--p-ink-3); font: 500 11px/1.4 var(--p-mono); }
+.p-ai-tool-call-detail { padding: 10px 12px; border-top: 1px solid var(--p-line-subtle); color: var(--p-ink-2); font: 400 12px/1.55 var(--p-mono); }
+
+.p-ai-approval { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 16px; border: 1px solid var(--p-line); border-radius: var(--p-surface-radius); background: var(--p-surface-raised); }
+.p-ai-approval-copy { min-width: 0; }
+.p-ai-approval-title { color: var(--p-ink); font: 600 13px/1.4 var(--p-sans); }
+.p-ai-approval-description { margin-top: 4px; color: var(--p-ink-3); font: 400 12px/1.5 var(--p-sans); }
+.p-ai-approval-actions { display: inline-flex; align-items: center; gap: 8px; flex: 0 0 auto; }
+
+.p-ai-citation { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 6px; color: var(--p-ink-2); text-decoration: none; border-bottom: 1px solid var(--p-line); }
+.p-ai-citation:hover { color: var(--p-ink); border-color: var(--p-ink-3); }
+.p-ai-citation-source { font: 600 12px/1.4 var(--p-sans); }
+.p-ai-citation-meta { color: var(--p-ink-3); font: 500 11px/1.4 var(--p-mono); }
+.p-ai-citation-detail { width: 100%; color: var(--p-ink-3); font: 400 12px/1.5 var(--p-sans); }
+
+@keyframes p-ai-pulse { 50% { opacity: 0.35; } }
+@keyframes p-ai-slide { from { transform: translateX(-120%); } to { transform: translateX(220%); } }
+
+@media (max-width: 640px) {
+  .p-ai-approval { flex-direction: column; }
+  .p-ai-approval-actions { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p-ai-status-processing .p-ai-status-marker,
+  .p-ai-thinking-bar::after,
+  .p-ai-tool-call-running .p-ai-tool-call-marker { animation: none; }
+}
