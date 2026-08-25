@@ -1,8 +1,20 @@
 {
   "name": "parchment-design-system",
   "version": "4.0.0",
-  "private": true,
+  "private": false,
   "description": "Black & White Editorial UI system for creator tools and AI workspaces.",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist", "registry.json", "README.md", "docs/INSTALL.md", "docs/MIGRATION.md"],
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js", "require": "./dist/index.cjs" },
+    "./components": { "types": "./dist/components.d.ts", "import": "./dist/components.js", "require": "./dist/components.cjs" },
+    "./patterns": { "types": "./dist/patterns.d.ts", "import": "./dist/patterns.js", "require": "./dist/patterns.cjs" },
+    "./styles.css": "./dist/patterns.css",
+    "./tokens.css": "./dist/parchment.tokens.css",
+    "./registry.json": "./registry.json"
+  },
   "scripts": {
     "tokens:build": "node scripts/generate-css-vars.js",
     "tokens:check": "node scripts/generate-css-vars.js --check",
@@ -10,9 +22,16 @@
     "components:check": "node scripts/check-component-css.js && node scripts/build-components.js --check",
     "registry:check": "node scripts/check-registry.mjs",
     "typecheck": "tsc --noEmit",
+    "runtime:bundle": "tsup",
+    "styles:bundle": "node scripts/build-runtime-styles.mjs",
+    "package:build": "npm run runtime:bundle && npm run styles:bundle",
     "runtime:check": "node scripts/audit-runtime.mjs && npm run registry:check && npm run typecheck",
-    "build": "npm run tokens:build && npm run components:build && npm run typecheck",
-    "check": "npm run tokens:check && npm run components:check && npm run runtime:check"
+    "build": "npm run tokens:build && npm run components:build && npm run typecheck && npm run package:build",
+    "check": "npm run tokens:check && npm run components:check && npm run runtime:check && npm run package:build"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
@@ -29,13 +48,14 @@
     "@radix-ui/react-tooltip": "^1.2.8",
     "@tanstack/react-table": "^8.21.3",
     "cmdk": "^1.1.1",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
     "react-resizable-panels": "^3.0.6"
   },
   "devDependencies": {
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tsup": "^8.5.0",
     "typescript": "^5.9.2"
   }
 }
