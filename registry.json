@@ -37,6 +37,22 @@
     { "name": "toolbar", "type": "registry:ui", "files": [{ "path": "src/components/toolbar.tsx", "type": "registry:ui" }] },
     { "name": "view-switcher", "type": "registry:ui", "files": [{ "path": "src/components/view-switcher.tsx", "type": "registry:ui" }] },
     { "name": "property-panel", "type": "registry:ui", "files": [{ "path": "src/components/property-panel.tsx", "type": "registry:ui" }] },
-    { "name": "split-pane", "type": "registry:ui", "files": [{ "path": "src/components/split-pane.tsx", "type": "registry:ui" }] }
+    { "name": "split-pane", "type": "registry:ui", "files": [{ "path": "src/components/split-pane.tsx", "type": "registry:ui" }] },
+    { "name": "command-palette", "type": "registry:ui", "dependencies": ["cmdk"], "registryDependencies": ["dialog"], "files": [{ "path": "src/components/command-palette.tsx", "type": "registry:ui" }] },
+    { "name": "data-table", "type": "registry:ui", "dependencies": ["@tanstack/react-table"], "files": [{ "path": "src/components/data-table.tsx", "type": "registry:ui" }] },
+    { "name": "resizable-panel", "type": "registry:ui", "dependencies": ["react-resizable-panels"], "files": [{ "path": "src/components/resizable-panel.tsx", "type": "registry:ui" }] },
+    { "name": "combobox", "type": "registry:ui", "registryDependencies": ["input"], "files": [{ "path": "src/components/combobox.tsx", "type": "registry:ui" }] },
+    { "name": "tree-view", "type": "registry:ui", "files": [{ "path": "src/components/tree-view.tsx", "type": "registry:ui" }] },
+    { "name": "ai-status", "type": "registry:ui", "files": [{ "path": "src/components/ai-status.tsx", "type": "registry:ui" }] },
+    { "name": "ai-thinking", "type": "registry:ui", "files": [{ "path": "src/components/ai-thinking.tsx", "type": "registry:ui" }] },
+    { "name": "ai-message", "type": "registry:ui", "files": [{ "path": "src/components/ai-message.tsx", "type": "registry:ui" }] },
+    { "name": "ai-tool-call", "type": "registry:ui", "files": [{ "path": "src/components/ai-tool-call.tsx", "type": "registry:ui" }] },
+    { "name": "ai-approval", "type": "registry:ui", "files": [{ "path": "src/components/ai-approval.tsx", "type": "registry:ui" }] },
+    { "name": "ai-citation", "type": "registry:ui", "files": [{ "path": "src/components/ai-citation.tsx", "type": "registry:ui" }] },
+    { "name": "ai-diff", "type": "registry:ui", "files": [{ "path": "src/components/ai-diff.tsx", "type": "registry:ui" }] },
+    { "name": "ai-conflict", "type": "registry:ui", "files": [{ "path": "src/components/ai-conflict.tsx", "type": "registry:ui" }] },
+    { "name": "ai-artifact", "type": "registry:ui", "files": [{ "path": "src/components/ai-artifact.tsx", "type": "registry:ui" }] },
+    { "name": "ai-confidence", "type": "registry:ui", "files": [{ "path": "src/components/ai-confidence.tsx", "type": "registry:ui" }] },
+    { "name": "ai-error", "type": "registry:ui", "files": [{ "path": "src/components/ai-error.tsx", "type": "registry:ui" }] }
   ]
 }
