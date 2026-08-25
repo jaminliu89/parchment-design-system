@@ -2,14 +2,14 @@
 
 ## Current execution pointer
 
-**P2 — Component Runtime 1.0. IN PROGRESS.**
+**P2 — Component Runtime 1.0 / Workspace foundation. IN PROGRESS.**
 
 ## Product/version contract
 
 - Product: **Parchment**
 - Current design language: **Parchment 4.0 · Black & White Editorial**
 - Runtime architecture program: **Component Runtime 1.0 / UI OS v2 foundation**
-- Current release status: **Specification + token runtime + CSS primitives ready / Core 30 React runtime implemented at alpha maturity**
+- Current release status: **Specification + token runtime + CSS primitives ready / Core 30 + first Workspace primitives implemented**
 - Reference consumers such as Creator OS validate Parchment; they do not own or fork Parchment component contracts.
 
 ## P0 — Canonical cleanup
@@ -89,14 +89,18 @@ No component advances to `stable` before automated keyboard/state evidence, resp
 
 ### Workspace component family
 
-- [ ] SidebarNav
-- [ ] Toolbar
+- [x] SidebarNav
+- [x] Toolbar
 - [ ] CommandPalette
 - [ ] TreeView / FileTree
-- [ ] SplitPane / ResizablePanel
-- [ ] Inspector / PropertyPanel
-- [ ] ListView / GridView / ViewSwitcher
+- [x] SplitPane layout primitive
+- [ ] ResizablePanel interaction behavior
+- [x] PropertyPanel
+- [x] ViewSwitcher
+- [ ] ListView / GridView
 - [ ] AssetBrowser primitives
+
+Workspace rule: structural layout primitives may ship at `alpha`/`experimental`, but interaction-rich components such as CommandPalette, TreeView and ResizablePanel must not claim completion until keyboard/focus/drag semantics are implemented and tested.
 
 ### AI-native component family
 
