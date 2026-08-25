@@ -2,14 +2,14 @@
 
 ## Current execution pointer
 
-**P2 — Component Runtime 1.0 / Workspace + AI-native checkpoint. IN PROGRESS.**
+**P3 — Pattern Engine / first official product patterns. IN PROGRESS.**
 
 ## Product/version contract
 
 - Product: **Parchment**
 - Current design language: **Parchment 4.0 · Black & White Editorial**
 - Runtime architecture program: **Component Runtime 1.0 / UI OS v2 foundation**
-- Current release status: **51 registry items across Core, Workspace and AI-native runtime; advanced interaction components are alpha/experimental pending automated evidence**
+- Current release status: **61 registry items: Core + Workspace + AI-native runtime + first 10 product Patterns**
 - Reference consumers such as Creator OS validate Parchment; they do not own or fork Parchment component contracts.
 
 ## P0 — Canonical cleanup
@@ -91,23 +91,32 @@ Parchment represents AI through workflow state and semantics, not a decorative A
 
 ## P3 — Pattern engine
 
-Pattern admission requires stable semantics across multiple real workflows.
+Pattern admission requires stable semantics across multiple real workflows. `docs/PATTERN-CONTRACTS.md` is the canonical usage/admission contract.
 
-- [ ] AppShell
-- [ ] PageHeader
-- [ ] Section
-- [ ] ListItem
+### First official Pattern set
+
+- [x] AppShell
+- [x] PageHeader
+- [x] Section
+- [x] ListItem
+- [x] FormField
+- [x] EmptyState
+- [x] EditorShell
+- [x] InspectorLayout
+- [x] AssetLibrary
+- [x] AIWorkspace
+
+These patterns are implemented and registry-published but remain `alpha`/`experimental` until multi-workflow reference validation and visual/accessibility evidence are complete.
+
+### Remaining Pattern set
+
 - [ ] PropertyList
-- [ ] FormField
-- [ ] EmptyState
 - [ ] Loading/Error/Retry flow
 - [ ] AI State Bar
-- [ ] EditorShell
-- [ ] InspectorLayout
-- [ ] AssetLibrary
-- [ ] AIWorkspace
 - [ ] SettingsSection
-- [ ] Responsive workspace patterns
+- [ ] Search/Command workspace
+- [ ] Review/Approval workspace
+- [ ] Responsive workspace pattern evidence
 
 ## P4 — Reference validation
 
@@ -120,7 +129,7 @@ Pattern admission requires stable semantics across multiple real workflows.
 
 - [ ] Registry/install guide
 - [ ] Migration guide
-- [ ] Component showcase/playground
+- [ ] Component + Pattern showcase/playground
 - [ ] Accessibility evidence
 - [ ] Release checklist green
 - [ ] Parchment Component Runtime 1.0 release
@@ -129,11 +138,12 @@ Pattern admission requires stable semantics across multiple real workflows.
 
 1. Parchment is the source of truth for tokens, interaction contracts, reusable components and cross-product patterns.
 2. Products may compose Parchment but must not fork palette, state models, icon geometry or accessibility behavior.
-3. Generic semantic components do not require three-page reuse evidence; Patterns do.
+3. Generic semantic components do not require three-page reuse evidence; Patterns do require multi-workflow validation before `stable`.
 4. Raw visual values belong to tokens/CSS. Dynamic geometry may use runtime CSS variables only when unavoidable.
 5. Text/emoji glyphs may not substitute for product icons.
 6. Stateful widgets must implement or delegate WAI-ARIA keyboard/focus behavior and carry automated evidence before `stable`.
-7. Maturity levels: `experimental → alpha → beta → stable → deprecated`.
+7. Patterns own layout/composition semantics, never product-specific data fetching or business state machines.
+8. Maturity levels: `experimental → alpha → beta → stable → deprecated`.
 
 ## Execution protocol
 
