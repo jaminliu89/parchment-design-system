@@ -5,13 +5,13 @@ export type AlertTone = "default" | "success" | "warning" | "error";
 
 export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
   tone?: AlertTone;
-  title?: React.ReactNode;
+  heading?: React.ReactNode;
 }
 
-export function Alert({ tone = "default", title, className, children, ...props }: AlertProps) {
+export function Alert({ tone = "default", heading, className, children, ...props }: AlertProps) {
   return (
     <div role={tone === "error" ? "alert" : "status"} className={cn("p-alert", `p-alert-${tone}`, className)} {...props}>
-      {title ? <div className="p-alert-title">{title}</div> : null}
+      {heading ? <div className="p-alert-title">{heading}</div> : null}
       <div className="p-alert-content">{children}</div>
     </div>
   );
