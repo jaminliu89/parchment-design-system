@@ -8,8 +8,9 @@
     "tokens:check": "node scripts/generate-css-vars.js --check",
     "components:build": "node scripts/build-components.js",
     "components:check": "node scripts/check-component-css.js && node scripts/build-components.js --check",
+    "registry:check": "node scripts/check-registry.mjs",
     "typecheck": "tsc --noEmit",
-    "runtime:check": "node scripts/audit-runtime.mjs && npm run typecheck",
+    "runtime:check": "node scripts/audit-runtime.mjs && npm run registry:check && npm run typecheck",
     "build": "npm run tokens:build && npm run components:build && npm run typecheck",
     "check": "npm run tokens:check && npm run components:check && npm run runtime:check"
   },
