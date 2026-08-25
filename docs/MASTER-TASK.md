@@ -9,7 +9,7 @@
 - Product: **Parchment**
 - Current design language: **Parchment 4.0 · Black & White Editorial**
 - Runtime architecture program: **Component Runtime 1.0 / UI OS v2 foundation**
-- Current release status: **Specification + token runtime + CSS primitives ready / React accessible runtime in progress**
+- Current release status: **Specification + token runtime + CSS primitives ready / Core 30 React runtime implemented at alpha maturity**
 - Reference consumers such as Creator OS validate Parchment; they do not own or fork Parchment component contracts.
 
 ## P0 — Canonical cleanup
@@ -41,8 +41,10 @@
 - [x] Establish Radix headless behavior adapter for stateful widgets
 - [x] Add runtime stylesheet that consumes Parchment variables instead of product-local visual values
 - [x] Add runtime audit gate forbidding raw visual hex in React components
+- [x] Add runtime audit gate forbidding text/emoji glyphs as product icon substitutes
 - [x] Add strict TypeScript declaration contract
 - [x] Add root `registry.json` compatible with current shadcn registry schema
+- [x] Add registry integrity gate for names, metadata and file existence
 - [x] Add component maturity inventory (`docs/COMPONENT-MATURITY.md`)
 - [ ] Story/showcase harness
 - [ ] State matrix, keyboard tests and visual regression tests
@@ -59,28 +61,29 @@
 
 Golden 6 validates the full chain: token → CSS primitive → accessible/headless behavior → React API → runtime skin → consumer integration. Remaining components must follow the same contract rather than invent local APIs.
 
-### Core component families
+### Core 30 checkpoint
 
-- [ ] Controls: IconButton, Toggle, ToggleGroup, SegmentedControl, Slider
-- [x] Forms: Textarea
-- [ ] Forms remaining: Field, Label, HelpText, ErrorText, NumberInput, SearchInput, PasswordInput
-- [x] Selection: Checkbox, RadioGroup, Switch
-- [ ] Selection remaining: Combobox, TagsInput
-- [ ] Navigation: Breadcrumb, Pagination, Stepper, NavigationMenu
-- [x] Overlays: Tooltip, Popover, DropdownMenu
-- [ ] Overlays remaining: ContextMenu, AlertDialog, Drawer/Sheet
-- [x] Feedback: Badge, Alert/Callout, Spinner, Progress, Skeleton
-- [ ] Feedback remaining: Toast, StatusIndicator
-- [x] Data display: Separator
-- [ ] Data display remaining: Avatar, DataTable, KeyValue, Stat, Timeline, CodeBlock, Kbd
-- [x] Disclosure/editing: Accordion
-- [ ] Disclosure/editing remaining: Collapsible, InlineEditor
+Implemented at `alpha` maturity:
 
-### Runtime inventory checkpoint
+- Controls: Button, IconButton
+- Forms: Input, SearchInput, Textarea, Field
+- Selection: Select, Checkbox, RadioGroup, Switch
+- Surfaces/display: Card, Badge, StatusIndicator, Avatar, Separator, KeyValue, Kbd
+- Navigation: Tabs, Breadcrumb, Pagination
+- Overlays: Dialog, Tooltip, Popover, DropdownMenu
+- Disclosure: Accordion, Collapsible
+- Feedback: Progress, Spinner, Skeleton, Alert
 
-**20 component exports / component families are now implemented at `alpha` maturity.**
+### Remaining Core component families
 
-Implemented: Button, Input, Textarea, Select, Checkbox, RadioGroup, Switch, Card, Badge, Tabs, Dialog, Tooltip, Popover, DropdownMenu, Accordion, Separator, Progress, Spinner, Skeleton, Alert.
+- [ ] Controls: Toggle, ToggleGroup, SegmentedControl, Slider
+- [ ] Forms: NumberInput, PasswordInput
+- [ ] Selection: Combobox, TagsInput
+- [ ] Navigation: Stepper, NavigationMenu
+- [ ] Overlays: ContextMenu, AlertDialog, Drawer/Sheet
+- [ ] Feedback: Toast
+- [ ] Data display: DataTable, Stat, Timeline, CodeBlock
+- [ ] Editing: InlineEditor
 
 No component advances to `stable` before automated keyboard/state evidence, responsive behavior and visual regression are green.
 
@@ -154,8 +157,9 @@ Pattern admission requires stable semantics across multiple real workflows. Comp
 3. A semantic primitive/component enters the library when its interaction contract is generic and stable; it does not need three-page reuse evidence.
 4. A Pattern enters the official layer only when it survives multiple real workflow contexts without product-specific branching.
 5. Raw visual values are forbidden in React components; visual decisions belong to tokens/CSS runtime. Dynamic geometry may be expressed through runtime variables when unavoidable, but visual values remain token-owned.
-6. Every stateful widget must delegate or implement the correct WAI-ARIA keyboard/focus behavior and carry test evidence before stable maturity.
-7. Maturity levels: `experimental → alpha → beta → stable → deprecated`.
+6. Text/emoji glyphs may not substitute for product icons. Icon geometry remains governed by the Parchment icon contract.
+7. Every stateful widget must delegate or implement the correct WAI-ARIA keyboard/focus behavior and carry test evidence before stable maturity.
+8. Maturity levels: `experimental → alpha → beta → stable → deprecated`.
 
 ## Execution protocol
 
