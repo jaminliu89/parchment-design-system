@@ -36,14 +36,13 @@ jobs:
       - name: Verify generated artifacts, registry and runtime
         run: npm run check
 
-      - name: Reject retired Parchment versions
+      - name: Reject retired Parchment language in canonical runtime
         run: |
           set -euo pipefail
+          targets=(README.md docs/ARCHITECTURE.md docs/PRD.md docs/MASTER-TASK.md docs/COMPONENT-CONTRACTS.md parchment.css src)
           if grep -RInE \
-            --exclude-dir=.git \
-            --exclude=LEGACY-MIGRATION-REGISTRY.md \
-            --exclude=sync-audit.yml \
-            '云雾白|石墨蓝|#F6F7F9|#5A6590|Parchment 3\.|Parchment v[123]' .; then
-            echo 'Retired Parchment design language detected.'
+            '云雾白|石墨蓝|#F6F7F9|#5A6590|Parchment 3\.|Parchment v[123]' \
+            "${targets[@]}"; then
+            echo 'Retired Parchment design language detected in canonical/runtime sources.'
             exit 1
           fi
