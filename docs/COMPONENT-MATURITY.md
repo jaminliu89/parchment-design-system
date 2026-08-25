@@ -18,7 +18,7 @@ Maturity is evidence-based, not age-based.
 | SearchInput | alpha | Input | injectable icon; clear action semantic |
 | Textarea | alpha | native | error/disabled/readonly contract |
 | Field | alpha | native | label/help/error semantic composition |
-| Select | alpha | Radix Select | keyboard/focus behavior delegated |
+| Select | alpha | Radix Select | keyboard/focus behavior delegated; CSS geometry indicators |
 | Checkbox | alpha | Radix Checkbox | checked/indeterminate/disabled; no glyph icons |
 | RadioGroup | alpha | Radix Radio Group | roving keyboard behavior delegated |
 | Switch | alpha | Radix Switch | checked/disabled/focus |
@@ -42,12 +42,18 @@ Maturity is evidence-based, not age-based.
 | Pagination | alpha | native nav/button | current-page semantics |
 | Kbd | alpha | native kbd | keyboard hint primitive |
 | KeyValue | alpha | native dl/dt/dd | responsive metadata display |
+| SidebarNav | alpha | native nav/button | active-page semantics; icons injected |
+| Toolbar | alpha | native ARIA toolbar/group | grouping contract; roving focus not yet added |
+| ViewSwitcher | alpha | native pressed buttons | exclusive-view behavior remains consumer-controlled |
+| PropertyPanel | alpha | native aside/section | inspector structure and responsive collapse styling |
+| SplitPane | experimental | native separator/layout | layout primitive only; drag-resize behavior intentionally not claimed |
 
 ## Current checkpoint
 
-- 30 source-registry items.
+- 30 Core source-registry items plus first 5 Workspace primitives.
 - Runtime source audit checks raw visual hex and forbidden icon glyph substitutions.
 - Registry integrity gate checks duplicate names, file metadata and source-file existence.
 - Components remain `alpha` until automated keyboard/state tests and visual-regression evidence exist.
+- Workspace components with incomplete interaction semantics remain `experimental` rather than overstating maturity.
 
 No component may advance to `stable` until automated interaction and visual evidence exists.
