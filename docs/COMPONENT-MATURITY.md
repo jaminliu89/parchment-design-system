@@ -47,13 +47,20 @@ Maturity is evidence-based, not age-based.
 | ViewSwitcher | alpha | native pressed buttons | exclusive-view behavior remains consumer-controlled |
 | PropertyPanel | alpha | native aside/section | inspector structure and responsive collapse styling |
 | SplitPane | experimental | native separator/layout | layout primitive only; drag-resize behavior intentionally not claimed |
+| AIStatus | alpha | native live region | semantic AI lifecycle states without decorative AI color family |
+| AIThinking | alpha | native live region | processing semantics + reduced-motion behavior |
+| AIMessage | alpha | native article | assistant/user/system content roles |
+| AIToolCall | alpha | native group | queued/running/success/error semantics |
+| AIApproval | alpha | native labelled section | explicit human-review action surface; instance-safe labeling |
+| AICitation | alpha | native anchor | source/meta/detail evidence primitive |
 
 ## Current checkpoint
 
-- 30 Core source-registry items plus first 5 Workspace primitives.
+- 30 Core registry items, 5 Workspace registry items and 6 AI-native source components.
 - Runtime source audit checks raw visual hex and forbidden icon glyph substitutions.
 - Registry integrity gate checks duplicate names, file metadata and source-file existence.
 - Components remain `alpha` until automated keyboard/state tests and visual-regression evidence exist.
 - Workspace components with incomplete interaction semantics remain `experimental` rather than overstating maturity.
+- AI-native components must communicate state through semantics/structure and never through color alone.
 
 No component may advance to `stable` until automated interaction and visual evidence exists.
