@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "parchment",
+  "homepage": "https://github.com/jaminliu89/parchment-design-system",
+  "items": [
+    { "name": "button", "type": "registry:ui", "files": [{ "path": "src/components/button.tsx", "type": "registry:ui" }] },
+    { "name": "input", "type": "registry:ui", "files": [{ "path": "src/components/input.tsx", "type": "registry:ui" }] },
+    { "name": "textarea", "type": "registry:ui", "files": [{ "path": "src/components/textarea.tsx", "type": "registry:ui" }] },
+    { "name": "select", "type": "registry:ui", "dependencies": ["@radix-ui/react-select"], "files": [{ "path": "src/components/select.tsx", "type": "registry:ui" }] },
+    { "name": "checkbox", "type": "registry:ui", "dependencies": ["@radix-ui/react-checkbox"], "files": [{ "path": "src/components/checkbox.tsx", "type": "registry:ui" }] },
+    { "name": "radio-group", "type": "registry:ui", "dependencies": ["@radix-ui/react-radio-group"], "files": [{ "path": "src/components/radio-group.tsx", "type": "registry:ui" }] },
+    { "name": "switch", "type": "registry:ui", "dependencies": ["@radix-ui/react-switch"], "files": [{ "path": "src/components/switch.tsx", "type": "registry:ui" }] },
+    { "name": "card", "type": "registry:ui", "files": [{ "path": "src/components/card.tsx", "type": "registry:ui" }] },
+    { "name": "badge", "type": "registry:ui", "files": [{ "path": "src/components/badge.tsx", "type": "registry:ui" }] },
+    { "name": "tabs", "type": "registry:ui", "dependencies": ["@radix-ui/react-tabs"], "files": [{ "path": "src/components/tabs.tsx", "type": "registry:ui" }] },
+    { "name": "dialog", "type": "registry:ui", "dependencies": ["@radix-ui/react-dialog"], "files": [{ "path": "src/components/dialog.tsx", "type": "registry:ui" }] },
+    { "name": "tooltip", "type": "registry:ui", "dependencies": ["@radix-ui/react-tooltip"], "files": [{ "path": "src/components/tooltip.tsx", "type": "registry:ui" }] },
+    { "name": "popover", "type": "registry:ui", "dependencies": ["@radix-ui/react-popover"], "files": [{ "path": "src/components/popover.tsx", "type": "registry:ui" }] },
+    { "name": "dropdown-menu", "type": "registry:ui", "dependencies": ["@radix-ui/react-dropdown-menu"], "files": [{ "path": "src/components/dropdown-menu.tsx", "type": "registry:ui" }] },
+    { "name": "accordion", "type": "registry:ui", "dependencies": ["@radix-ui/react-accordion"], "files": [{ "path": "src/components/accordion.tsx", "type": "registry:ui" }] },
+    { "name": "separator", "type": "registry:ui", "files": [{ "path": "src/components/separator.tsx", "type": "registry:ui" }] },
+    { "name": "progress", "type": "registry:ui", "files": [{ "path": "src/components/progress.tsx", "type": "registry:ui" }] },
+    { "name": "spinner", "type": "registry:ui", "files": [{ "path": "src/components/spinner.tsx", "type": "registry:ui" }] },
+    { "name": "skeleton", "type": "registry:ui", "files": [{ "path": "src/components/skeleton.tsx", "type": "registry:ui" }] },
+    { "name": "alert", "type": "registry:ui", "files": [{ "path": "src/components/alert.tsx", "type": "registry:ui" }] }
+  ]
+}
