@@ -42,7 +42,8 @@
 - [x] Add runtime stylesheet that consumes Parchment variables instead of product-local visual values
 - [x] Add runtime audit gate forbidding raw visual hex in React components
 - [x] Add strict TypeScript declaration contract
-- [ ] Registry contract and shadcn-style install path
+- [x] Add root `registry.json` compatible with current shadcn registry schema
+- [x] Add component maturity inventory (`docs/COMPONENT-MATURITY.md`)
 - [ ] Story/showcase harness
 - [ ] State matrix, keyboard tests and visual regression tests
 - [ ] Package export/build pipeline and versioned release artifact
@@ -61,13 +62,27 @@ Golden 6 validates the full chain: token → CSS primitive → accessible/headle
 ### Core component families
 
 - [ ] Controls: IconButton, Toggle, ToggleGroup, SegmentedControl, Slider
-- [ ] Forms: Textarea, Field, Label, HelpText, ErrorText, NumberInput, SearchInput, PasswordInput
-- [ ] Selection: Checkbox, RadioGroup, Switch, Combobox, TagsInput
+- [x] Forms: Textarea
+- [ ] Forms remaining: Field, Label, HelpText, ErrorText, NumberInput, SearchInput, PasswordInput
+- [x] Selection: Checkbox, RadioGroup, Switch
+- [ ] Selection remaining: Combobox, TagsInput
 - [ ] Navigation: Breadcrumb, Pagination, Stepper, NavigationMenu
-- [ ] Overlays: Tooltip, Popover, DropdownMenu, ContextMenu, AlertDialog, Drawer/Sheet
-- [ ] Feedback: Badge, Alert/Callout, Toast, Spinner, Progress, Skeleton, StatusIndicator
-- [ ] Data display: Avatar, Separator, DataTable, KeyValue, Stat, Timeline, CodeBlock, Kbd
-- [ ] Disclosure/editing: Accordion, Collapsible, InlineEditor
+- [x] Overlays: Tooltip, Popover, DropdownMenu
+- [ ] Overlays remaining: ContextMenu, AlertDialog, Drawer/Sheet
+- [x] Feedback: Badge, Alert/Callout, Spinner, Progress, Skeleton
+- [ ] Feedback remaining: Toast, StatusIndicator
+- [x] Data display: Separator
+- [ ] Data display remaining: Avatar, DataTable, KeyValue, Stat, Timeline, CodeBlock, Kbd
+- [x] Disclosure/editing: Accordion
+- [ ] Disclosure/editing remaining: Collapsible, InlineEditor
+
+### Runtime inventory checkpoint
+
+**20 component exports / component families are now implemented at `alpha` maturity.**
+
+Implemented: Button, Input, Textarea, Select, Checkbox, RadioGroup, Switch, Card, Badge, Tabs, Dialog, Tooltip, Popover, DropdownMenu, Accordion, Separator, Progress, Spinner, Skeleton, Alert.
+
+No component advances to `stable` before automated keyboard/state evidence, responsive behavior and visual regression are green.
 
 ### Workspace component family
 
@@ -138,7 +153,7 @@ Pattern admission requires stable semantics across multiple real workflows. Comp
 2. Products may compose Parchment but must not fork its palette, component state model, icon geometry or accessibility behavior.
 3. A semantic primitive/component enters the library when its interaction contract is generic and stable; it does not need three-page reuse evidence.
 4. A Pattern enters the official layer only when it survives multiple real workflow contexts without product-specific branching.
-5. Raw visual values are forbidden in React components; visual decisions belong to tokens/CSS runtime.
+5. Raw visual values are forbidden in React components; visual decisions belong to tokens/CSS runtime. Dynamic geometry may be expressed through runtime variables when unavoidable, but visual values remain token-owned.
 6. Every stateful widget must delegate or implement the correct WAI-ARIA keyboard/focus behavior and carry test evidence before stable maturity.
 7. Maturity levels: `experimental → alpha → beta → stable → deprecated`.
 
