@@ -22,10 +22,11 @@
     "components:check": "node scripts/check-component-css.js && node scripts/build-components.js --check",
     "registry:check": "node scripts/check-registry.mjs",
     "typecheck": "tsc --noEmit",
+    "test": "vitest run",
     "runtime:bundle": "tsup",
     "styles:bundle": "node scripts/build-runtime-styles.mjs",
     "package:build": "npm run runtime:bundle && npm run styles:bundle",
-    "runtime:check": "node scripts/audit-runtime.mjs && npm run registry:check && npm run typecheck",
+    "runtime:check": "node scripts/audit-runtime.mjs && npm run registry:check && npm run typecheck && npm test",
     "build": "npm run tokens:build && npm run components:build && npm run typecheck && npm run package:build",
     "check": "npm run tokens:check && npm run components:check && npm run runtime:check && npm run package:build"
   },
@@ -51,11 +52,17 @@
     "react-resizable-panels": "^3.0.6"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.4",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
+    "axe-core": "^4.10.3",
+    "jsdom": "^26.1.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "tsup": "^8.5.0",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
   }
 }
