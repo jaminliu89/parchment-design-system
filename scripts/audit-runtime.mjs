@@ -4,6 +4,7 @@ import path from "node:path";
 const root = path.resolve("src/components");
 const files = fs.readdirSync(root).filter((name) => /\.(ts|tsx)$/.test(name));
 const errors = [];
+const forbiddenIconGlyphs = /[✓✔✕✖×⌕🔍🔎→←↑↓▶◀▲▼⋮⋯]/g;
 
 for (const file of files) {
   const full = path.join(root, file);
@@ -11,6 +12,9 @@ for (const file of files) {
 
   const rawHex = source.match(/#[0-9a-fA-F]{3,8}\b/g);
   if (rawHex) errors.push(`${file}: raw hex values are forbidden (${rawHex.join(", ")})`);
+
+  const glyphs = source.match(forbiddenIconGlyphs);
+  if (glyphs) errors.push(`${file}: text/emoji glyphs may not substitute for product icons (${[...new Set(glyphs)].join(", ")})`);
 
   if (file.endsWith(".tsx") && !/className=|Primitive\./.test(source)) {
     errors.push(`${file}: component has no Parchment class or headless primitive binding`);
