@@ -2,17 +2,54 @@
 
 > **Black & White Editorial UI system for creator tools and AI workspaces.**
 
-Parchment is the design and interaction system for creator tools and AI workspaces. Its canonical language is white space, black typography and primary actions, restrained structural grays, one icon geometry, semantic AI states and quiet chrome.
+Parchment is the design, interaction and component system for creator tools and AI workspaces. Its canonical language is white space, black typography and primary actions, restrained structural grays, one icon geometry, semantic AI states and quiet chrome.
 
-**Current status:** Specification ready · Token runtime available · CSS component primitives available · Accessible behavior engine in progress.
+**Current status:** Specification ready · Token runtime available · CSS primitives available · **React Component Runtime 1.0 in progress (Golden 6 implemented).**
+
+## Runtime architecture
+
+Parchment is the source of truth. Product applications are reference consumers, not temporary owners of reusable component contracts.
+
+```
+Design principles
+        ↓
+Design tokens
+        ↓
+CSS / layout primitives
+        ↓
+Accessible headless behavior (Radix where appropriate)
+        ↓
+React + TypeScript components
+        ↓
+Workspace + AI-native patterns
+        ↓
+Reference consumers
+        ↓
+Quality evidence fed back into Parchment
+```
+
+### Golden 6 runtime components
+
+The first contract-validation set is implemented under `src/components/`:
+
+- Button
+- Input
+- Select
+- Dialog
+- Tabs
+- Card
+
+These are not a separate visual system. They consume the existing Parchment CSS/token language and add framework API, state ownership and accessible interaction behavior.
+
+Import runtime styles with `src/runtime.css` while the package export pipeline is being finalized.
 
 ## Multi-theme variants
 
-Parchment 4.0 is a **monochrome editorial** system by default. Theme variants are available for warmer / commercial visual identities:
+Parchment 4.0 is a **monochrome editorial** system by default. Theme variants may provide warmer or commercial identities without forking component behavior.
 
 | Theme | Signal accent | Tone | Use case |
 |---|---|---|---|
-| Parchment (default, 4.0) | `#000000` black | Pure B&W editorial | Creator OS, writing, editorial |
+| Parchment (default, 4.0) | `#000000` black | Pure B&W editorial | Creator tools, writing, editorial |
 | NovelAgent | `#2E3A52` muted navy | Warm canvas + navy accent | Commercial tools, professional writing OS |
 
 See `docs/THEME-ARCHITECTURE.md` for the full theme contract and `parchment-theme-preview.html` for a live side-by-side comparison.
@@ -21,9 +58,10 @@ See `docs/THEME-ARCHITECTURE.md` for the full theme contract and `parchment-them
 
 1. `docs/MASTER-TASK.md` — execution order and release status.
 2. `docs/PRD.md` — product and governance contract.
-3. `parchment.v3.tokens.json` — canonical machine-readable tokens.
+3. `parchment.v3.tokens.json` — canonical machine-readable tokens until the non-breaking 4.0 artifact rename.
 4. `docs/ARCHITECTURE.md` — layer boundaries and consumption rules.
 5. `docs/COMPONENT-CONTRACTS.md`, `docs/CONTENT-AND-STATES.md` and `docs/GOVERNANCE.md` — behavior, content and lifecycle contracts.
+6. `src/components/` — framework runtime implementation, subordinate to the contracts above.
 
 ## Visual contract
 
@@ -36,33 +74,36 @@ See `docs/THEME-ARCHITECTURE.md` for the full theme contract and `parchment-them
 - Controls use 8px radius; surfaces use 12px radius.
 - Pills are semantic status only; circles are exceptional, not generic icon containers.
 - Content > label > icon > chrome.
-- No emoji/text glyphs as product icons; no mixed filled/outline icon sets.
+- No emoji/text glyphs as product icons in stable components.
 - AI is behavior/state, not a permanent visual theme.
 - Minimum interactive target: 44px; visible focus; reduced-motion support.
 
-## Role hierarchy
+## Component governance
 
-`App Shell → Navigation → Header → Toolbar → Content → Transcript/Voice → AI → Inspector → Dialog → Empty/Loading/Error → Responsive`
+A semantic component is admitted when its interaction contract is generic and stable; it does not need arbitrary page-count reuse evidence. Patterns require evidence across multiple workflows before promotion.
 
-## Source files
+Maturity is explicit: `experimental → alpha → beta → stable → deprecated`.
 
-- `parchment.v3.tokens.json` — canonical tokens.
-- `parchment-preview.html` — primary visual preview.
-- `parchment-role-lab.html` — role/component walkthrough.
-- `parchment-theme-preview.html` — side-by-side theme comparison.
-- `parchment.theme-novelagent.tokens.json` — NovelAgent theme tokens.
-- `dist/theme-novelagent.css` — NovelAgent runtime CSS.
-- `docs/QUALITY-GATE.md` — visual, interaction and release gate.
-- `docs/ICONOGRAPHY.md` — iconography contract.
-- `docs/THEME-ARCHITECTURE.md` — theme contract and adding new themes.
+React components may not invent raw visual hex values. Visual decisions belong to the token/CSS runtime. Stateful widgets must provide WAI-ARIA keyboard/focus behavior and test evidence before reaching stable maturity.
+
+## Planned families
+
+Beyond the Golden 6, the runtime program is organized into four governed families:
+
+- **Core UI:** controls, forms, selection, navigation, overlays, feedback, data display and disclosure.
+- **Workspace:** sidebar, toolbar, command palette, tree/file navigation, split panes, inspector/property panels, list/grid views and asset-browser primitives.
+- **AI-native:** thinking, streaming, response, artifact, tool call, approval, diff, conflict, citation, confidence, regenerate and error states.
+- **Patterns:** AppShell, PageHeader, Section, FormField, EditorShell, InspectorLayout, AssetLibrary, AIWorkspace and responsive workflow compositions.
+
+The complete execution order lives in `docs/MASTER-TASK.md`.
 
 ## Definition of done
 
 A surface is ready only when it passes role-lab review at desktop/mobile and light/dark appearances; uses the same icon geometry and shape language; preserves content hierarchy without decorative chrome; and exposes AI state through semantics and structure rather than color alone.
 
-CSS classes are visual primitives, not a claim of accessible component completion. Dialog, tabs, switch and other stateful widgets still require semantic markup, keyboard behavior and runtime tests in the consuming framework.
+A framework component is ready only when its API, states, keyboard/focus behavior, token usage, TypeScript contract and quality evidence are complete. CSS selectors alone are not evidence of accessible component completion.
 
-Historical experiments are `CONSOLIDATE_THEN_DELETE`: they may not override the four sources of truth above and may be physically removed only after unique references are migrated, references reach zero and release checks pass.
+Historical experiments are `CONSOLIDATE_THEN_DELETE`: they may not override the canonical sources above and may be physically removed only after unique references are migrated, references reach zero and release checks pass.
 
 ## Surface explorations
 
