@@ -28,3 +28,8 @@ export * from "./breadcrumb";
 export * from "./pagination";
 export * from "./kbd";
 export * from "./key-value";
+export * from "./sidebar-nav";
+export * from "./toolbar";
+export * from "./view-switcher";
+export * from "./property-panel";
+export * from "./split-pane";
