@@ -32,6 +32,11 @@
     { "name": "breadcrumb", "type": "registry:ui", "files": [{ "path": "src/components/breadcrumb.tsx", "type": "registry:ui" }] },
     { "name": "pagination", "type": "registry:ui", "files": [{ "path": "src/components/pagination.tsx", "type": "registry:ui" }] },
     { "name": "kbd", "type": "registry:ui", "files": [{ "path": "src/components/kbd.tsx", "type": "registry:ui" }] },
-    { "name": "key-value", "type": "registry:ui", "files": [{ "path": "src/components/key-value.tsx", "type": "registry:ui" }] }
+    { "name": "key-value", "type": "registry:ui", "files": [{ "path": "src/components/key-value.tsx", "type": "registry:ui" }] },
+    { "name": "sidebar-nav", "type": "registry:ui", "files": [{ "path": "src/components/sidebar-nav.tsx", "type": "registry:ui" }] },
+    { "name": "toolbar", "type": "registry:ui", "files": [{ "path": "src/components/toolbar.tsx", "type": "registry:ui" }] },
+    { "name": "view-switcher", "type": "registry:ui", "files": [{ "path": "src/components/view-switcher.tsx", "type": "registry:ui" }] },
+    { "name": "property-panel", "type": "registry:ui", "files": [{ "path": "src/components/property-panel.tsx", "type": "registry:ui" }] },
+    { "name": "split-pane", "type": "registry:ui", "files": [{ "path": "src/components/split-pane.tsx", "type": "registry:ui" }] }
   ]
 }
