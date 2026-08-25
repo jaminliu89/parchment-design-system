@@ -24,11 +24,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+          cache-dependency-path: package.json
+
+      - name: Install runtime dependencies
+        run: npm install --no-audit --no-fund
 
       - name: Build
         run: npm run build
 
-      - name: Verify generated artifacts and components
+      - name: Verify generated artifacts, registry and runtime
         run: npm run check
 
       - name: Reject retired Parchment versions
