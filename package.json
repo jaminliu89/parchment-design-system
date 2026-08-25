@@ -8,7 +8,22 @@
     "tokens:check": "node scripts/generate-css-vars.js --check",
     "components:build": "node scripts/build-components.js",
     "components:check": "node scripts/check-component-css.js && node scripts/build-components.js --check",
-    "build": "npm run tokens:build && npm run components:build",
-    "check": "npm run tokens:check && npm run components:check"
+    "typecheck": "tsc --noEmit false",
+    "runtime:check": "node scripts/audit-runtime.mjs && npm run typecheck",
+    "build": "npm run tokens:build && npm run components:build && npm run typecheck",
+    "check": "npm run tokens:check && npm run components:check && npm run runtime:check"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-select": "^2.2.6",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@radix-ui/react-tabs": "^1.1.13",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "typescript": "^5.9.2"
   }
 }
