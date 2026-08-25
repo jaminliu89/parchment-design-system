@@ -10,7 +10,7 @@ export const Checkbox = React.forwardRef<React.ElementRef<typeof CheckboxPrimiti
 ) {
   return (
     <CheckboxPrimitive.Root ref={ref} className={cn("p-checkbox-root", className)} {...props}>
-      <CheckboxPrimitive.Indicator className="p-checkbox-indicator">✓</CheckboxPrimitive.Indicator>
+      <CheckboxPrimitive.Indicator className="p-checkbox-indicator"><span className="p-checkbox-mark" aria-hidden="true" /></CheckboxPrimitive.Indicator>
       {children}
     </CheckboxPrimitive.Root>
   );
