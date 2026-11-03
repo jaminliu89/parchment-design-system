@@ -20,9 +20,22 @@
   --p-surface-radius: var(--p-shape-surface, 12px);
   --p-pill-radius: var(--p-shape-pill, 999px);
   --p-control-height: var(--p-component-control-minimumHeight, 44px);
-  --p-sans: var(--p-typography-ui, Inter, "Noto Sans SC", system-ui, sans-serif);
-  --p-serif: var(--p-typography-editorial, "Instrument Serif", "Noto Serif SC", Georgia, serif);
-  --p-mono: var(--p-typography-mono, "DM Mono", ui-monospace, monospace);
+  --p-font-ui: var(--p-typography-family-ui, Inter, "Noto Sans SC", system-ui, sans-serif);
+  --p-font-display: var(--p-typography-family-display, "Instrument Serif", "Noto Serif SC", Georgia, serif);
+  --p-font-editorial: var(--p-typography-family-editorial, "Instrument Serif", "Noto Serif SC", Georgia, serif);
+  --p-font-cn-body: var(--p-typography-family-cnBody, "Noto Serif SC", "Songti SC", STSong, serif);
+  --p-font-mono: var(--p-typography-family-mono, "DM Mono", ui-monospace, monospace);
+  --p-sans: var(--p-font-ui);
+  --p-serif: var(--p-font-editorial);
+  --p-mono: var(--p-font-mono);
+  --p-band: var(--p-color-semantic-inverse, #111111);
+  --p-band-ink: var(--p-color-semantic-inverseText, #f2f2f2);
+  --p-band-ink-2: var(--p-color-semantic-inverseTextSecondary, #a3a3a3);
+  --p-band-line: var(--p-color-semantic-inverseBorder, #2a2a2c);
+  --p-line-strong: var(--p-color-semantic-borderStrong, #111111);
+  --p-editorial-radius: var(--p-shape-editorial, 2px);
+  --p-measure-cn: var(--p-composition-measure-cn, 36em);
+  --p-measure-latin: var(--p-composition-measure-latin, 66ch);
 }
 
 [data-theme="dark"],
@@ -37,6 +50,11 @@
   --p-ink-2: var(--p-color-primitive-darkInk2, #d4d4d4);
   --p-ink-3: var(--p-color-primitive-darkInk3, #a3a3a3);
   --p-ink-4: var(--p-color-primitive-darkInk4, #737373);
+  --p-band: var(--p-color-primitive-darkBand, #f5f5f5);
+  --p-band-ink: var(--p-color-primitive-darkBandInk, #111111);
+  --p-band-ink-2: var(--p-color-primitive-darkBandInk2, #555555);
+  --p-band-line: var(--p-color-primitive-darkBandLine, #d4d4d4);
+  --p-line-strong: var(--p-color-primitive-darkLineStrong, #f5f5f5);
 }
 
 .p-btn,
@@ -245,6 +263,82 @@
 
 .p-editorial-title { font-family: var(--p-serif); font-weight: 400; }
 .p-eyebrow { color: var(--p-ink-4); font: 500 10px/1.4 var(--p-mono); letter-spacing: 0.12em; text-transform: uppercase; }
+
+/* Editorial depth primitives: inverse band, ink rule, measure, near-square surface. */
+.p-band {
+  background: var(--p-band);
+  color: var(--p-band-ink);
+}
+.p-band :where(h1, h2, h3, h4) { color: var(--p-band-ink); }
+.p-band :where(p, li, dd, span) { color: var(--p-band-ink); }
+.p-band .p-band-muted,
+.p-band .p-eyebrow { color: var(--p-band-ink-2); }
+.p-band .p-rule-strong--bottom { border-bottom-color: var(--p-band-line); }
+
+/* Controls inside an inverse band cannot reuse the page-level ink, or they vanish. */
+.p-band .p-btn,
+.p-band .p-icon-btn {
+  border-color: var(--p-band-line);
+  color: var(--p-band-ink);
+}
+.p-band .p-btn:hover,
+.p-band .p-icon-btn:hover {
+  border-color: var(--p-band-ink-2);
+  color: var(--p-band-ink);
+}
+.p-band .p-btn-primary {
+  background: var(--p-band-ink);
+  border-color: var(--p-band-ink);
+  color: var(--p-band);
+}
+.p-band .p-btn-primary:hover {
+  background: var(--p-band-ink);
+  border-color: var(--p-band-ink);
+  opacity: 0.86;
+}
+.p-band .p-btn-secondary {
+  background: transparent;
+  border-color: var(--p-band-line);
+}
+.p-band .p-input,
+.p-band .p-select,
+.p-band .p-textarea {
+  background: transparent;
+  border-color: var(--p-band-line);
+  color: var(--p-band-ink);
+}
+
+.p-rule-strong {
+  border: 0;
+  border-top: 1px solid var(--p-line-strong);
+  margin: 0;
+  width: 100%;
+}
+.p-rule-strong-bottom {
+  border-bottom: 1px solid var(--p-line-strong);
+  border-top: 0;
+}
+
+.p-measure-cn { max-width: var(--p-measure-cn); }
+.p-measure-latin { max-width: var(--p-measure-latin); }
+.p-measure-cn,
+.p-measure-latin { text-wrap: pretty; }
+
+.p-editorial-surface {
+  background: var(--p-surface);
+  border: 1px solid var(--p-line);
+  border-radius: var(--p-editorial-radius);
+}
+
+.p-body-cn {
+  font-family: var(--p-font-cn-body);
+  line-height: var(--p-typography-lineHeight-reading, 1.7);
+}
+.p-display {
+  font-family: var(--p-font-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

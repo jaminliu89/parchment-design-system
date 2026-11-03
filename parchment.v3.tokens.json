@@ -94,6 +94,51 @@
       "darkInk4": {
         "$value": "#737373",
         "$type": "color"
+      },
+      "band": {
+        "$description": "Inverse block background. Cuts a page into editorial bands.",
+        "$value": "#111111",
+        "$type": "color"
+      },
+      "bandInk": {
+        "$description": "Primary text on an inverse band.",
+        "$value": "#F2F2F2",
+        "$type": "color"
+      },
+      "bandInk2": {
+        "$description": "Secondary text on an inverse band.",
+        "$value": "#A3A3A3",
+        "$type": "color"
+      },
+      "bandLine": {
+        "$description": "Hairline on an inverse band.",
+        "$value": "#2A2A2C",
+        "$type": "color"
+      },
+      "lineStrong": {
+        "$description": "Ink-weight rule. Separates sections, heads tables, closes blocks.",
+        "$value": "#111111",
+        "$type": "color"
+      },
+      "darkBand": {
+        "$value": "#F5F5F5",
+        "$type": "color"
+      },
+      "darkBandInk": {
+        "$value": "#111111",
+        "$type": "color"
+      },
+      "darkBandInk2": {
+        "$value": "#555555",
+        "$type": "color"
+      },
+      "darkBandLine": {
+        "$value": "#D4D4D4",
+        "$type": "color"
+      },
+      "darkLineStrong": {
+        "$value": "#F5F5F5",
+        "$type": "color"
       }
     },
     "semantic": {
@@ -147,10 +192,49 @@
       },
       "error": {
         "$value": "{color.primitive.error}"
+      },
+      "inverse": {
+        "$description": "Full-bleed inverse surface. Editorial band, cover block, statement section.",
+        "$value": "{color.primitive.band}"
+      },
+      "inverseText": {
+        "$value": "{color.primitive.bandInk}"
+      },
+      "inverseTextSecondary": {
+        "$value": "{color.primitive.bandInk2}"
+      },
+      "inverseBorder": {
+        "$value": "{color.primitive.bandLine}"
+      },
+      "borderStrong": {
+        "$description": "Ink rule for section boundaries and table heads. Not for ordinary dividers.",
+        "$value": "{color.primitive.lineStrong}"
       }
     }
   },
   "typography": {
+    "family": {
+      "ui": {
+        "$description": "Controls, navigation, metadata. Never for long-form body.",
+        "$value": "Inter, Noto Sans SC, -apple-system, BlinkMacSystemFont, sans-serif"
+      },
+      "display": {
+        "$description": "Headings and cover lines. Editorial weight only.",
+        "$value": "Instrument Serif, Noto Serif SC, Georgia, serif"
+      },
+      "editorial": {
+        "$description": "Long-form reading body, Latin-led.",
+        "$value": "Instrument Serif, Noto Serif SC, Georgia, serif"
+      },
+      "cnBody": {
+        "$description": "Long-form Chinese body. Serif first, Latin serif as fallback only.",
+        "$value": "Noto Serif SC, Songti SC, STSong, Source Han Serif SC, Instrument Serif, Georgia, serif"
+      },
+      "mono": {
+        "$description": "Code, timecode, parameters. Never replaced by a serif.",
+        "$value": "DM Mono, ui-monospace, SFMono-Regular, Menlo, monospace"
+      }
+    },
     "ui": {
       "$value": "Inter, Noto Sans SC, -apple-system, BlinkMacSystemFont, sans-serif"
     },
@@ -190,6 +274,10 @@
     },
     "pill": {
       "$value": "999px"
+    },
+    "editorial": {
+      "$description": "Near-square surface for reading blocks, covers and quote panels. Never for controls.",
+      "$value": "2px"
     }
   },
   "icon": {
@@ -284,6 +372,16 @@
     },
     "section": {
       "gap": { "$value": "64px" }
+    },
+    "measure": {
+      "cn": {
+        "$description": "Line length for Chinese body text. 1em equals one CJK glyph, so 36em holds 34-38 characters.",
+        "$value": "36em"
+      },
+      "latin": {
+        "$description": "Line length for Latin body text, 60-72 characters per line.",
+        "$value": "66ch"
+      }
     }
   },
   "motion": {

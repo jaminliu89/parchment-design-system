@@ -9,10 +9,25 @@ This is the canonical visual, interaction and release gate. A checklist item is 
 - [ ] 8px controls, 12px surfaces and pills only for compact semantic status
 - [ ] One 20px geometric monoline icon family, 1.75px stroke, round caps/joins and `currentColor`
 - [ ] Sans is the interface voice; serif is limited to deliberate editorial emphasis
+- [ ] `borderStrong` appears only at section boundaries and table heads, never as an ordinary divider
+- [ ] Inverse bands restate their own control colours; no page-level ink is inherited onto a band
+- [ ] Long-form text blocks are constrained by `measure` (`ch`), not only by container width
 - [ ] Content hierarchy remains legible with color removed
 - [ ] Color supplements functional success, warning and error meaning only
 - [ ] Every interactive target is at least 44px and has visible non-color-only focus
 - [ ] Reduced motion removes non-essential animation
+
+## Payload and delivery budget
+
+Visual restraint does not imply a small payload. A 5 KB client shell is slower than a 250 KB server-rendered page, because the shell shows nothing until JavaScript lands. Gate both.
+
+- [ ] Third-party domains ≤ 2 per rendered page
+- [ ] Fonts self-hosted, no `fonts.googleapis.com` request; per-slice woff2 ≤ 20 KB
+- [ ] First-screen content readable in the raw HTML response (`curl <url> | head -c 5000`), not only after JS
+- [ ] A bare `<div id="root">` shell counts as a payload failure on any page whose content matters to search or to a slow connection
+- [ ] Total first-paint bytes recorded in the PR description
+
+Measure with the response, not the browser: if the raw HTML has no readable first screen, the page is client-rendered regardless of how the numbers look in devtools.
 
 ## Component behavior
 
